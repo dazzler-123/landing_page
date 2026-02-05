@@ -58,7 +58,7 @@ const HowItWorks: React.FC = () => {
               letterSpacing: '0.1em',
               fontWeight: 700,
               mb: 1,
-              color: '#E8A54C',
+              color: '#F58220',
             }}
           >
             Our Process
@@ -68,7 +68,7 @@ const HowItWorks: React.FC = () => {
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem' },
               fontWeight: 700,
-              color: '#0B4F3D',
+              color: '#2F5F86',
               mb: 2,
               fontFamily: "'Instrument Serif', serif",
             }}
@@ -100,7 +100,7 @@ const HowItWorks: React.FC = () => {
                 left: 0,
                 right: 0,
                 height: 4,
-                background: 'linear-gradient(to right, #0B4F3D, #E8A54C, #0B4F3D)',
+                background: 'linear-gradient(to right, #2F5F86, #4F86A7, #2F5F86)',
                 opacity: 0.2,
                 zIndex: 0,
               }}
@@ -131,8 +131,8 @@ const HowItWorks: React.FC = () => {
                         height: 80,
                         background:
                           index % 2 === 0
-                            ? 'linear-gradient(135deg, #0B4F3D, rgba(11, 79, 61, 0.8))'
-                            : 'linear-gradient(135deg, #E8A54C, rgba(232, 165, 76, 0.8))',
+                            ? 'linear-gradient(135deg, #2F5F86, rgba(47, 95, 134, 0.8))'
+                            : 'linear-gradient(135deg, #4F86A7, rgba(79, 134, 167, 0.8))',
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -151,7 +151,7 @@ const HowItWorks: React.FC = () => {
                         transform: 'translateX(-50%)',
                         width: 32,
                         height: 32,
-                        bgcolor: '#E8A54C',
+                        bgcolor: '#F58220',
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -170,7 +170,7 @@ const HowItWorks: React.FC = () => {
                     sx={{
                       fontSize: '1.25rem',
                       fontWeight: 700,
-                      color: '#0B4F3D',
+                      color: '#2F5F86',
                       mb: 1.5,
                       fontFamily: "'Instrument Serif', serif",
                     }}

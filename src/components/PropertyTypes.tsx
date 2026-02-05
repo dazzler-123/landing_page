@@ -26,18 +26,18 @@ const PropertyTypes: React.FC = () => {
   };
 
   const propertyTypes = [
-    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Commercial Office' },
-    { icon: <StoreIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Retail Stores' },
-    { icon: <HomeIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Residential Buildings' },
-    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Warehouses' },
-    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Healthcare Facilities' },
-    { icon: <BuildIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Industrial Properties' },
-    { icon: <HotelIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Hotels & Hospitality' },
-    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#0B4F3D' }} />, label: 'Educational Institutions' },
+    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Commercial Office' },
+    { icon: <StoreIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Retail Stores' },
+    { icon: <HomeIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Residential Buildings' },
+    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Warehouses' },
+    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Healthcare Facilities' },
+    { icon: <BuildIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Industrial Properties' },
+    { icon: <HotelIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Hotels & Hospitality' },
+    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Educational Institutions' },
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F8F7F4' }}>
+    <Box sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F4F6F8' }}>
       <Container maxWidth="xl">
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 8, alignItems: 'center' }}>
           {/* Content */}
@@ -50,7 +50,7 @@ const PropertyTypes: React.FC = () => {
                   letterSpacing: '0.1em',
                   fontWeight: 700,
                   mb: 1,
-                  color: '#E8A54C',
+                  color: '#F58220',
                 }}
               >
                 Property Types
@@ -60,7 +60,7 @@ const PropertyTypes: React.FC = () => {
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem' },
                   fontWeight: 700,
-                  color: '#0B4F3D',
+                  color: '#2F5F86',
                   mb: 2,
                   fontFamily: "'Instrument Serif', serif",
                 }}
@@ -91,12 +91,12 @@ const PropertyTypes: React.FC = () => {
                         p: 2,
                         bgcolor: 'white',
                         borderRadius: 3,
-                        border: '1px solid rgba(11, 79, 61, 0.1)',
+                        border: '1px solid rgba(47, 95, 134, 0.1)',
                         transition: 'all 0.3s',
                         '&:hover': {
-                          borderColor: '#E8A54C',
+                          borderColor: '#F58220',
                           '& .property-icon': {
-                            bgcolor: 'rgba(232, 165, 76, 0.2)',
+                            bgcolor: 'rgba(245, 130, 32, 0.2)',
                           },
                         },
                       }}
@@ -106,7 +106,7 @@ const PropertyTypes: React.FC = () => {
                         sx={{
                           width: 40,
                           height: 40,
-                          bgcolor: 'rgba(11, 79, 61, 0.1)',
+                          bgcolor: 'rgba(47, 95, 134, 0.1)',
                           borderRadius: 2,
                           display: 'flex',
                           alignItems: 'center',
@@ -121,7 +121,7 @@ const PropertyTypes: React.FC = () => {
                         sx={{
                           fontSize: '0.875rem',
                           fontWeight: 600,
-                          color: '#0B4F3D',
+                          color: '#2F5F86',
                         }}
                       >
                         {property.label}
@@ -141,13 +141,13 @@ const PropertyTypes: React.FC = () => {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 1,
-                    color: '#0B4F3D',
+                    color: '#2F5F86',
                     fontSize: '1.125rem',
                     fontWeight: 600,
                     textDecoration: 'none',
                     textTransform: 'none',
                     '&:hover': {
-                      color: '#E8A54C',
+                      color: '#F58220',
                       '& .MuiSvgIcon-root': {
                         transform: 'translateX(8px)',
                       },
@@ -177,7 +177,7 @@ const PropertyTypes: React.FC = () => {
                   right: -24,
                   width: '100%',
                   height: '100%',
-                  bgcolor: '#0B4F3D',
+                  bgcolor: '#2F5F86',
                   borderRadius: 4,
                   zIndex: -1,
                   transition: 'transform 0.5s',
@@ -221,7 +221,7 @@ const PropertyTypes: React.FC = () => {
                     sx={{
                       width: 48,
                       height: 48,
-                      bgcolor: '#E8A54C',
+                      bgcolor: '#F58220',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
@@ -231,7 +231,7 @@ const PropertyTypes: React.FC = () => {
                     <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '1.25rem' }}>500+</Typography>
                   </Box>
                   <Box>
-                    <Typography sx={{ color: '#0B4F3D', fontWeight: 700, fontSize: '0.875rem' }}>
+                    <Typography sx={{ color: '#2F5F86', fontWeight: 700, fontSize: '0.875rem' }}>
                       Properties Managed
                     </Typography>
                     <Typography sx={{ color: 'rgba(26, 43, 37, 0.6)', fontSize: '0.75rem' }}>

@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
         width: '100%',
         bgcolor: 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(24px)',
-        borderTop: '1px solid rgba(11, 79, 61, 0.1)',
+        borderTop: '1px solid rgba(47, 95, 134, 0.1)',
         borderRadius: '0 0 16px 16px',
         overflow: 'hidden',
       }}
@@ -60,8 +60,8 @@ const Navigation: React.FC = () => {
             onClick={(e) => handleNavClick(e, link.href)}
             sx={{
               textAlign: 'center',
-              color: '#1A2B25',
-              '&:hover': { color: '#0B4F3D' },
+              color: '#1F3F5B',
+              '&:hover': { color: '#2F5F86' },
               cursor: 'pointer',
             }}
           >
@@ -80,11 +80,11 @@ const Navigation: React.FC = () => {
           href="#contact"
           onClick={(e) => handleNavClick(e, '#contact')}
           sx={{
-            bgcolor: '#0B4F3D',
+            bgcolor: '#F58220',
             color: 'white',
             py: 1.5,
             mt: 1,
-            '&:hover': { bgcolor: 'rgba(11, 79, 61, 0.9)' },
+            '&:hover': { bgcolor: 'rgba(245, 130, 32, 0.9)' },
           }}
         >
           Get A Free Quote
@@ -100,7 +100,7 @@ const Navigation: React.FC = () => {
         sx={{
           bgcolor: 'rgba(255, 255, 255, 0.9)',
           backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid rgba(11, 79, 61, 0.1)',
+          borderBottom: '1px solid rgba(47, 95, 134, 0.1)',
           boxShadow: 'none',
           zIndex: 50,
         }}
@@ -131,7 +131,7 @@ const Navigation: React.FC = () => {
                 sx={{
                   width: 48,
                   height: 48,
-                  bgcolor: '#0B4F3D',
+                  bgcolor: '#2F5F86',
                   borderRadius: 2,
                   display: 'flex',
                   alignItems: 'center',
@@ -147,7 +147,7 @@ const Navigation: React.FC = () => {
                   sx={{
                     fontSize: '1.25rem',
                     fontWeight: 700,
-                    color: '#0B4F3D',
+                    color: '#2F5F86',
                     lineHeight: 1,
                     fontFamily: "'Instrument Serif', serif",
                   }}
@@ -159,7 +159,7 @@ const Navigation: React.FC = () => {
                     fontSize: '10px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
-                    color: '#E8A54C',
+                    color: '#F58220',
                     fontWeight: 500,
                   }}
                 >
@@ -176,10 +176,10 @@ const Navigation: React.FC = () => {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   sx={{
-                    color: 'rgba(26, 43, 37, 0.8)',
+                    color: 'rgba(31, 63, 91, 0.8)',
                     fontSize: '0.875rem',
                     fontWeight: 500,
-                    '&:hover': { color: '#0B4F3D' },
+                    '&:hover': { color: '#2F5F86' },
                     textTransform: 'none',
                   }}
                 >
@@ -192,13 +192,13 @@ const Navigation: React.FC = () => {
                 onClick={(e) => handleNavClick(e, '#contact')}
                 startIcon={<PhoneIcon />}
                 sx={{
-                  bgcolor: '#0B4F3D',
+                  bgcolor: '#2F5F86',
                   color: 'white',
                   px: 3,
                   py: 1.25,
                   boxShadow: 2,
                   '&:hover': {
-                    bgcolor: 'rgba(11, 79, 61, 0.9)',
+                    bgcolor: 'rgba(47, 95, 134, 0.9)',
                     boxShadow: 4,
                   },
                 }}
@@ -213,7 +213,7 @@ const Navigation: React.FC = () => {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { md: 'none' }, color: '#0B4F3D' }}
+              sx={{ display: { md: 'none' }, color: '#2F5F86' }}
             >
               {mobileOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>

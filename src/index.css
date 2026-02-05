@@ -13,8 +13,8 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F8F7F4;
-  color: #1A2B25;
+  background-color: #F4F6F8;
+  color: #1F3F5B;
   overflow-x: hidden;
 }
 
@@ -24,26 +24,26 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F7F4;
+  background: #F4F6F8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0B4F3D;
+  background: #2F5F86;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E8A54C;
+  background: #F58220;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #E8A54C;
+  background-color: #F58220;
   color: white;
 }
 
 ::-moz-selection {
-  background-color: #E8A54C;
+  background-color: #F58220;
   color: white;
 }
 

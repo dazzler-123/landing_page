@@ -38,7 +38,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <Box id="about" sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F8F7F4' }}>
+    <Box id="about" sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F4F6F8' }}>
       <Container maxWidth="xl">
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 8, alignItems: 'center' }}>
           {/* Image */}
@@ -54,7 +54,7 @@ const About: React.FC = () => {
                   left: -24,
                   width: '100%',
                   height: '100%',
-                  bgcolor: '#E8A54C',
+                  bgcolor: '#F58220',
                   borderRadius: 4,
                   zIndex: -1,
                   transition: 'transform 0.5s',
@@ -93,7 +93,7 @@ const About: React.FC = () => {
                   letterSpacing: '0.1em',
                   fontWeight: 700,
                   mb: 1,
-                  color: '#E8A54C',
+                  color: '#F58220',
                 }}
               >
                 Why Choose GroupServe
@@ -103,7 +103,7 @@ const About: React.FC = () => {
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem' },
                   fontWeight: 700,
-                  color: '#0B4F3D',
+                  color: '#2F5F86',
                   mb: 2,
                   fontFamily: "'Instrument Serif', serif",
                 }}
@@ -132,12 +132,12 @@ const About: React.FC = () => {
                       borderRadius: 3,
                       bgcolor: 'white',
                       boxShadow: 1,
-                      border: '1px solid rgba(11, 79, 61, 0.1)',
+                      border: '1px solid rgba(47, 95, 134, 0.1)',
                       transition: 'all 0.3s',
                       '&:hover': {
-                        borderColor: '#E8A54C',
+                        borderColor: '#F58220',
                         '& .benefit-icon': {
-                          bgcolor: '#E8A54C',
+                          bgcolor: '#F58220',
                         },
                     },
                     }}
@@ -148,7 +148,7 @@ const About: React.FC = () => {
                         sx={{
                           width: 40,
                           height: 40,
-                          bgcolor: 'rgba(232, 165, 76, 0.2)',
+                          bgcolor: 'rgba(245, 130, 32, 0.2)',
                           borderRadius: 2,
                           display: 'flex',
                           alignItems: 'center',
@@ -157,14 +157,14 @@ const About: React.FC = () => {
                           transition: 'background-color 0.3s',
                         }}
                       >
-                        <CheckCircleIcon sx={{ color: '#0B4F3D', fontSize: 20 }} />
+                        <CheckCircleIcon sx={{ color: '#2F5F86', fontSize: 20 }} />
                       </Box>
                       <Box>
                         <Typography
                           sx={{
                             fontSize: '1.125rem',
                             fontWeight: 700,
-                            color: '#0B4F3D',
+                            color: '#2F5F86',
                             mb: 0.5,
                           }}
                         >
@@ -173,7 +173,7 @@ const About: React.FC = () => {
                         <Typography
                           sx={{
                             fontSize: '0.875rem',
-                            color: 'rgba(26, 43, 37, 0.7)',
+                            color: 'rgba(31, 63, 91, 0.7)',
                           }}
                         >
                           {benefit.description}
@@ -191,13 +191,13 @@ const About: React.FC = () => {
                   onClick={(e) => handleNavClick(e, '#contact')}
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    color: '#0B4F3D',
+                    color: '#2F5F86',
                     fontSize: '1.125rem',
                     fontWeight: 600,
                     textTransform: 'none',
                     p: 0,
                     '&:hover': {
-                      color: '#E8A54C',
+                      color: '#F58220',
                       '& .MuiSvgIcon-root': {
                         transform: 'translateX(8px)',
                       },

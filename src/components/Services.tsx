@@ -166,7 +166,7 @@ const Services: React.FC = () => {
               letterSpacing: '0.1em',
               fontWeight: 700,
               mb: 1,
-              color: '#E8A54C',
+              color: '#F58220',
             }}
           >
             Our Services
@@ -176,7 +176,7 @@ const Services: React.FC = () => {
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem' },
               fontWeight: 700,
-              color: '#0B4F3D',
+              color: '#2F5F86',
               mb: 2,
               fontFamily: "'Instrument Serif', serif",
             }}
@@ -204,16 +204,16 @@ const Services: React.FC = () => {
                 data-aos="fade-up"
                 data-aos-delay={service.delay}
                 sx={{
-                  bgcolor: '#F8F7F4',
+                  bgcolor: '#F4F6F8',
                   borderRadius: 4,
                   p: 4,
-                  border: '1px solid rgba(11, 79, 61, 0.1)',
+                  border: '1px solid rgba(47, 95, 134, 0.1)',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   transition: 'all 0.3s',
                   '&:hover': {
-                    borderColor: '#E8A54C',
+                    borderColor: '#F58220',
                     boxShadow: 6,
                     '& .service-icon': {
                       transform: 'scale(1.1)',
@@ -228,8 +228,8 @@ const Services: React.FC = () => {
                       width: 64,
                       height: 64,
                       background: index % 2 === 0
-                        ? 'linear-gradient(135deg, #0B4F3D, rgba(11, 79, 61, 0.8))'
-                        : 'linear-gradient(135deg, #E8A54C, rgba(232, 165, 76, 0.8))',
+                        ? 'linear-gradient(135deg, #2F5F86, rgba(47, 95, 134, 0.8))'
+                        : 'linear-gradient(135deg, #4F86A7, rgba(79, 134, 167, 0.8))',
                       borderRadius: 3,
                       display: 'flex',
                       alignItems: 'center',
@@ -245,7 +245,7 @@ const Services: React.FC = () => {
                     sx={{
                       fontSize: '1.25rem',
                       fontWeight: 700,
-                      color: '#0B4F3D',
+                      color: '#2F5F86',
                       mb: 1.5,
                       fontFamily: "'Instrument Serif', serif",
                     }}
@@ -266,13 +266,13 @@ const Services: React.FC = () => {
                     onClick={(e) => handleNavClick(e, '#contact')}
                     endIcon={<ArrowForwardIcon />}
                     sx={{
-                      color: '#0B4F3D',
+                      color: '#2F5F86',
                       fontSize: '0.875rem',
                       fontWeight: 500,
                       textTransform: 'none',
                       p: 0,
                       '&:hover': {
-                        color: '#E8A54C',
+                        color: '#F58220',
                         '& .MuiSvgIcon-root': {
                           transform: 'translateX(4px)',
                         },
@@ -298,7 +298,7 @@ const Services: React.FC = () => {
             onClick={(e) => handleNavClick(e, '#contact')}
             endIcon={<ArrowForwardIcon />}
             sx={{
-              bgcolor: '#0B4F3D',
+              bgcolor: '#2F5F86',
               color: 'white',
               px: 4,
               py: 2,
@@ -306,7 +306,7 @@ const Services: React.FC = () => {
               fontWeight: 600,
               boxShadow: 4,
               '&:hover': {
-                bgcolor: 'rgba(11, 79, 61, 0.9)',
+                bgcolor: 'rgba(47, 95, 134, 0.9)',
                 boxShadow: 6,
               },
             }}

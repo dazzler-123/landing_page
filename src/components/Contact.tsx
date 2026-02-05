@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
       sx={{
         py: { xs: 6, md: 12 },
         px: 3,
-        background: 'linear-gradient(135deg, #0B4F3D, rgba(11, 79, 61, 0.9))',
+        background: 'linear-gradient(135deg, #2F5F86, rgba(47, 95, 134, 0.9))',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
               sx={{
                 width: 8,
                 height: 8,
-                bgcolor: '#E8A54C',
+                bgcolor: '#F58220',
                 borderRadius: '50%',
                 animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 '@keyframes pulse': {
@@ -110,15 +110,15 @@ const Contact: React.FC = () => {
               startIcon={<PhoneIcon />}
               sx={{
                 width: { xs: '100%', sm: 'auto' },
-                bgcolor: '#E8A54C',
-                color: '#1A2B25',
+                bgcolor: '#F58220',
+                color: '#1F3F5B',
                 px: 5,
                 py: 2.5,
                 fontSize: '1.125rem',
                 fontWeight: 700,
                 boxShadow: 6,
                 '&:hover': {
-                  bgcolor: 'rgba(232, 165, 76, 0.9)',
+                  bgcolor: 'rgba(245, 130, 32, 0.9)',
                   boxShadow: 8,
                 },
               }}
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
           >
             {['No Long-Term Contracts', 'Free Property Assessment', 'Same-Day Response'].map((text) => (
               <Box key={text} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <CheckCircleIcon sx={{ color: '#E8A54C', fontSize: 20 }} />
+                <CheckCircleIcon sx={{ color: '#F58220', fontSize: 20 }} />
                 <Typography sx={{ fontSize: '0.875rem' }}>{text}</Typography>
               </Box>
             ))}

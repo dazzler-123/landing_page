@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             content: '""',
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to right, rgba(11, 79, 61, 0.95), rgba(11, 79, 61, 0.7), transparent)',
+            background: 'linear-gradient(to right, rgba(47, 95, 134, 0.95), rgba(47, 95, 134, 0.7), transparent)',
             zIndex: 2,
           },
         }}
@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
               sx={{
                 width: 48,
                 height: 48,
-                bgcolor: '#E8A54C',
+                bgcolor: '#F58220',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
               backdropFilter: 'blur(12px)',
               fontSize: '0.875rem',
               fontWeight: 500,
-              color: '#E8A54C',
+              color: '#F58220',
               bgcolor: 'rgba(255, 255, 255, 0.1)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '9999px',
@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
               sx={{
                 width: 8,
                 height: 8,
-                bgcolor: '#E8A54C',
+                bgcolor: '#F58220',
                 borderRadius: '50%',
                 animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 '@keyframes pulse': {
@@ -163,7 +163,7 @@ const Hero: React.FC = () => {
             }}
           >
             Keep Your Properties Running Smoothly{' '}
-            <Box component="span" sx={{ color: '#E8A54C' }}>
+            <Box component="span" sx={{ color: '#F58220' }}>
               Without the Hassle
             </Box>
           </Typography>
@@ -197,15 +197,15 @@ const Hero: React.FC = () => {
               onClick={(e) => handleNavClick(e, '#contact')}
               endIcon={<ArrowForwardIcon />}
               sx={{
-                bgcolor: '#E8A54C',
-                color: '#1A2B25',
+                bgcolor: '#F58220',
+                color: '#1F3F5B',
                 px: 4,
                 py: 2,
                 fontSize: '1rem',
                 fontWeight: 600,
                 boxShadow: 4,
                 '&:hover': {
-                  bgcolor: 'rgba(232, 165, 76, 0.9)',
+                  bgcolor: 'rgba(245, 130, 32, 0.9)',
                   boxShadow: 6,
                   '& .MuiSvgIcon-root': {
                     transform: 'translateX(4px)',
@@ -255,7 +255,7 @@ const Hero: React.FC = () => {
           >
             {['Licensed & Insured', '10+ Years Experience', '24/7 Emergency Support'].map((text) => (
               <Box key={text} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <CheckCircleIcon sx={{ color: '#E8A54C', fontSize: 20 }} />
+                <CheckCircleIcon sx={{ color: '#F58220', fontSize: 20 }} />
                 <Typography sx={{ fontSize: '0.875rem' }}>{text}</Typography>
               </Box>
             ))}

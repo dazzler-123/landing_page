@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: '#1A2B25',
+        bgcolor: '#1F3F5B',
         color: 'rgba(255, 255, 255, 0.8)',
         py: 8,
         px: 3,
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                 sx={{
                   width: 48,
                   height: 48,
-                  background: 'linear-gradient(135deg, #0B4F3D, rgba(11, 79, 61, 0.8))',
+                  background: 'linear-gradient(135deg, #2F5F86, rgba(47, 95, 134, 0.8))',
                   borderRadius: 2,
                   display: 'flex',
                   alignItems: 'center',
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
                     fontSize: '10px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
-                    color: '#E8A54C',
+                    color: '#F58220',
                     fontWeight: 500,
                   }}
                 >
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                     textDecoration: 'none',
                     transition: 'background-color 0.3s',
                     '&:hover': {
-                      bgcolor: '#E8A54C',
+                      bgcolor: '#F58220',
                     },
                   }}
                 >
@@ -143,7 +143,7 @@ const Footer: React.FC = () => {
                     textDecoration: 'none',
                     transition: 'color 0.3s',
                     '&:hover': {
-                      color: '#E8A54C',
+                      color: '#F58220',
                     },
                   }}
                 >
@@ -169,7 +169,7 @@ const Footer: React.FC = () => {
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                <PhoneIcon sx={{ color: '#E8A54C', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
+                <PhoneIcon sx={{ color: '#F58220', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
                     (555) 123-4567
@@ -178,7 +178,7 @@ const Footer: React.FC = () => {
                 </Box>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                <EmailIcon sx={{ color: '#E8A54C', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
+                <EmailIcon sx={{ color: '#F58220', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
                     info@groupserve.com
@@ -187,7 +187,7 @@ const Footer: React.FC = () => {
                 </Box>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                <LocationOnIcon sx={{ color: '#E8A54C', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
+                <LocationOnIcon sx={{ color: '#F58220', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
                     123 Business Ave
@@ -221,7 +221,7 @@ const Footer: React.FC = () => {
                 color: 'inherit',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
-                '&:hover': { color: '#E8A54C' },
+                '&:hover': { color: '#F58220' },
               }}
             >
               Privacy Policy
@@ -232,7 +232,7 @@ const Footer: React.FC = () => {
                 color: 'inherit',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
-                '&:hover': { color: '#E8A54C' },
+                '&:hover': { color: '#F58220' },
               }}
             >
               Terms of Service
