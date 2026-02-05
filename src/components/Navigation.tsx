@@ -11,8 +11,6 @@ import {
   ListItemText,
   Container,
   Typography,
-  useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -21,8 +19,6 @@ import PhoneIcon from '@mui/icons-material/Phone';
 
 const Navigation: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

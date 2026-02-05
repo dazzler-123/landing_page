@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Container, Typography, Card, CardContent, Button, Grid } from '@mui/material';
+import { Box, Container, Typography, Card, CardContent, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
