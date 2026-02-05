@@ -1,0 +1,177 @@
+import React, { useEffect } from 'react';
+import { Box, Container, Typography, Button } from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+const Contact: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
+  return (
+    <Box
+      id="contact"
+      sx={{
+        py: { xs: 6, md: 12 },
+        px: 3,
+        background: 'linear-gradient(135deg, #0B4F3D, rgba(11, 79, 61, 0.9))',
+        position: 'relative',
+        overflow: 'hidden',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+          opacity: 0.1,
+        },
+      }}
+    >
+      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 10 }}>
+        <Box sx={{ textAlign: 'center' }} data-aos="fade-up">
+          {/* Badge */}
+          <Box
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 1,
+              px: 2,
+              py: 1,
+              borderRadius: '9999px',
+              bgcolor: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: 'white',
+              fontSize: '0.875rem',
+              fontWeight: 700,
+              letterSpacing: '0.025em',
+              mb: 4,
+            }}
+          >
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                bgcolor: '#E8A54C',
+                borderRadius: '50%',
+                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                '@keyframes pulse': {
+                  '50%': { opacity: 0.5 },
+                },
+              }}
+            />
+            Get Started Today
+          </Box>
+
+          {/* Headline */}
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: '2.25rem', sm: '3rem', lg: '3.75rem' },
+              fontWeight: 700,
+              color: 'white',
+              mb: 2,
+              fontFamily: "'Instrument Serif', serif",
+              lineHeight: 1.25,
+            }}
+          >
+            Ready to Simplify Your Facilities Management?
+          </Typography>
+
+          {/* Subheadline */}
+          <Typography
+            sx={{
+              fontSize: '1.25rem',
+              color: 'rgba(255, 255, 255, 0.9)',
+              mb: 6,
+              maxWidth: '42rem',
+              mx: 'auto',
+              lineHeight: 1.625,
+            }}
+          >
+            Get a free consultation with our property management experts. No obligation, just honest advice.
+          </Typography>
+
+          {/* CTAs */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', sm: 'row' },
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 2,
+              mb: 6,
+            }}
+          >
+            <Button
+              variant="contained"
+              href="tel:+1234567890"
+              startIcon={<PhoneIcon />}
+              sx={{
+                width: { xs: '100%', sm: 'auto' },
+                bgcolor: '#E8A54C',
+                color: '#1A2B25',
+                px: 5,
+                py: 2.5,
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                boxShadow: 6,
+                '&:hover': {
+                  bgcolor: 'rgba(232, 165, 76, 0.9)',
+                  boxShadow: 8,
+                },
+              }}
+            >
+              Schedule Free Consultation
+            </Button>
+            <Button
+              variant="outlined"
+              href="tel:+1234567890"
+              startIcon={<PhoneIcon />}
+              sx={{
+                width: { xs: '100%', sm: 'auto' },
+                bgcolor: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(12px)',
+                borderColor: 'rgba(255, 255, 255, 0.2)',
+                color: 'white',
+                px: 4,
+                py: 2.5,
+                fontSize: '1.125rem',
+                '&:hover': {
+                  bgcolor: 'rgba(255, 255, 255, 0.2)',
+                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                },
+              }}
+            >
+              Call Now: (555) 123-4567
+            </Button>
+          </Box>
+
+          {/* Trust Indicators */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 4,
+              color: 'rgba(255, 255, 255, 0.8)',
+              fontSize: '0.875rem',
+            }}
+          >
+            {['No Long-Term Contracts', 'Free Property Assessment', 'Same-Day Response'].map((text) => (
+              <Box key={text} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <CheckCircleIcon sx={{ color: '#E8A54C', fontSize: 20 }} />
+                <Typography sx={{ fontSize: '0.875rem' }}>{text}</Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Contact;
+
