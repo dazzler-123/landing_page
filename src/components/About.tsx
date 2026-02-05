@@ -20,20 +20,20 @@ const About: React.FC = () => {
 
   const benefits = [
     {
-      title: 'Single Point of Contact',
-      description: 'One dedicated team managing all your facilities needs - no more juggling multiple vendors.',
+      title: 'Trained & Certified Staff',
+      description: 'Our cleaning professionals are thoroughly trained, background-checked, and certified in industry best practices.',
     },
     {
-      title: 'Flexible Service Plans',
-      description: 'Customized solutions that scale with your property portfolio and budget requirements.',
+      title: 'Eco-Friendly Products',
+      description: 'We use green cleaning products that are safe for your employees, customers, and the environment.',
     },
     {
-      title: 'Preventive Maintenance Plans',
-      description: 'Proactive care that prevents costly repairs and extends the life of your property assets.',
+      title: 'Flexible Scheduling',
+      description: 'Customized cleaning schedules that work around your business hours - daily, weekly, or on-demand service.',
     },
     {
       title: 'Fully Licensed & Insured',
-      description: 'Complete peace of mind with comprehensive insurance coverage and certified professionals.',
+      description: 'Complete peace of mind with comprehensive insurance coverage and bonded cleaning professionals.',
     },
   ];
 
@@ -96,19 +96,19 @@ const About: React.FC = () => {
                   color: '#F58220',
                 }}
               >
-                Why Choose GroupServe
+                Why Choose Our Cleaning Services
               </Typography>
               <Typography
                 variant="h2"
+                className="font-display"
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem' },
                   fontWeight: 700,
                   color: '#2F5F86',
                   mb: 2,
-                  fontFamily: "'Instrument Serif', serif",
                 }}
               >
-                Your Trusted Partner in Property Excellence
+                Your Trusted Cleaning Partner
               </Typography>
               <Typography
                 sx={{
@@ -118,8 +118,8 @@ const About: React.FC = () => {
                   lineHeight: 1.625,
                 }}
               >
-                We provide comprehensive, reliable solutions that save you time and money while ensuring your properties
-                always look their best.
+                We deliver exceptional cleaning services with trained professionals, eco-friendly products, and flexible schedules 
+                to keep your property spotless and healthy.
               </Typography>
 
               {/* Benefits */}

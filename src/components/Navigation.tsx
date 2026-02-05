@@ -144,26 +144,28 @@ const Navigation: React.FC = () => {
               <Box>
                 <Typography
                   variant="h6"
+                  className="font-display"
                   sx={{
                     fontSize: '1.25rem',
                     fontWeight: 700,
                     color: '#2F5F86',
                     lineHeight: 1,
-                    fontFamily: "'Instrument Serif', serif",
                   }}
                 >
                   GroupServe
                 </Typography>
                 <Typography
+                  className="font-body"
                   sx={{
                     fontSize: '10px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     color: '#F58220',
                     fontWeight: 500,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  Facilities Management
+                  Professional Cleaning Services
                 </Typography>
               </Box>
             </Box>

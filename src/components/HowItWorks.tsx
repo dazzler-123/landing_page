@@ -26,22 +26,22 @@ const HowItWorks: React.FC = () => {
     {
       icon: <LocationOnIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 2,
-      title: 'Property Assessment',
-      description: 'We conduct a thorough on-site inspection to understand your property\'s unique requirements.',
+      title: 'Site Assessment',
+      description: 'We conduct a thorough on-site inspection to understand your property\'s cleaning requirements and create a customized plan.',
       delay: 200,
     },
     {
       icon: <DescriptionIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 3,
-      title: 'Custom Proposal',
-      description: 'Receive a detailed, customized service plan with transparent pricing and clear timelines.',
+      title: 'Custom Quote',
+      description: 'Receive a detailed, customized cleaning plan with transparent pricing and flexible scheduling options.',
       delay: 300,
     },
     {
       icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 4,
-      title: 'Service Begins',
-      description: 'Our expert team starts managing your property with consistent, high-quality service delivery.',
+      title: 'Cleaning Begins',
+      description: 'Our expert cleaning team starts working with consistent, high-quality service delivery and regular quality checks.',
       delay: 400,
     },
   ];
@@ -65,15 +65,15 @@ const HowItWorks: React.FC = () => {
           </Typography>
           <Typography
             variant="h2"
+            className="font-display"
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem' },
               fontWeight: 700,
               color: '#2F5F86',
               mb: 2,
-              fontFamily: "'Instrument Serif', serif",
             }}
           >
-            How We Work With You
+            How Our Cleaning Process Works
           </Typography>
           <Typography
             sx={{
@@ -84,8 +84,7 @@ const HowItWorks: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Getting started is simple. We've streamlined our process to get your property managed quickly and
-            efficiently.
+            Getting started is simple. We've streamlined our process to get your property cleaned quickly and efficiently.
           </Typography>
         </Box>
 
@@ -167,12 +166,12 @@ const HowItWorks: React.FC = () => {
                   </Box>
                   <Typography
                     variant="h3"
+                    className="font-display"
                     sx={{
                       fontSize: '1.25rem',
                       fontWeight: 700,
                       color: '#2F5F86',
                       mb: 1.5,
-                      fontFamily: "'Instrument Serif', serif",
                     }}
                   >
                     {step.title}

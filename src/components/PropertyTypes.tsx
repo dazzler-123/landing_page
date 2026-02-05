@@ -9,6 +9,7 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import BuildIcon from '@mui/icons-material/Build';
 import HotelIcon from '@mui/icons-material/Hotel';
 import SchoolIcon from '@mui/icons-material/School';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -26,14 +27,17 @@ const PropertyTypes: React.FC = () => {
   };
 
   const propertyTypes = [
-    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Commercial Office' },
-    { icon: <StoreIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Retail Stores' },
-    { icon: <HomeIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Residential Buildings' },
-    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Warehouses' },
-    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Healthcare Facilities' },
-    { icon: <BuildIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Industrial Properties' },
-    { icon: <HotelIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Hotels & Hospitality' },
-    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Educational Institutions' },
+    { icon: <HomeIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Residential' },
+    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Office' },
+    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Hospital' },
+    { icon: <BuildIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Industrial' },
+    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Commercial' },
+    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Healthcare' },
+    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Educational' },
+    { icon: <StoreIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Retail' },
+    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Warehouse' },
+    { icon: <RestaurantIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Restaurant' },
+    { icon: <HotelIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Hotel' },
   ];
 
   return (
@@ -57,15 +61,15 @@ const PropertyTypes: React.FC = () => {
               </Typography>
               <Typography
                 variant="h2"
+                className="font-display"
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem' },
                   fontWeight: 700,
                   color: '#2F5F86',
                   mb: 2,
-                  fontFamily: "'Instrument Serif', serif",
                 }}
               >
-                We Serve All Types of Properties
+                Cleaning Services for Every Property Type
               </Typography>
               <Typography
                 sx={{
@@ -75,8 +79,8 @@ const PropertyTypes: React.FC = () => {
                   lineHeight: 1.625,
                 }}
               >
-                From small retail stores to large commercial complexes, we have the expertise and resources to manage
-                any property type.
+                From residential homes to large commercial facilities, we provide expert cleaning services tailored 
+                to each property type's unique requirements.
               </Typography>
 
               {/* Property Types Grid */}

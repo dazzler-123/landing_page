@@ -58,32 +58,34 @@ const Footer: React.FC = () => {
               <Box>
                 <Typography
                   variant="h6"
+                  className="font-display"
                   sx={{
                     fontSize: '1.25rem',
                     fontWeight: 700,
-                    color: 'white',
+                    color: 'white', 
                     lineHeight: 1,
-                    fontFamily: "'Instrument Serif', serif",
                   }}
                 >
                   GroupServe
                 </Typography>
                 <Typography
+                  className="font-body"
                   sx={{
                     fontSize: '10px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     color: '#F58220',
                     fontWeight: 500,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  Facilities Management
+                  Professional Cleaning Services
                 </Typography>
               </Box>
             </Box>
             <Typography sx={{ fontSize: '0.875rem', mb: 3, lineHeight: 1.625 }}>
-              Professional facilities management services for commercial and residential properties. Your trusted
-              partner in property excellence.
+            Professional cleaning services for commercial and residential properties. Your trusted partner for 
+            spotless, healthy environments.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               {[
@@ -121,12 +123,12 @@ const Footer: React.FC = () => {
           <Box>
             <Typography
               variant="h6"
+              className="font-display"
               sx={{
                 color: 'white',
                 fontWeight: 700,
                 mb: 3,
                 fontSize: '1.125rem',
-                fontFamily: "'Instrument Serif', serif",
               }}
             >
               Quick Links
@@ -157,12 +159,12 @@ const Footer: React.FC = () => {
           <Box>
             <Typography
               variant="h6"
+              className="font-display"
               sx={{
                 color: 'white',
                 fontWeight: 700,
                 mb: 3,
                 fontSize: '1.125rem',
-                fontFamily: "'Instrument Serif', serif",
               }}
             >
               Get In Touch

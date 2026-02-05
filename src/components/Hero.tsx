@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
                 },
               }}
             />
-            Trusted by 500+ Property Owners
+            Trusted by 500+ Businesses & Property Owners
           </Box>
 
           {/* Headline */}
@@ -152,19 +152,19 @@ const Hero: React.FC = () => {
             data-aos="fade-up"
             data-aos-duration="1000"
             variant="h1"
+            className="font-display"
             sx={{
               fontSize: { xs: '2.5rem', sm: '3rem', lg: '4.5rem' },
               fontWeight: 700,
               color: 'white',
               letterSpacing: '-0.025em',
               mb: 2,
-              fontFamily: "'Instrument Serif', serif",
               lineHeight: 1.25,
             }}
           >
-            Keep Your Properties Running Smoothly{' '}
+            Professional Cleaning Services{' '}
             <Box component="span" sx={{ color: '#F58220' }}>
-              Without the Hassle
+              You Can Trust
             </Box>
           </Typography>
 
@@ -180,8 +180,8 @@ const Hero: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Comprehensive facilities management services from a single trusted partner. We handle everything so you
-            don't have to.
+            Expert cleaning solutions for offices, hospitals, hotels, restaurants, and all commercial properties. 
+            Spotless results, every time.
           </Typography>
 
           {/* CTAs */}
@@ -253,7 +253,7 @@ const Hero: React.FC = () => {
               fontSize: '0.875rem',
             }}
           >
-            {['Licensed & Insured', '10+ Years Experience', '24/7 Emergency Support'].map((text) => (
+            {['Licensed & Insured', 'Eco-Friendly Products', '24/7 Emergency Service'].map((text) => (
               <Box key={text} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <CheckCircleIcon sx={{ color: '#F58220', fontSize: 20 }} />
                 <Typography sx={{ fontSize: '0.875rem' }}>{text}</Typography>

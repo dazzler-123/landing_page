@@ -34,29 +34,29 @@ export const theme = createTheme({
   typography: {
     fontFamily: "'Plus Jakarta Sans', sans-serif",
     h1: {
-      fontFamily: "'Instrument Serif', serif",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
       fontWeight: 700,
       letterSpacing: '-0.025em',
     },
     h2: {
-      fontFamily: "'Instrument Serif', serif",
+      fontFamily: "'IPlus Jakarta Sans', sans-serif",
       fontWeight: 700,
       letterSpacing: '-0.025em',
     },
     h3: {
-      fontFamily: "'Instrument Serif', serif",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
       fontWeight: 700,
     },
     h4: {
-      fontFamily: "'Instrument Serif', serif",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
       fontWeight: 700,
     },
     h5: {
-      fontFamily: "'Instrument Serif', serif",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
       fontWeight: 700,
     },
     h6: {
-      fontFamily: "'Instrument Serif', serif",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
       fontWeight: 700,
     },
     body1: {

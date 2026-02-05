@@ -42,8 +42,8 @@ const Services: React.FC = () => {
           <path d="M12 2v20M2 12h20" />
         </Box>
       ),
-      title: 'Professional Cleaning',
-      description: 'Daily janitorial services, deep cleaning, carpet care, and window washing to keep your property spotless.',
+      title: 'Commercial Cleaning',
+      description: 'Daily, weekly, or custom cleaning schedules for offices, retail spaces, and commercial buildings. Professional janitorial services tailored to your needs.',
       delay: 100,
     },
     {
@@ -63,8 +63,8 @@ const Services: React.FC = () => {
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </Box>
       ),
-      title: 'Building Maintenance',
-      description: 'Preventive and corrective maintenance for plumbing, electrical, painting, and general repairs.',
+      title: 'Deep Cleaning',
+      description: 'Thorough deep cleaning services for move-ins, move-outs, spring cleaning, and special occasions. We clean every corner, surface, and hard-to-reach area.',
       delay: 200,
     },
     {
@@ -84,8 +84,8 @@ const Services: React.FC = () => {
           <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
         </Box>
       ),
-      title: 'HVAC Services',
-      description: 'Installation, maintenance, and emergency repairs for heating, ventilation, and air conditioning systems.',
+      title: 'Carpet & Upholstery',
+      description: 'Professional carpet cleaning, upholstery cleaning, and rug care using eco-friendly methods. Restore your carpets and furniture to like-new condition.',
       delay: 300,
     },
     {
@@ -106,8 +106,8 @@ const Services: React.FC = () => {
           <path d="M12 2v20" />
         </Box>
       ),
-      title: 'Landscaping',
-      description: 'Lawn care, seasonal planting, irrigation systems, and grounds maintenance to enhance curb appeal.',
+      title: 'Window Cleaning',
+      description: 'Interior and exterior window cleaning for all building types. Streak-free results using professional equipment and techniques for crystal-clear windows.',
       delay: 100,
     },
     {
@@ -127,8 +127,8 @@ const Services: React.FC = () => {
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         </Box>
       ),
-      title: 'Roof & Gutter Cleaning',
-      description: 'Regular inspections, debris removal, and maintenance to prevent water damage and extend roof life.',
+      title: 'Floor Care & Maintenance',
+      description: 'Hardwood, tile, vinyl, and concrete floor cleaning, polishing, and maintenance. Keep your floors looking pristine with regular professional care.',
       delay: 200,
     },
     {
@@ -148,8 +148,8 @@ const Services: React.FC = () => {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </Box>
       ),
-      title: 'Security Services',
-      description: '24/7 monitoring, access control, surveillance systems, and on-site security personnel for your peace of mind.',
+      title: 'Post-Construction Cleanup',
+      description: 'Comprehensive cleaning after construction or renovation projects. Remove dust, debris, and construction materials to make your space move-in ready.',
       delay: 300,
     },
   ];
@@ -173,15 +173,16 @@ const Services: React.FC = () => {
           </Typography>
           <Typography
             variant="h2"
+            className="font-display"
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem' },
               fontWeight: 700,
               color: '#2F5F86',
               mb: 2,
-              fontFamily: "'Instrument Serif', serif",
+              
             }}
           >
-            Complete Facilities Management Solutions
+            Comprehensive Cleaning Solutions
           </Typography>
           <Typography
             sx={{
@@ -192,7 +193,7 @@ const Services: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            From cleaning to HVAC, we provide comprehensive property management services tailored to your needs.
+            Professional cleaning services for every type of property. From daily maintenance to deep cleaning, we deliver spotless results.
           </Typography>
         </Box>
 
@@ -242,12 +243,12 @@ const Services: React.FC = () => {
                   </Box>
                   <Typography
                     variant="h3"
+                    className="font-display"
                     sx={{
                       fontSize: '1.25rem',
                       fontWeight: 700,
                       color: '#2F5F86',
                       mb: 1.5,
-                      fontFamily: "'Instrument Serif', serif",
                     }}
                   >
                     {service.title}

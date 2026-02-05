@@ -67,16 +67,16 @@ const Contact: React.FC = () => {
           {/* Headline */}
           <Typography
             variant="h2"
+            className="font-display"
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem', lg: '3.75rem' },
               fontWeight: 700,
               color: 'white',
               mb: 2,
-              fontFamily: "'Instrument Serif', serif",
               lineHeight: 1.25,
             }}
           >
-            Ready to Simplify Your Facilities Management?
+            Ready for Spotless Cleaning Services?
           </Typography>
 
           {/* Subheadline */}
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Get a free consultation with our property management experts. No obligation, just honest advice.
+            Get a free quote from our cleaning experts. No obligation, just honest pricing and professional service recommendations.
           </Typography>
 
           {/* CTAs */}
