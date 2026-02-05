@@ -66,8 +66,8 @@ const About: React.FC = () => {
             >
               <Box
                 component="img"
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_1f9f1c486-1770145375229.png"
-                alt="Professional property management team at work"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Professional cleaning team at work"
                 sx={{
                   width: '100%',
                   aspectRatio: '1/1',

@@ -10,6 +10,29 @@ const Contact: React.FC = () => {
     AOS.init({ once: true });
   }, []);
 
+  // Generate random dots pattern
+  const generateDotsPattern = () => {
+    const dots = [];
+    const dotCount = 150; // Number of random dots
+    for (let i = 0; i < dotCount; i++) {
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const size = Math.random() * 4 + 2; // Random size between 2-6px
+      const opacity = Math.random() * 0.3 + 0.1; // Random opacity between 0.1-0.4
+      dots.push(
+        <circle
+          key={i}
+          cx={`${x}%`}
+          cy={`${y}%`}
+          r={size}
+          fill="rgba(255, 255, 255, 0.2)"
+          opacity={opacity}
+        />
+      );
+    }
+    return dots;
+  };
+
   return (
     <Box
       id="contact"
@@ -29,7 +52,22 @@ const Contact: React.FC = () => {
         },
       }}
     >
-      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 10 }}>
+      {/* Random Dots Background */}
+      <Box
+        component="svg"
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {generateDotsPattern()}
+      </Box>
+      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2 }}>
         <Box sx={{ textAlign: 'center' }} data-aos="fade-up">
           {/* Badge */}
           <Box

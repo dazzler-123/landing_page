@@ -5,6 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import homeImage from '../assets/home.jpg';
 
 const Hero: React.FC = () => {
   const theme = useTheme();
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
             content: '""',
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'url(https://img.rocket.new/generatedImages/rocket_gen_img_1d2785cd0-1765233866657.png)',
+            backgroundImage: `url(${homeImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             zIndex: 1,

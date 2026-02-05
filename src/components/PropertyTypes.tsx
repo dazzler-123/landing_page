@@ -193,8 +193,8 @@ const PropertyTypes: React.FC = () => {
             >
               <Box
                 component="img"
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_11f39316a-1767018786783.png"
-                alt="Modern commercial building exterior showcasing professional property management"
+                src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Professional cleaning services for various property types"
                 sx={{
                   width: '100%',
                   aspectRatio: '4/5',

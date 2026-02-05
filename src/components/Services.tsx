@@ -9,6 +9,7 @@ interface Service {
   title: string;
   description: string;
   delay: number;
+  bgImage: string;
 }
 
 const Services: React.FC = () => {
@@ -23,6 +24,17 @@ const Services: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  // Cleaning service images
+  const cleaningImages = [
+    'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Commercial cleaning
+    'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Deep cleaning
+    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Carpet cleaning
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Window cleaning
+    'https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Floor care
+    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Post-construction
+    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Gutter cleaning
+  ];
 
   const services: Service[] = [
     {
@@ -45,6 +57,7 @@ const Services: React.FC = () => {
       title: 'Commercial Cleaning',
       description: 'Daily, weekly, or custom cleaning schedules for offices, retail spaces, and commercial buildings. Professional janitorial services tailored to your needs.',
       delay: 100,
+      bgImage: cleaningImages[0],
     },
     {
       icon: (
@@ -66,6 +79,7 @@ const Services: React.FC = () => {
       title: 'Deep Cleaning',
       description: 'Thorough deep cleaning services for move-ins, move-outs, spring cleaning, and special occasions. We clean every corner, surface, and hard-to-reach area.',
       delay: 200,
+      bgImage: cleaningImages[1],
     },
     {
       icon: (
@@ -87,6 +101,7 @@ const Services: React.FC = () => {
       title: 'Carpet & Upholstery',
       description: 'Professional carpet cleaning, upholstery cleaning, and rug care using eco-friendly methods. Restore your carpets and furniture to like-new condition.',
       delay: 300,
+      bgImage: cleaningImages[2],
     },
     {
       icon: (
@@ -109,6 +124,7 @@ const Services: React.FC = () => {
       title: 'Window Cleaning',
       description: 'Interior and exterior window cleaning for all building types. Streak-free results using professional equipment and techniques for crystal-clear windows.',
       delay: 100,
+      bgImage: cleaningImages[3],
     },
     {
       icon: (
@@ -130,7 +146,30 @@ const Services: React.FC = () => {
       title: 'Floor Care & Maintenance',
       description: 'Hardwood, tile, vinyl, and concrete floor cleaning, polishing, and maintenance. Keep your floors looking pristine with regular professional care.',
       delay: 200,
+      bgImage: cleaningImages[4],
     },
+    // {
+    //   icon: (
+    //     <Box
+    //       component="svg"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       width={32}
+    //       height={32}
+    //       viewBox="0 0 24 24"
+    //       fill="none"
+    //       stroke="white"
+    //       strokeWidth={2}
+    //       strokeLinecap="round"
+    //       strokeLinejoin="round"
+    //     >
+    //       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    //     </Box>
+    //   ),
+    //   title: 'Post-Construction Cleanup',
+    //   description: 'Comprehensive cleaning after construction or renovation projects. Remove dust, debris, and construction materials to make your space move-in ready.',
+    //   delay: 300,
+    //   bgImage: cleaningImages[5],
+    // },
     {
       icon: (
         <Box
@@ -145,18 +184,40 @@ const Services: React.FC = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <path d="M3 9h18" />
+          <path d="M9 22V9" />
+          <path d="M15 22V9" />
         </Box>
       ),
-      title: 'Post-Construction Cleanup',
-      description: 'Comprehensive cleaning after construction or renovation projects. Remove dust, debris, and construction materials to make your space move-in ready.',
-      delay: 300,
+      title: 'Gutter Cleaning',
+      description: 'Professional gutter cleaning and maintenance services to prevent water damage and keep your property protected. We remove leaves, debris, and ensure proper drainage.',
+      delay: 100,
+      bgImage: cleaningImages[6],
     },
   ];
 
   return (
-    <Box id="services" sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: 'white' }}>
-      <Container maxWidth="xl">
+    <Box 
+      id="services" 
+      sx={{ 
+        py: { xs: 6, md: 12 }, 
+        px: 3, 
+        bgcolor: 'white',
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.03,
+          zIndex: 0,
+        },
+      }}
+    >
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
         {/* Section Header */}
         <Box sx={{ textAlign: 'center', mb: 8 }} data-aos="fade-up">
           <Typography
@@ -205,24 +266,39 @@ const Services: React.FC = () => {
                 data-aos="fade-up"
                 data-aos-delay={service.delay}
                 sx={{
-                  bgcolor: '#F4F6F8',
+                  position: 'relative',
                   borderRadius: 4,
                   p: 4,
                   border: '1px solid rgba(47, 95, 134, 0.1)',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
+                  overflow: 'hidden',
                   transition: 'all 0.3s',
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    inset: 0,
+                    // backgroundImage: `url(${service.bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    opacity: 0.15,
+                    zIndex: 0,
+                    transition: 'opacity 0.3s',
+                  },
                   '&:hover': {
                     borderColor: '#F58220',
                     boxShadow: 6,
+                    '&::before': {
+                      opacity: 0.25,
+                    },
                     '& .service-icon': {
                       transform: 'scale(1.1)',
                     },
-                },
+                  },
                 }}
               >
-                <CardContent sx={{ flexGrow: 1, p: 0 }}>
+                <CardContent sx={{ flexGrow: 1, p: 0, position: 'relative', zIndex: 1 }}>
                   <Box
                     className="service-icon"
                     sx={{
