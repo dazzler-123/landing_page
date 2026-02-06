@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Container, Typography, Card } from '@mui/material';
+import { Box, Container, Typography, Card, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BusinessIcon from '@mui/icons-material/Business';
 import StoreIcon from '@mui/icons-material/Store';
@@ -27,21 +27,21 @@ const PropertyTypes: React.FC = () => {
   };
 
   const propertyTypes = [
-    { icon: <HomeIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Residential' },
-    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Office' },
-    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Hospital' },
-    { icon: <BuildIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Industrial' },
-    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Commercial' },
-    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Healthcare' },
-    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Educational' },
-    { icon: <StoreIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Retail' },
-    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Warehouse' },
-    { icon: <RestaurantIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Restaurant' },
-    { icon: <HotelIcon sx={{ fontSize: 20, color: '#2F5F86' }} />, label: 'Hotel' },
+    { icon: <HomeIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Residential' },
+    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Office' },
+    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#50BB5A' }} />, label: 'Hospital' },
+    { icon: <BuildIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Industrial' },
+    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Commercial' },
+    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#50BB5A' }} />, label: 'Healthcare' },
+    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Educational' },
+    { icon: <StoreIcon sx={{ fontSize: 20, color: '#F0942D' }} />, label: 'Retail' },
+    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Warehouse' },
+    { icon: <RestaurantIcon sx={{ fontSize: 20, color: '#F0942D' }} />, label: 'Restaurant' },
+    { icon: <HotelIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Hotel' },
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F4F6F8' }}>
+    <Box sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F8FAFD' }}>
       <Container maxWidth="xl">
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 8, alignItems: 'center' }}>
           {/* Content */}
@@ -54,7 +54,7 @@ const PropertyTypes: React.FC = () => {
                   letterSpacing: '0.1em',
                   fontWeight: 700,
                   mb: 1,
-                  color: '#F58220',
+                  color: '#50BB5A',
                 }}
               >
                 Property Types
@@ -65,7 +65,7 @@ const PropertyTypes: React.FC = () => {
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem' },
                   fontWeight: 700,
-                  color: '#2F5F86',
+                  color: '#0F223F',
                   mb: 2,
                 }}
               >
@@ -74,7 +74,7 @@ const PropertyTypes: React.FC = () => {
               <Typography
                 sx={{
                   fontSize: '1.125rem',
-                  color: 'rgba(26, 43, 37, 0.7)',
+                  color: '#6C757D',
                   mb: 5,
                   lineHeight: 1.625,
                 }}
@@ -94,13 +94,13 @@ const PropertyTypes: React.FC = () => {
                         gap: 1.5,
                         p: 2,
                         bgcolor: 'white',
-                        borderRadius: 3,
-                        border: '1px solid rgba(47, 95, 134, 0.1)',
+                        borderRadius: 0.5,
+                        border: '1px solid rgba(15, 34, 63, 0.1)',
                         transition: 'all 0.3s',
                         '&:hover': {
-                          borderColor: '#F58220',
+                          borderColor: '#F0942D',
                           '& .property-icon': {
-                            bgcolor: 'rgba(245, 130, 32, 0.2)',
+                            bgcolor: 'rgba(240, 148, 45, 0.2)',
                           },
                         },
                       }}
@@ -110,7 +110,7 @@ const PropertyTypes: React.FC = () => {
                         sx={{
                           width: 40,
                           height: 40,
-                          bgcolor: 'rgba(47, 95, 134, 0.1)',
+                          bgcolor: 'rgba(15, 34, 63, 0.1)',
                           borderRadius: 2,
                           display: 'flex',
                           alignItems: 'center',
@@ -125,7 +125,7 @@ const PropertyTypes: React.FC = () => {
                         sx={{
                           fontSize: '0.875rem',
                           fontWeight: 600,
-                          color: '#2F5F86',
+                          color: '#0F223F',
                         }}
                       >
                         {property.label}
@@ -137,23 +137,26 @@ const PropertyTypes: React.FC = () => {
 
               {/* CTA */}
               <Box sx={{ mt: 5 }}>
-                <Box
-                  component="a"
+                <Button
+                  variant="contained"
                   href="#contact"
                   onClick={(e) => handleNavClick(e, '#contact')}
+                  endIcon={<ArrowForwardIcon />}
                   sx={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    color: '#2F5F86',
-                    fontSize: '1.125rem',
+                    bgcolor: '#0F223F',
+                    color: 'white',
+                    px: 4,
+                    py: 1.5,
+                    fontSize: '1rem',
                     fontWeight: 600,
-                    textDecoration: 'none',
                     textTransform: 'none',
+                    borderRadius: 0.5,
+                    boxShadow: 2,
                     '&:hover': {
-                      color: '#F58220',
+                      bgcolor: 'rgba(15, 34, 63, 0.9)',
+                      boxShadow: 4,
                       '& .MuiSvgIcon-root': {
-                        transform: 'translateX(8px)',
+                        transform: 'translateX(4px)',
                       },
                     },
                     '& .MuiSvgIcon-root': {
@@ -162,8 +165,7 @@ const PropertyTypes: React.FC = () => {
                   }}
                 >
                   Explore Industries We Serve
-                  <ArrowForwardIcon />
-                </Box>
+                </Button>
               </Box>
             </Box>
           </Box>
@@ -181,8 +183,8 @@ const PropertyTypes: React.FC = () => {
                   right: -24,
                   width: '100%',
                   height: '100%',
-                  bgcolor: '#2F5F86',
-                  borderRadius: 4,
+                  bgcolor: '#0F223F',
+                  borderRadius: 2,
                   zIndex: -1,
                   transition: 'transform 0.5s',
                 },
@@ -199,7 +201,7 @@ const PropertyTypes: React.FC = () => {
                   width: '100%',
                   aspectRatio: '4/5',
                   objectFit: 'cover',
-                  borderRadius: 4,
+                  borderRadius: 2,
                   boxShadow: 6,
                   transition: 'transform 0.7s',
                   '&:hover': {
@@ -215,7 +217,7 @@ const PropertyTypes: React.FC = () => {
                   bottom: 32,
                   left: 32,
                   bgcolor: 'white',
-                  borderRadius: 3,
+                  borderRadius: 0.5,
                   p: 2,
                   boxShadow: 6,
                 }}
@@ -225,17 +227,17 @@ const PropertyTypes: React.FC = () => {
                     sx={{
                       width: 48,
                       height: 48,
-                      bgcolor: '#F58220',
+                      bgcolor: '#50BB5A',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
                   >
-                    <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '1.25rem' }}>500+</Typography>
+                    <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '1rem' }}>500+</Typography>
                   </Box>
                   <Box>
-                    <Typography sx={{ color: '#2F5F86', fontWeight: 700, fontSize: '0.875rem' }}>
+                    <Typography sx={{ color: '#0F223F', fontWeight: 700, fontSize: '0.875rem' }}>
                       Properties Managed
                     </Typography>
                     <Typography sx={{ color: 'rgba(26, 43, 37, 0.6)', fontSize: '0.75rem' }}>

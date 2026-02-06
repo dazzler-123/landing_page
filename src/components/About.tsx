@@ -38,7 +38,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <Box id="about" sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F4F6F8' }}>
+    <Box id="about" sx={{ py: { xs: 6, md: 12 }, px: 3, bgcolor: '#F8FAFD' }}>
       <Container maxWidth="xl">
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 8, alignItems: 'center' }}>
           {/* Image */}
@@ -54,8 +54,8 @@ const About: React.FC = () => {
                   left: -24,
                   width: '100%',
                   height: '100%',
-                  bgcolor: '#F58220',
-                  borderRadius: 4,
+                  bgcolor: '#F0942D',
+                  borderRadius: 2,
                   zIndex: -1,
                   transition: 'transform 0.5s',
                 },
@@ -72,7 +72,7 @@ const About: React.FC = () => {
                   width: '100%',
                   aspectRatio: '1/1',
                   objectFit: 'cover',
-                  borderRadius: 4,
+                  borderRadius: 2,
                   boxShadow: 6,
                   transition: 'transform 0.7s',
                   '&:hover': {
@@ -93,7 +93,7 @@ const About: React.FC = () => {
                   letterSpacing: '0.1em',
                   fontWeight: 700,
                   mb: 1,
-                  color: '#F58220',
+                  color: '#50BB5A',
                 }}
               >
                 Why Choose Our Cleaning Services
@@ -104,7 +104,7 @@ const About: React.FC = () => {
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem' },
                   fontWeight: 700,
-                  color: '#2F5F86',
+                  color: '#0F223F',
                   mb: 2,
                 }}
               >
@@ -113,7 +113,7 @@ const About: React.FC = () => {
               <Typography
                 sx={{
                   fontSize: '1.125rem',
-                  color: 'rgba(26, 43, 37, 0.7)',
+                  color: '#6C757D',
                   mb: 4,
                   lineHeight: 1.625,
                 }}
@@ -128,18 +128,12 @@ const About: React.FC = () => {
                   <Card
                     key={benefit.title}
                     sx={{
-                      p: 2,
-                      borderRadius: 3,
-                      bgcolor: 'white',
-                      boxShadow: 1,
-                      border: '1px solid rgba(47, 95, 134, 0.1)',
+                      // p: 2,
+                      // borderRadius: 0.5,
+                      bgcolor: 'none',
+                      boxShadow: 'none',
+                      border: 'none',
                       transition: 'all 0.3s',
-                      '&:hover': {
-                        borderColor: '#F58220',
-                        '& .benefit-icon': {
-                          bgcolor: '#F58220',
-                        },
-                    },
                     }}
                   >
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
@@ -148,7 +142,7 @@ const About: React.FC = () => {
                         sx={{
                           width: 40,
                           height: 40,
-                          bgcolor: 'rgba(245, 130, 32, 0.2)',
+                          bgcolor: 'rgba(80, 187, 90, 0.2)',
                           borderRadius: 2,
                           display: 'flex',
                           alignItems: 'center',
@@ -157,14 +151,14 @@ const About: React.FC = () => {
                           transition: 'background-color 0.3s',
                         }}
                       >
-                        <CheckCircleIcon sx={{ color: '#2F5F86', fontSize: 20 }} />
+                        <CheckCircleIcon sx={{ color: '#50BB5A', fontSize: 20 }} />
                       </Box>
                       <Box>
                         <Typography
                           sx={{
                             fontSize: '1.125rem',
                             fontWeight: 700,
-                            color: '#2F5F86',
+                            color: '#0F223F',
                             mb: 0.5,
                           }}
                         >
@@ -173,7 +167,7 @@ const About: React.FC = () => {
                         <Typography
                           sx={{
                             fontSize: '0.875rem',
-                            color: 'rgba(31, 63, 91, 0.7)',
+                            color: '#6C757D',
                           }}
                         >
                           {benefit.description}
@@ -191,13 +185,13 @@ const About: React.FC = () => {
                   onClick={(e) => handleNavClick(e, '#contact')}
                   endIcon={<ArrowForwardIcon />}
                   sx={{
-                    color: '#2F5F86',
+                    color: '#0F223F',
                     fontSize: '1.125rem',
                     fontWeight: 600,
                     textTransform: 'none',
                     p: 0,
                     '&:hover': {
-                      color: '#F58220',
+                      color: '#F0942D',
                       '& .MuiSvgIcon-root': {
                         transform: 'translateX(8px)',
                       },

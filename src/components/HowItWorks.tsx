@@ -58,7 +58,7 @@ const HowItWorks: React.FC = () => {
               letterSpacing: '0.1em',
               fontWeight: 700,
               mb: 1,
-              color: '#F58220',
+              color: '#50BB5A',
             }}
           >
             Our Process
@@ -69,7 +69,7 @@ const HowItWorks: React.FC = () => {
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem' },
               fontWeight: 700,
-              color: '#2F5F86',
+              color: '#0F223F',
               mb: 2,
             }}
           >
@@ -78,7 +78,7 @@ const HowItWorks: React.FC = () => {
           <Typography
             sx={{
               fontSize: '1.125rem',
-              color: 'rgba(26, 43, 37, 0.7)',
+              color: '#6C757D',
               maxWidth: '48rem',
               mx: 'auto',
               lineHeight: 1.625,
@@ -99,8 +99,8 @@ const HowItWorks: React.FC = () => {
                 left: 0,
                 right: 0,
                 height: 4,
-                background: 'linear-gradient(to right, #2F5F86, #4F86A7, #2F5F86)',
-                opacity: 0.2,
+                background: 'linear-gradient(to right, #0F223F 0%, #3097C0 33%, #50BB5A 66%, #FF7E00 100%)',
+                opacity: 0.3,
                 zIndex: 0,
               }}
             />
@@ -129,9 +129,13 @@ const HowItWorks: React.FC = () => {
                         width: 80,
                         height: 80,
                         background:
-                          index % 2 === 0
-                            ? 'linear-gradient(135deg, #2F5F86, rgba(47, 95, 134, 0.8))'
-                            : 'linear-gradient(135deg, #4F86A7, rgba(79, 134, 167, 0.8))',
+                          index === 0
+                            ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Contact Us - Dark blue gradient
+                            : index === 1
+                            ? 'linear-gradient(135deg, #3097C0, #20C997)' // Property Assessment - Teal/blue gradient
+                            : index === 2
+                            ? 'linear-gradient(135deg, #50BB5A, #28a745)' // Custom Proposal - Green gradient
+                            : 'linear-gradient(135deg, #FF7E00, #FFC700)', // Service Begins - Orange to yellow gradient
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -150,7 +154,14 @@ const HowItWorks: React.FC = () => {
                         transform: 'translateX(-50%)',
                         width: 32,
                         height: 32,
-                        bgcolor: '#F58220',
+                        background:
+                          index === 0
+                            ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Contact Us
+                            : index === 1
+                            ? 'linear-gradient(135deg, #3097C0, #20C997)' // Property Assessment
+                            : index === 2
+                            ? 'linear-gradient(135deg, #50BB5A, #28a745)' // Custom Proposal
+                            : 'linear-gradient(135deg, #FF7E00, #FFC700)', // Service Begins
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -170,7 +181,7 @@ const HowItWorks: React.FC = () => {
                     sx={{
                       fontSize: '1.25rem',
                       fontWeight: 700,
-                      color: '#2F5F86',
+                      color: '#0F223F',
                       mb: 1.5,
                     }}
                   >
@@ -178,7 +189,7 @@ const HowItWorks: React.FC = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      color: 'rgba(26, 43, 37, 0.7)',
+                      color: '#6C757D',
                       lineHeight: 1.625,
                     }}
                   >

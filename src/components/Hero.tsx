@@ -5,7 +5,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import homeImage from '../assets/home.jpg';
+import heroImage from '../assets/home.jpg';
 
 const Hero: React.FC = () => {
   const theme = useTheme();
@@ -33,101 +33,75 @@ const Hero: React.FC = () => {
       id="home"
       sx={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: '120vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        pt: 10,
+        bgcolor: '#002b56',
       }}
     >
-      {/* Background Image */}
+      {/* Background */}
       <Box
         sx={{
           position: 'absolute',
           inset: 0,
           zIndex: 0,
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url(${homeImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 1,
-          },
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to right, rgba(47, 95, 134, 0.95), rgba(47, 95, 134, 0.7), transparent)',
-            zIndex: 2,
-          },
+          bgcolor: '#002b56',
         }}
       />
-
-      {/* Floating 24/7 Badge */}
-      {isDesktop && (
+      
+      {/* Curved Bottom Edge */}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: -1,
+          left: 0,
+          right: 0,
+          height: '100px',
+          zIndex: 1,
+          overflow: 'hidden',
+        }}
+      >
         <Box
-          data-aos="fade-left"
-          data-aos-delay="400"
+          component="svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
           sx={{
-            position: 'absolute',
-            top: 128,
-            right: 32,
-            zIndex: 10,
-            bgcolor: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(12px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: 4,
-            p: 2,
-            boxShadow: 6,
+            width: '100%',
+            height: '100%',
+            display: 'block',
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-            <Box
-              sx={{
-                width: 48,
-                height: 48,
-                bgcolor: '#F58220',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <AccessTimeIcon sx={{ color: 'white', fontSize: 24 }} />
-            </Box>
-            <Box>
-              <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '1.125rem', lineHeight: 1 }}>
-                24/7
-              </Typography>
-              <Typography sx={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}>
-                Support Available
-              </Typography>
-            </Box>
-          </Box>
+          <path
+            d="M0,100 Q360,20 720,40 T1440,20 L1440,100 L0,100 Z"
+            fill="#FFFFFF"
+          />
         </Box>
-      )}
+      </Box>
 
       {/* Hero Content */}
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 10, width: '100%', px: { xs: 3, md: 6 } }}>
-        <Box sx={{ maxWidth: '42rem' }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: 'center', gap: { xs: 4, lg: 8 } }}>
+          {/* Left Side - Content */}
+          <Box sx={{ flex: 1, maxWidth: { xs: '100%', lg: '42rem' } }}>
           {/* Badge */}
           <Box
+            mt={2}
             data-aos="fade-down"
             data-aos-duration="1000"
             sx={{
               display: 'inline-flex',
-              gap: 1,
+    
               backdropFilter: 'blur(12px)',
               fontSize: '0.875rem',
               fontWeight: 500,
-              color: '#F58220',
+              color: '#F0942D',
               bgcolor: 'rgba(255, 255, 255, 0.1)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '9999px',
-              mb: 4,
+              mb: 1,
               px: 2,
               py: 1,
               alignItems: 'center',
@@ -137,7 +111,7 @@ const Hero: React.FC = () => {
               sx={{
                 width: 8,
                 height: 8,
-                bgcolor: '#F58220',
+                bgcolor: '#F0942D',
                 borderRadius: '50%',
                 animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 '@keyframes pulse': {
@@ -164,7 +138,7 @@ const Hero: React.FC = () => {
             }}
           >
             Professional Cleaning Services{' '}
-            <Box component="span" sx={{ color: '#F58220' }}>
+            <Box component="span" sx={{ color: '#F0942D' }}>
               You Can Trust
             </Box>
           </Typography>
@@ -198,15 +172,15 @@ const Hero: React.FC = () => {
               onClick={(e) => handleNavClick(e, '#contact')}
               endIcon={<ArrowForwardIcon />}
               sx={{
-                bgcolor: '#F58220',
-                color: '#1F3F5B',
+                bgcolor: '#F0942D',
+                color: '#FFFFFF',
                 px: 4,
                 py: 2,
                 fontSize: '1rem',
                 fontWeight: 600,
                 boxShadow: 4,
                 '&:hover': {
-                  bgcolor: 'rgba(245, 130, 32, 0.9)',
+                  bgcolor: 'rgba(240, 148, 45, 0.9)',
                   boxShadow: 6,
                   '& .MuiSvgIcon-root': {
                     transform: 'translateX(4px)',
@@ -254,13 +228,136 @@ const Hero: React.FC = () => {
               fontSize: '0.875rem',
             }}
           >
-            {['Licensed & Insured', 'Eco-Friendly Products', '24/7 Emergency Service'].map((text) => (
+            {['Licensed & Insured', 'Eco-Friendly Products', '24/7 Emergency Service'].map((text, index) => (
               <Box key={text} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <CheckCircleIcon sx={{ color: '#F58220', fontSize: 20 }} />
+                <CheckCircleIcon sx={{ color: index === 1 ? '#50BB5A' : '#F0942D', fontSize: 20 }} />
                 <Typography sx={{ fontSize: '0.875rem' }}>{text}</Typography>
               </Box>
             ))}
           </Box>
+          </Box>
+
+          {/* Right Side - Image */}
+          {isDesktop && (
+            <Box
+              data-aos="fade-left"
+              data-aos-delay="400"
+              sx={{
+                flex: 1,
+                position: 'relative',
+                width: '100%',
+                maxWidth: { lg: '600px' },
+                display: { xs: 'none', lg: 'block' },
+                overflow: 'visible',
+              }}
+            >
+              <Box
+                sx={{
+                  position: 'relative',
+                  borderRadius: 1,
+                  overflow: 'visible',
+                  boxShadow: 8,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={heroImage}
+                  alt="Professional cleaning services"
+                  sx={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                    borderRadius: 1,
+                  }}
+                />
+                
+                {/* 24/7 Support Badge Overlay - Top Right */}
+                <Box
+                  data-aos="fade-down"
+                  data-aos-delay="600"
+                  sx={{
+                    position: 'absolute',
+                    top: -10,
+                    right: -10,
+                    bgcolor: '#F0942D',
+                    borderRadius: 0.5,
+                    width: 200,
+                    height: 80,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 1.5,
+                    boxShadow: 6,
+                    zIndex: 3,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      bgcolor: 'white',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <AccessTimeIcon sx={{ color: '#F0942D', fontSize: 24 }} />
+                  </Box>
+                  <Box>
+                    <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '0.875rem', lineHeight: 1 }}>
+                      24/7
+                    </Typography>
+                    <Typography sx={{ color: 'white', fontSize: '0.75rem', lineHeight: 1 }}>
+                      Support Always
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* 500+ Members Badge Overlay - Bottom Right */}
+                <Box
+                  data-aos="fade-up"
+                  data-aos-delay="800"
+                  sx={{
+                    position: 'absolute',
+                    bottom: -10,
+                    left: -10,
+                    bgcolor: 'white',
+                    borderRadius: 0.5,
+                    p: 2,
+                    boxShadow: 4,
+                    zIndex: 2,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1.5,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      bgcolor: '#50BB5A',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <CheckCircleIcon sx={{ color: 'white', fontSize: 24 }} />
+                  </Box>
+                  <Box>
+                    <Typography sx={{ color: '#0F223F', fontWeight: 700, fontSize: '0.875rem', lineHeight: 1 }}>
+                      500+
+                    </Typography>
+                    <Typography sx={{ color: '#6C757D', fontSize: '0.75rem' }}>
+                      Members
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          )}
         </Box>
       </Container>
 

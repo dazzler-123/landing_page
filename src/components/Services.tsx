@@ -42,8 +42,8 @@ const Services: React.FC = () => {
         <Box
           component="svg"
           xmlns="http://www.w3.org/2000/svg"
-          width={32}
-          height={32}
+          width={20}
+          height={20}
           viewBox="0 0 24 24"
           fill="none"
           stroke="white"
@@ -203,13 +203,13 @@ const Services: React.FC = () => {
       sx={{ 
         py: { xs: 6, md: 12 }, 
         px: 3, 
-        bgcolor: 'white',
+        bgcolor: '#F8FAFD',
         position: 'relative',
         '&::before': {
           content: '""',
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
+          // backgroundImage: 'url(https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.03,
@@ -227,7 +227,7 @@ const Services: React.FC = () => {
               letterSpacing: '0.1em',
               fontWeight: 700,
               mb: 1,
-              color: '#F58220',
+              color: '#50BB5A',
             }}
           >
             Our Services
@@ -238,7 +238,7 @@ const Services: React.FC = () => {
             sx={{
               fontSize: { xs: '2.25rem', sm: '3rem' },
               fontWeight: 700,
-              color: '#2F5F86',
+              color: '#0F223F',
               mb: 2,
               
             }}
@@ -248,7 +248,7 @@ const Services: React.FC = () => {
           <Typography
             sx={{
               fontSize: '1.125rem',
-              color: 'rgba(26, 43, 37, 0.7)',
+              color: '#6C757D',
               maxWidth: '48rem',
               mx: 'auto',
               lineHeight: 1.625,
@@ -267,12 +267,15 @@ const Services: React.FC = () => {
                 data-aos-delay={service.delay}
                 sx={{
                   position: 'relative',
-                  borderRadius: 4,
-                  p: 4,
-                  border: '1px solid rgba(47, 95, 134, 0.1)',
-                  height: '100%',
+                  borderRadius: 0.5,
+                  backgroundColor: '#e7f0ff',
+                  p: 2,
+                  border: '1px solid rgba(15, 34, 63, 0.1)',
+                  height: '250px',
                   display: 'flex',
                   flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   overflow: 'hidden',
                   transition: 'all 0.3s',
                   '&::before': {
@@ -287,7 +290,7 @@ const Services: React.FC = () => {
                     transition: 'opacity 0.3s',
                   },
                   '&:hover': {
-                    borderColor: '#F58220',
+                    borderColor: '#F0942D',
                     boxShadow: 6,
                     '&::before': {
                       opacity: 0.25,
@@ -302,38 +305,43 @@ const Services: React.FC = () => {
                   <Box
                     className="service-icon"
                     sx={{
-                      width: 64,
-                      height: 64,
-                      background: index % 2 === 0
-                        ? 'linear-gradient(135deg, #2F5F86, rgba(47, 95, 134, 0.8))'
-                        : 'linear-gradient(135deg, #4F86A7, rgba(79, 134, 167, 0.8))',
-                      borderRadius: 3,
+                      width: 48,
+                      height: 48,
+                      background: index % 3 === 0
+                        ? 'linear-gradient(135deg, #0F223F, rgba(15, 34, 63, 0.8))'
+                        : index % 3 === 1
+                        ? 'linear-gradient(135deg, #3097C0, rgba(48, 151, 192, 0.8))'
+                        : 'linear-gradient(135deg, #50BB5A, rgba(80, 187, 90, 0.8))',
+                      borderRadius: 0.5,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      mb: 3,
+                      mb: 2,
                       transition: 'transform 0.3s',
                     }}
                   >
-                    {service.icon}
+                    <Box sx={{ '& svg': { width: 20, height: 20 } }}>
+                      {service.icon}
+                    </Box>
                   </Box>
                   <Typography
                     variant="h3"
                     className="font-display"
                     sx={{
-                      fontSize: '1.25rem',
+                      fontSize: '1.125rem',
                       fontWeight: 700,
-                      color: '#2F5F86',
-                      mb: 1.5,
+                      color: '#0F223F',
+                      mb: 1,
                     }}
                   >
                     {service.title}
                   </Typography>
                   <Typography
                     sx={{
-                      color: 'rgba(26, 43, 37, 0.7)',
-                      mb: 3,
-                      lineHeight: 1.625,
+                      color: '#6C757D',
+                      mb: 2,
+                      lineHeight: 1.5,
+                      fontSize: '0.875rem',
                     }}
                   >
                     {service.description}
@@ -343,13 +351,13 @@ const Services: React.FC = () => {
                     onClick={(e) => handleNavClick(e, '#contact')}
                     endIcon={<ArrowForwardIcon />}
                     sx={{
-                      color: '#2F5F86',
+                      color: '#0F223F',
                       fontSize: '0.875rem',
                       fontWeight: 500,
                       textTransform: 'none',
                       p: 0,
                       '&:hover': {
-                        color: '#F58220',
+                        color: index % 3 === 2 ? '#50BB5A' : '#F0942D',
                         '& .MuiSvgIcon-root': {
                           transform: 'translateX(4px)',
                         },
@@ -375,7 +383,7 @@ const Services: React.FC = () => {
             onClick={(e) => handleNavClick(e, '#contact')}
             endIcon={<ArrowForwardIcon />}
             sx={{
-              bgcolor: '#2F5F86',
+              bgcolor: '#0F223F',
               color: 'white',
               px: 4,
               py: 2,
@@ -383,7 +391,7 @@ const Services: React.FC = () => {
               fontWeight: 600,
               boxShadow: 4,
               '&:hover': {
-                bgcolor: 'rgba(47, 95, 134, 0.9)',
+                bgcolor: 'rgba(15, 34, 63, 0.9)',
                 boxShadow: 6,
               },
             }}
