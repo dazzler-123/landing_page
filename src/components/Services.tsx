@@ -185,13 +185,10 @@ const Services: React.FC = () => {
           strokeLinejoin="round"
         >
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <path d="M3 9h18" />
-          <path d="M9 22V9" />
-          <path d="M15 22V9" />
         </Box>
       ),
       title: 'Gutter Cleaning',
-      description: 'Professional gutter cleaning and maintenance services to prevent water damage and keep your property protected. We remove leaves, debris, and ensure proper drainage.',
+      description: 'Professional gutter cleaning and maintenance services to prevent water damage and keep your property protected. We ensure proper drainage.',
       delay: 100,
       bgImage: cleaningImages[6],
     },
