@@ -256,9 +256,9 @@ const Services: React.FC = () => {
         </Box>
 
         {/* Services Grid */}
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 4 }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 4, alignItems: 'stretch' }}>
           {services.map((service, index) => (
-            <Box key={service.title}>
+            <Box key={service.title} sx={{ display: 'flex' }}>
               <Card
                 data-aos="fade-up"
                 data-aos-delay={service.delay}
@@ -268,13 +268,14 @@ const Services: React.FC = () => {
                   backgroundColor: '#e7f0ff',
                   p: 2,
                   border: '1px solid rgba(15, 34, 63, 0.1)',
-                  // minBlockSize: '250px',
+                  height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
                   overflow: 'hidden',
                   transition: 'all 0.3s',
+                  width: '100%',
                   '&::before': {
                     content: '""',
                     position: 'absolute',
@@ -298,7 +299,7 @@ const Services: React.FC = () => {
                   },
                 }}
               >
-                <CardContent sx={{ flexGrow: 1, p: 0, position: 'relative', zIndex: 1 }}>
+                <CardContent sx={{ flexGrow: 1, p: 0, position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', width: '100%' }}>
                   <Box
                     className="service-icon"
                     sx={{
@@ -339,6 +340,7 @@ const Services: React.FC = () => {
                       mb: 2,
                       lineHeight: 1.5,
                       fontSize: '0.875rem',
+                      flexGrow: 1,
                     }}
                   >
                     {service.description}
