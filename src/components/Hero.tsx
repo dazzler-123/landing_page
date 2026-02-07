@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
         >
           <path
             d="M0,100 Q360,20 720,40 T1440,20 L1440,100 L0,100 Z"
-            fill="#FFFFFF"
+            fill="#F8FAFD"
           />
         </Box>
       </Box>
