@@ -268,7 +268,7 @@ const Services: React.FC = () => {
                   backgroundColor: '#e7f0ff',
                   p: 2,
                   border: '1px solid rgba(15, 34, 63, 0.1)',
-                  height: '250px',
+                  // minBlockSize: '250px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',

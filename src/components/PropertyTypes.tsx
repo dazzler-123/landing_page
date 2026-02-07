@@ -84,7 +84,7 @@ const PropertyTypes: React.FC = () => {
               </Typography>
 
               {/* Property Types Grid */}
-              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)' }, gap: 2 }}>
+              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)' }, gap: 2,justifyContent: 'center',alignItems: 'center' }}>
                 {propertyTypes.map((property) => (
                   <Box key={property.label}>
                     <Card
@@ -92,7 +92,7 @@ const PropertyTypes: React.FC = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1.5,
-                        p: 2,
+                        p: 1.5,
                         bgcolor: 'white',
                         borderRadius: 0.5,
                         border: '1px solid rgba(15, 34, 63, 0.1)',

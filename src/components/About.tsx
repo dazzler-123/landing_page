@@ -130,7 +130,7 @@ const About: React.FC = () => {
                     sx={{
                       // p: 2,
                       // borderRadius: 0.5,
-                      bgcolor: 'none',
+                      bgcolor: 'transparent',
                       boxShadow: 'none',
                       border: 'none',
                       transition: 'all 0.3s',
