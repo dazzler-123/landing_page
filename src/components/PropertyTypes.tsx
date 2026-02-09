@@ -9,7 +9,6 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import BuildIcon from '@mui/icons-material/Build';
 import HotelIcon from '@mui/icons-material/Hotel';
 import SchoolIcon from '@mui/icons-material/School';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

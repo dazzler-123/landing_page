@@ -20,14 +20,6 @@ const Services: React.FC = () => {
     AOS.init({ once: true });
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.querySelector(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   const handleViewAllServices = () => {
     navigate('/services');
   };
@@ -247,7 +239,7 @@ const Services: React.FC = () => {
             { number: '500+', label: 'Happy Clients' },
             { number: '24/7', label: 'Support Available' },
             { number: '98%', label: 'Client Retention' },
-          ].map((stat, index) => (
+          ].map((stat) => (
             <Box
               key={stat.label}
               sx={{
