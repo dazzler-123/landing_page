@@ -34,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicePage />} />
+          <Route path="/services/:serviceType" element={<ServicePage />} />
         </Routes>
       </Router>
     </ThemeProvider>

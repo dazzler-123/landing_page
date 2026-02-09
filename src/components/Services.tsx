@@ -376,9 +376,9 @@ const Services: React.FC = () => {
                   >
                     {service.description}
                   </Typography>
-                  <Button
+                  {/* <Button
                     href="#contact"
-                    onClick={(e) => handleNavClick(e, '#contact')}
+                    onClick={(e) => service.title=='Commercial & Residential Cleaning'?navigate('/services/cleaning') : handleNavClick(e, '#contact')}
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                       color: '#0F223F',
@@ -398,7 +398,7 @@ const Services: React.FC = () => {
                     }}
                   >
                     Learn More
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             </Box>

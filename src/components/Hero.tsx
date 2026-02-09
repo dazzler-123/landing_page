@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
       id="home"
       sx={{
         position: 'relative',
-        minHeight: '120vh',
+        minHeight: '140vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
