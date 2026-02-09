@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Box, Container, Typography, Card, CardContent, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,6 +14,8 @@ interface Service {
 }
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
@@ -23,6 +26,10 @@ const Services: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  };
+
+  const handleViewAllServices = () => {
+    navigate('/services');
   };
 
   // Cleaning service images
@@ -54,8 +61,8 @@ const Services: React.FC = () => {
           <path d="M12 2v20M2 12h20" />
         </Box>
       ),
-      title: 'Commercial Cleaning',
-      description: 'Daily, weekly, or custom cleaning schedules for offices, retail spaces, and commercial buildings. Professional janitorial services tailored to your needs.',
+      title: 'Commercial & Residential Cleaning',
+      description: 'Complete cleaning solutions for all environments including daily office cleaning, deep cleaning, window cleaning, and specialist treatments.',
       delay: 100,
       bgImage: cleaningImages[0],
     },
@@ -76,8 +83,8 @@ const Services: React.FC = () => {
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </Box>
       ),
-      title: 'Deep Cleaning',
-      description: 'Thorough deep cleaning services for move-ins, move-outs, spring cleaning, and special occasions. We clean every corner, surface, and hard-to-reach area.',
+      title: 'HVAC Maintenance',
+      description: 'Complete heating, ventilation, and air conditioning solutions including regular maintenance, emergency repairs, system installation, and energy efficiency optimization.',
       delay: 200,
       bgImage: cleaningImages[1],
     },
@@ -98,8 +105,8 @@ const Services: React.FC = () => {
           <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
         </Box>
       ),
-      title: 'Carpet & Upholstery',
-      description: 'Professional carpet cleaning, upholstery cleaning, and rug care using eco-friendly methods. Restore your carpets and furniture to like-new condition.',
+      title: 'Electrical & Plumbing',
+      description: 'Full electrical and plumbing installation, maintenance, and testing services including PAT testing, emergency repairs, and energy-efficient upgrades.',
       delay: 300,
       bgImage: cleaningImages[2],
     },
@@ -121,8 +128,8 @@ const Services: React.FC = () => {
           <path d="M12 2v20" />
         </Box>
       ),
-      title: 'Window Cleaning',
-      description: 'Interior and exterior window cleaning for all building types. Streak-free results using professional equipment and techniques for crystal-clear windows.',
+      title: 'Gutter & Roof Cleaning',
+      description: 'Specialist exterior maintenance services including gutter cleaning, roof cleaning, high-level access, and preventative maintenance to prevent water damage.',
       delay: 100,
       bgImage: cleaningImages[3],
     },
@@ -143,33 +150,11 @@ const Services: React.FC = () => {
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         </Box>
       ),
-      title: 'Floor Care & Maintenance',
-      description: 'Hardwood, tile, vinyl, and concrete floor cleaning, polishing, and maintenance. Keep your floors looking pristine with regular professional care.',
+      title: 'Landscaping & Grounds',
+      description: 'Professional exterior maintenance and landscaping including lawn care, hedge maintenance, seasonal planting, irrigation systems, and hard landscaping.',
       delay: 200,
       bgImage: cleaningImages[4],
     },
-    // {
-    //   icon: (
-    //     <Box
-    //       component="svg"
-    //       xmlns="http://www.w3.org/2000/svg"
-    //       width={32}
-    //       height={32}
-    //       viewBox="0 0 24 24"
-    //       fill="none"
-    //       stroke="white"
-    //       strokeWidth={2}
-    //       strokeLinecap="round"
-    //       strokeLinejoin="round"
-    //     >
-    //       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    //     </Box>
-    //   ),
-    //   title: 'Post-Construction Cleanup',
-    //   description: 'Comprehensive cleaning after construction or renovation projects. Remove dust, debris, and construction materials to make your space move-in ready.',
-    //   delay: 300,
-    //   bgImage: cleaningImages[5],
-    // },
     {
       icon: (
         <Box
@@ -187,10 +172,10 @@ const Services: React.FC = () => {
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         </Box>
       ),
-      title: 'Gutter Cleaning',
-      description: 'Professional gutter cleaning and maintenance services to prevent water damage and keep your property protected. We ensure proper drainage.',
+      title: 'Building Maintenance',
+      description: 'Complete building maintenance and repair services including reactive maintenance, planned maintenance, carpentry, decorating, flooring, and building fabric maintenance.',
       delay: 100,
-      bgImage: cleaningImages[6],
+      bgImage: cleaningImages[5],
     },
   ];
 
@@ -240,7 +225,7 @@ const Services: React.FC = () => {
               
             }}
           >
-            Comprehensive Cleaning Solutions
+            Comprehensive Facilities Management Solutions
           </Typography>
           <Typography
             sx={{
@@ -251,8 +236,54 @@ const Services: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Professional cleaning services for every type of property. From daily maintenance to deep cleaning, we deliver spotless results.
+            Group Serve Facilities Management is a full-service facilities management company providing integrated hard and soft services tailored to your operational needs.
           </Typography>
+        </Box>
+
+        {/* Statistics Section */}
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 4, mb: 8 }} data-aos="fade-up">
+          {[
+            { number: '15+', label: 'Years Experience' },
+            { number: '500+', label: 'Happy Clients' },
+            { number: '24/7', label: 'Support Available' },
+            { number: '98%', label: 'Client Retention' },
+          ].map((stat, index) => (
+            <Box
+              key={stat.label}
+              sx={{
+                textAlign: 'center',
+                p: 3,
+                bgcolor: 'white',
+                borderRadius: 2,
+                boxShadow: 2,
+                transition: 'all 0.3s',
+                '&:hover': {
+                  boxShadow: 4,
+                  transform: 'translateY(-4px)',
+                },
+              }}
+            >
+              <Typography
+                sx={{
+                  fontSize: { xs: '2rem', md: '2.5rem' },
+                  fontWeight: 700,
+                  color: '#0F223F',
+                  mb: 1,
+                }}
+              >
+                {stat.number}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: '0.875rem',
+                  color: '#6C757D',
+                  fontWeight: 500,
+                }}
+              >
+                {stat.label}
+              </Typography>
+            </Box>
+          ))}
         </Box>
 
         {/* Services Grid */}
@@ -378,8 +409,7 @@ const Services: React.FC = () => {
         <Box sx={{ textAlign: 'center', mt: 8 }} data-aos="fade-up">
           <Button
             variant="contained"
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
+            onClick={handleViewAllServices}
             endIcon={<ArrowForwardIcon />}
             sx={{
               bgcolor: '#0F223F',

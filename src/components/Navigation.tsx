@@ -35,8 +35,8 @@ const Navigation: React.FC = () => {
 
   const navLinks = [
     { label: 'Services', href: '#services' },
-    { label: 'About Us', href: '#about' },
-    { label: 'How It Works', href: '#how-it-works' },
+    // { label: 'About Us', href: '#about' },
+    // { label: 'How It Works', href: '#how-it-works' },
     { label: 'Contact', href: '#contact' },
   ];
 

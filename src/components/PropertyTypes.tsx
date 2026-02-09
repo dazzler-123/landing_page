@@ -27,17 +27,14 @@ const PropertyTypes: React.FC = () => {
   };
 
   const propertyTypes = [
-    { icon: <HomeIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Residential' },
-    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Office' },
-    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#50BB5A' }} />, label: 'Hospital' },
-    { icon: <BuildIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Industrial' },
-    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Commercial' },
-    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#50BB5A' }} />, label: 'Healthcare' },
-    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Educational' },
-    { icon: <StoreIcon sx={{ fontSize: 20, color: '#F0942D' }} />, label: 'Retail' },
-    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Warehouse' },
-    { icon: <RestaurantIcon sx={{ fontSize: 20, color: '#F0942D' }} />, label: 'Restaurant' },
-    { icon: <HotelIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Hotel' },
+    { icon: <BusinessIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Offices & Corporate Buildings' },
+    { icon: <HomeIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Residential Complexes' },
+    { icon: <StoreIcon sx={{ fontSize: 20, color: '#50BB5A' }} />, label: 'Retail & Shopping Centres' },
+    { icon: <WarehouseIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Industrial & Warehousing' },
+    { icon: <SchoolIcon sx={{ fontSize: 20, color: '#0F223F' }} />, label: 'Educational Institutions' },
+    { icon: <LocalHospitalIcon sx={{ fontSize: 20, color: '#50BB5A' }} />, label: 'Healthcare Facilities' },
+    { icon: <HotelIcon sx={{ fontSize: 20, color: '#F0942D' }} />, label: 'Hospitality & Leisure' },
+    { icon: <BuildIcon sx={{ fontSize: 20, color: '#3097C0' }} />, label: 'Public Sector Buildings' },
   ];
 
   return (
@@ -57,7 +54,7 @@ const PropertyTypes: React.FC = () => {
                   color: '#50BB5A',
                 }}
               >
-                Property Types
+                Industries We Serve
               </Typography>
               <Typography
                 variant="h2"
@@ -69,7 +66,7 @@ const PropertyTypes: React.FC = () => {
                   mb: 2,
                 }}
               >
-                Cleaning Services for Every Property Type
+                No Matter the Industry
               </Typography>
               <Typography
                 sx={{
@@ -79,8 +76,7 @@ const PropertyTypes: React.FC = () => {
                   lineHeight: 1.625,
                 }}
               >
-                From residential homes to large commercial facilities, we provide expert cleaning services tailored 
-                to each property type's unique requirements.
+                We tailor our services to meet specific site requirements across all industries. From offices to healthcare facilities, we deliver comprehensive facilities management solutions.
               </Typography>
 
               {/* Property Types Grid */}
@@ -164,7 +160,7 @@ const PropertyTypes: React.FC = () => {
                     },
                   }}
                 >
-                  Explore Industries We Serve
+                  Get Your Free Quote
                 </Button>
               </Box>
             </Box>

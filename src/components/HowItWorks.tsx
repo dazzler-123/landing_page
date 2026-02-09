@@ -17,31 +17,31 @@ const HowItWorks: React.FC = () => {
 
   const steps = [
     {
-      icon: <PhoneIcon sx={{ fontSize: 32, color: 'white' }} />,
+      icon: <LocationOnIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 1,
-      title: 'Contact Us',
-      description: 'Reach out via phone, email, or our online form to discuss your property needs.',
+      title: 'Site Assessment',
+      description: 'We assess your specific requirements and facility conditions through a comprehensive on-site review.',
       delay: 100,
     },
     {
-      icon: <LocationOnIcon sx={{ fontSize: 32, color: 'white' }} />,
+      icon: <DescriptionIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 2,
-      title: 'Site Assessment',
-      description: 'We conduct a thorough on-site inspection to understand your property\'s cleaning requirements and create a customized plan.',
+      title: 'Custom Plan',
+      description: 'We create a tailored facilities management plan designed specifically for your operational needs.',
       delay: 200,
     },
     {
-      icon: <DescriptionIcon sx={{ fontSize: 32, color: 'white' }} />,
+      icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 3,
-      title: 'Custom Quote',
-      description: 'Receive a detailed, customized cleaning plan with transparent pricing and flexible scheduling options.',
+      title: 'Service Delivery',
+      description: 'Certified technicians deliver services to the highest standards with consistent quality.',
       delay: 300,
     },
     {
-      icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
+      icon: <PhoneIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 4,
-      title: 'Cleaning Begins',
-      description: 'Our expert cleaning team starts working with consistent, high-quality service delivery and regular quality checks.',
+      title: 'Ongoing Support',
+      description: 'Regular reviews, performance reporting, and continuous optimization for efficiency and cost-effectiveness.',
       delay: 400,
     },
   ];
@@ -73,7 +73,7 @@ const HowItWorks: React.FC = () => {
               mb: 2,
             }}
           >
-            How Our Cleaning Process Works
+            How It Works
           </Typography>
           <Typography
             sx={{
@@ -84,7 +84,7 @@ const HowItWorks: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Getting started is simple. We've streamlined our process to get your property cleaned quickly and efficiently.
+            Simple, transparent, and effective process for all our clients. From initial assessment to ongoing support, we ensure consistent service delivery.
           </Typography>
         </Box>
 

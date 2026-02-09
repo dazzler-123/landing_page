@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
-import { Box, Container, Typography, Button, useTheme, useMediaQuery } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Box, Container, Typography, Button, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import type { SelectChangeEvent } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LockIcon from '@mui/icons-material/Lock';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import heroImage from '../assets/home.jpg';
 
 const Hero: React.FC = () => {
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phoneNumber: '',
+    email: '',
+    serviceInterested: '',
+    facilityType: '',
+    specificRequirements: '',
+  });
 
   useEffect(() => {
     AOS.init({
@@ -26,6 +32,21 @@ const Hero: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (name: string) => (e: SelectChangeEvent<string>) => {
+    setFormData((prev) => ({ ...prev, [name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
   };
 
   return (
@@ -47,7 +68,18 @@ const Hero: React.FC = () => {
           position: 'absolute',
           inset: 0,
           zIndex: 0,
-          bgcolor: '#002b56',
+          // bgcolor: '#002b56',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            bgcolor: 'rgba(0, 43, 86, 0.75)',
+            zIndex: 1,
+          },
         }}
       />
       
@@ -83,7 +115,7 @@ const Hero: React.FC = () => {
 
       {/* Hero Content */}
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 10, width: '100%', px: { xs: 3, md: 6 } }}>
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: 'center', gap: { xs: 4, lg: 8 } }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: { xs: 'center', lg: 'flex-start' }, justifyContent: 'space-between', gap: { xs: 4, lg: 8 } }}>
           {/* Left Side - Content */}
           <Box sx={{ flex: 1, maxWidth: { xs: '100%', lg: '42rem' } }}>
           {/* Badge */}
@@ -119,7 +151,7 @@ const Hero: React.FC = () => {
                 },
               }}
             />
-            Trusted by 500+ Businesses & Property Owners
+            Professional • Reliable • Efficient
           </Box>
 
           {/* Headline */}
@@ -137,10 +169,11 @@ const Hero: React.FC = () => {
               lineHeight: 1.25,
             }}
           >
-            Professional Cleaning Services{' '}
+            Your Complete{' '}
             <Box component="span" sx={{ color: '#F0942D' }}>
-              You Can Trust
+              Facilities Management
             </Box>
+            {' '}Partner
           </Typography>
 
           {/* Subheadline */}
@@ -155,8 +188,7 @@ const Hero: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Expert cleaning solutions for offices, hospitals, hotels, restaurants, and all commercial properties. 
-            Spotless results, every time.
+            Professional, reliable, and comprehensive facilities management solutions tailored to your business needs across the UK.
           </Typography>
 
           {/* CTAs */}
@@ -191,7 +223,7 @@ const Hero: React.FC = () => {
                 },
               }}
             >
-              Get Started Today
+              Get Free Site Survey
             </Button>
             <Button
               variant="outlined"
@@ -211,7 +243,7 @@ const Hero: React.FC = () => {
                 },
               }}
             >
-              View All Services
+              View Our Services
             </Button>
           </Box>
 
@@ -228,7 +260,7 @@ const Hero: React.FC = () => {
               fontSize: '0.875rem',
             }}
           >
-            {['Licensed & Insured', 'Eco-Friendly Products', '24/7 Emergency Service'].map((text, index) => (
+            {['4.8 / 5 Rated Service', '24/7 Emergency Support', 'Fully Licensed & Insured'].map((text, index) => (
               <Box key={text} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <CheckCircleIcon sx={{ color: index === 1 ? '#50BB5A' : '#F0942D', fontSize: 20 }} />
                 <Typography sx={{ fontSize: '0.875rem' }}>{text}</Typography>
@@ -237,127 +269,208 @@ const Hero: React.FC = () => {
           </Box>
           </Box>
 
-          {/* Right Side - Image */}
-          {isDesktop && (
+          {/* Right Side - Form */}
+          <Box
+            data-aos="fade-left"
+            data-aos-delay="400"
+            sx={{
+              flex: { xs: '0 0 auto', lg: '0 0 auto' },
+              width: '100%',
+              maxWidth: { xs: '100%', lg: '380px' },
+              ml: { lg: 'auto' },
+            }}
+          >
             <Box
-              data-aos="fade-left"
-              data-aos-delay="400"
+              component="form"
+              onSubmit={handleSubmit}
               sx={{
-                flex: 1,
-                position: 'relative',
-                width: '100%',
-                maxWidth: { lg: '600px' },
-                display: { xs: 'none', lg: 'block' },
-                overflow: 'visible',
+                bgcolor: 'white',
+                borderRadius: 2,
+                p: 2.5,
+                boxShadow: 8,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1.75,
               }}
             >
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 1,
-                  overflow: 'visible',
-                  boxShadow: 8,
-                }}
-              >
-                <Box
-                  component="img"
-                  src={heroImage}
-                  alt="Professional cleaning services"
+              {/* Form Header */}
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0 }}>
+                <Typography
+                  variant="h3"
                   sx={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    borderRadius: 1,
-                  }}
-                />
-                
-                {/* 24/7 Support Badge Overlay - Top Right */}
-                <Box
-                  data-aos="fade-down"
-                  data-aos-delay="600"
-                  sx={{
-                    position: 'absolute',
-                    top: -10,
-                    right: -10,
-                    bgcolor: '#F0942D',
-                    borderRadius: 0.5,
-                    width: 200,
-                    height: 80,
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 1.5,
-                    boxShadow: 6,
-                    zIndex: 3,
+                    fontSize: '1.375rem',
+                    fontWeight: 700,
+                    color: '#0F223F',
                   }}
                 >
-                  <Box
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      bgcolor: 'white',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <AccessTimeIcon sx={{ color: '#F0942D', fontSize: 24 }} />
-                  </Box>
-                  <Box>
-                    <Typography sx={{ color: 'white', fontWeight: 700, fontSize: '0.875rem', lineHeight: 1 }}>
-                      24/7
-                    </Typography>
-                    <Typography sx={{ color: 'white', fontSize: '0.75rem', lineHeight: 1 }}>
-                      Support Always
-                    </Typography>
-                  </Box>
-                </Box>
-
-                {/* 500+ Members Badge Overlay - Bottom Right */}
+                  Get a Free Quote
+                </Typography>
                 <Box
-                  data-aos="fade-up"
-                  data-aos-delay="800"
                   sx={{
-                    position: 'absolute',
-                    bottom: -10,
-                    left: -10,
-                    bgcolor: 'white',
-                    borderRadius: 0.5,
-                    p: 2,
-                    boxShadow: 4,
-                    zIndex: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1.5,
+                    bgcolor: '#FFF4E6',
+                    color: '#0F223F',
+                    px: 1.1,
+                    py: 0.35,
+                    borderRadius: '9999px',
+                    fontSize: '0.65rem',
+                    fontWeight: 600,
                   }}
                 >
-                  <Box
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      bgcolor: '#50BB5A',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <CheckCircleIcon sx={{ color: 'white', fontSize: 24 }} />
-                  </Box>
-                  <Box>
-                    <Typography sx={{ color: '#0F223F', fontWeight: 700, fontSize: '0.875rem', lineHeight: 1 }}>
-                      500+
-                    </Typography>
-                    <Typography sx={{ color: '#6C757D', fontSize: '0.75rem' }}>
-                      Members
-                    </Typography>
-                  </Box>
+                  NO OBLIGATION
                 </Box>
               </Box>
+
+              {/* Full Name */}
+              <TextField
+                required
+                name="fullName"
+                label="Full Name"
+                value={formData.fullName}
+                onChange={handleInputChange}
+                fullWidth
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    bgcolor: 'white',
+                  },
+                }}
+              />
+
+              {/* Phone Number */}
+              <TextField
+                required
+                name="phoneNumber"
+                label="Phone Number"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                fullWidth
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    bgcolor: 'white',
+                  },
+                }}
+              />
+
+              {/* Email Address */}
+              <TextField
+                name="email"
+                label="Email Address"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                fullWidth
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    bgcolor: 'white',
+                  },
+                }}
+              />
+
+              {/* Service Interested In */}
+              <FormControl fullWidth required size="small">
+                <InputLabel>Service Interested In</InputLabel>
+                <Select
+                  name="serviceInterested"
+                  value={formData.serviceInterested}
+                  onChange={handleSelectChange('serviceInterested')}
+                  label="Service Interested In"
+                  sx={{
+                    bgcolor: 'white',
+                  }}
+                >
+                  <MenuItem value="commercial-cleaning">Commercial Cleaning</MenuItem>
+                  <MenuItem value="deep-cleaning">Deep Cleaning</MenuItem>
+                  <MenuItem value="carpet-upholstery">Carpet & Upholstery</MenuItem>
+                  <MenuItem value="window-cleaning">Window Cleaning</MenuItem>
+                  <MenuItem value="floor-care">Floor Care & Maintenance</MenuItem>
+                  <MenuItem value="gutter-cleaning">Gutter Cleaning</MenuItem>
+                </Select>
+              </FormControl>
+
+              {/* Facility Type */}
+              <FormControl fullWidth required size="small">
+                <InputLabel>Facility Type</InputLabel>
+                <Select
+                  name="facilityType"
+                  value={formData.facilityType}
+                  onChange={handleSelectChange('facilityType')}
+                  label="Facility Type"
+                  sx={{
+                    bgcolor: 'white',
+                  }}
+                >
+                  <MenuItem value="office">Office</MenuItem>
+                  <MenuItem value="hospital">Hospital</MenuItem>
+                  <MenuItem value="hotel">Hotel</MenuItem>
+                  <MenuItem value="restaurant">Restaurant</MenuItem>
+                  <MenuItem value="retail">Retail Store</MenuItem>
+                  <MenuItem value="warehouse">Warehouse</MenuItem>
+                  <MenuItem value="other">Other</MenuItem>
+                </Select>
+              </FormControl>
+
+              {/* Specific Requirements */}
+              <TextField
+                name="specificRequirements"
+                label="Specific Requirements"
+                value={formData.specificRequirements}
+                onChange={handleInputChange}
+                multiline
+                rows={3}
+                fullWidth
+                size="small"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    bgcolor: 'white',
+                  },
+                }}
+              />
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{
+                  bgcolor: '#F0942D',
+                  color: 'white',
+                  py: 1.1,
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  '&:hover': {
+                    bgcolor: 'rgba(240, 148, 45, 0.9)',
+                  },
+                }}
+              >
+                Request Quote Now
+              </Button>
+
+              {/* Footer Info */}
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  mt: 0.25,
+                  pt: 1.25,
+                  borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6 }}>
+                  <LockIcon sx={{ fontSize: 13, color: '#6C757D' }} />
+                  <Typography sx={{ fontSize: '0.75rem', color: '#6C757D' }}>
+                    Your details are 100% secure.
+                  </Typography>
+                </Box>
+                <Typography sx={{ fontSize: '0.75rem', color: '#0F223F', fontWeight: 500 }}>
+                  Call: 0121-123-4567
+                </Typography>
+              </Box>
             </Box>
-          )}
+          </Box>
         </Box>
       </Container>
 

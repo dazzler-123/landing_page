@@ -1,4 +1,5 @@
 import { ThemeProvider, CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { theme } from './theme';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
@@ -8,11 +9,11 @@ import HowItWorks from './components/HowItWorks';
 import PropertyTypes from './components/PropertyTypes';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ServicePage from './pages/ServicePage';
 
-function App() {
+function HomePage() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <>
       <Navigation />
       <Hero />
       <Services />
@@ -21,6 +22,20 @@ function App() {
       <PropertyTypes />
       <Contact />
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicePage />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }

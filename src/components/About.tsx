@@ -20,20 +20,28 @@ const About: React.FC = () => {
 
   const benefits = [
     {
-      title: 'Trained & Certified Staff',
-      description: 'Our cleaning professionals are thoroughly trained, background-checked, and certified in industry best practices.',
+      title: 'Experienced and trained service teams',
+      description: 'Our teams have industry certifications and extensive experience delivering facilities management services.',
     },
     {
-      title: 'Eco-Friendly Products',
-      description: 'We use green cleaning products that are safe for your employees, customers, and the environment.',
+      title: 'Integrated hard & soft FM solutions',
+      description: 'Complete facilities management from a single provider - from cleaning to HVAC, electrical, and more.',
     },
     {
-      title: 'Flexible Scheduling',
-      description: 'Customized cleaning schedules that work around your business hours - daily, weekly, or on-demand service.',
+      title: 'Transparent pricing and detailed reporting',
+      description: 'No hidden costs. We provide clear pricing and comprehensive reporting on facilities performance.',
     },
     {
-      title: 'Fully Licensed & Insured',
-      description: 'Complete peace of mind with comprehensive insurance coverage and bonded cleaning professionals.',
+      title: 'Compliance-focused service delivery',
+      description: 'Meeting all regulatory standards and ensuring your facilities remain compliant with industry requirements.',
+    },
+    {
+      title: 'Flexible schedules',
+      description: 'Tailored to your operational needs - we work around your business hours and requirements.',
+    },
+    {
+      title: 'Dedicated customer support',
+      description: 'Single-point contact with dedicated support ensuring consistent service delivery and quick response times.',
     },
   ];
 
@@ -96,7 +104,7 @@ const About: React.FC = () => {
                   color: '#50BB5A',
                 }}
               >
-                Why Choose Our Cleaning Services
+                Why Choose Group Serve
               </Typography>
               <Typography
                 variant="h2"
@@ -108,7 +116,7 @@ const About: React.FC = () => {
                   mb: 2,
                 }}
               >
-                Your Trusted Cleaning Partner
+                Professional. Reliable. Responsive.
               </Typography>
               <Typography
                 sx={{
@@ -118,8 +126,7 @@ const About: React.FC = () => {
                   lineHeight: 1.625,
                 }}
               >
-                We deliver exceptional cleaning services with trained professionals, eco-friendly products, and flexible schedules 
-                to keep your property spotless and healthy.
+                We don't just maintain buildings — we help create safe, efficient, and professional environments. Our experienced team, structured processes, and proactive approach ensure consistent service delivery with minimal disruption.
               </Typography>
 
               {/* Benefits */}
