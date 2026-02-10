@@ -6,7 +6,9 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import HowItWorks from './components/HowItWorks';
-import PropertyTypes from './components/PropertyTypes';
+import IndustriesServed from './components/IndustriesServed';
+import CaseStudies from './components/CaseStudies';
+import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ServicePage from './pages/ServicePage';
@@ -18,8 +20,11 @@ function HomePage() {
       <Hero />
       <Services />
       <About />
+      <IndustriesServed />
       <HowItWorks />
-      <PropertyTypes />
+      <CaseStudies />
+      <WhyChooseUs />
+      {/* <PropertyTypes /> */}
       <Contact />
       <Footer />
     </>

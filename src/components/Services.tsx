@@ -4,6 +4,12 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import CommercialImg from '../assets/Commercial.png';
+import HVACImg from '../assets/HVAC.png';
+import ElectricalImg from '../assets/Electrical.png';
+import GutterImg from '../assets/Gutter.png';
+import LandscapingImg from '../assets/Landscaping.png';
+import BuildingImg from '../assets/Building.png';
 
 interface Service {
   icon: React.ReactNode;
@@ -23,17 +29,6 @@ const Services: React.FC = () => {
   const handleViewAllServices = () => {
     navigate('/services');
   };
-
-  // Cleaning service images
-  const cleaningImages = [
-    'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Commercial cleaning
-    'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Deep cleaning
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Carpet cleaning
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Window cleaning
-    'https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Floor care
-    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Post-construction
-    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Gutter cleaning
-  ];
 
   const services: Service[] = [
     {
@@ -56,7 +51,7 @@ const Services: React.FC = () => {
       title: 'Commercial & Residential Cleaning',
       description: 'Complete cleaning solutions for all environments including daily office cleaning, deep cleaning, window cleaning, and specialist treatments.',
       delay: 100,
-      bgImage: cleaningImages[0],
+      bgImage: CommercialImg,
     },
     {
       icon: (
@@ -78,7 +73,7 @@ const Services: React.FC = () => {
       title: 'HVAC Maintenance',
       description: 'Complete heating, ventilation, and air conditioning solutions including regular maintenance, emergency repairs, system installation, and energy efficiency optimization.',
       delay: 200,
-      bgImage: cleaningImages[1],
+      bgImage: HVACImg,
     },
     {
       icon: (
@@ -100,7 +95,7 @@ const Services: React.FC = () => {
       title: 'Electrical & Plumbing',
       description: 'Full electrical and plumbing installation, maintenance, and testing services including PAT testing, emergency repairs, and energy-efficient upgrades.',
       delay: 300,
-      bgImage: cleaningImages[2],
+      bgImage: ElectricalImg,
     },
     {
       icon: (
@@ -123,7 +118,7 @@ const Services: React.FC = () => {
       title: 'Gutter & Roof Cleaning',
       description: 'Specialist exterior maintenance services including gutter cleaning, roof cleaning, high-level access, and preventative maintenance to prevent water damage.',
       delay: 100,
-      bgImage: cleaningImages[3],
+      bgImage: GutterImg,
     },
     {
       icon: (
@@ -145,7 +140,7 @@ const Services: React.FC = () => {
       title: 'Landscaping & Grounds',
       description: 'Professional exterior maintenance and landscaping including lawn care, hedge maintenance, seasonal planting, irrigation systems, and hard landscaping.',
       delay: 200,
-      bgImage: cleaningImages[4],
+      bgImage: LandscapingImg,
     },
     {
       icon: (
@@ -167,7 +162,7 @@ const Services: React.FC = () => {
       title: 'Building Maintenance',
       description: 'Complete building maintenance and repair services including reactive maintenance, planned maintenance, carpentry, decorating, flooring, and building fabric maintenance.',
       delay: 100,
-      bgImage: cleaningImages[5],
+      bgImage: BuildingImg,
     },
   ];
 
@@ -287,110 +282,142 @@ const Services: React.FC = () => {
                 data-aos-delay={service.delay}
                 sx={{
                   position: 'relative',
-                  borderRadius: 0.5,
-                  backgroundColor: '#e7f0ff',
-                  p: 2,
-                  border: '1px solid rgba(15, 34, 63, 0.1)',
+                  borderRadius: 2,
                   height: '100%',
+                  minHeight: '400px',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
                   overflow: 'hidden',
                   transition: 'all 0.3s',
                   width: '100%',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    inset: 0,
-                    // backgroundImage: `url(${service.bgImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    opacity: 0.15,
-                    zIndex: 0,
-                    transition: 'opacity 0.3s',
-                  },
+                  boxShadow: 2,
                   '&:hover': {
-                    borderColor: '#F0942D',
                     boxShadow: 6,
-                    '&::before': {
-                      opacity: 0.25,
-                    },
+                    transform: 'translateY(-4px)',
                     '& .service-icon': {
                       transform: 'scale(1.1)',
+                    },
+                    '& .service-overlay': {
+                      opacity: 1,
+                      background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.9) 100%)',
                     },
                   },
                 }}
               >
-                <CardContent sx={{ flexGrow: 1, p: 0, position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', width: '100%' }}>
+                {/* Background Image */}
+                <Box
+                  component="img"
+                  src={service.bgImage}
+                  alt={service.title}
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    zIndex: 0,
+                  }}
+                />
+
+                {/* Gradient Overlay - Top to Bottom (Light at top, Dark at bottom) */}
+                <Box
+                  className="service-overlay"
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.85) 100%)',
+                    transition: 'opacity 0.3s',
+                    zIndex: 1,
+                    opacity: 1,
+                  }}
+                />
+
+                {/* Additional Dark Layer at Bottom for Text Readability */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '50%',
+                    background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%)',
+                    zIndex: 1,
+                  }}
+                />
+
+                {/* Icon - Positioned at Top */}
+                <Box
+                  sx={{
+                    position: 'relative',
+                    zIndex: 2,
+                    p: 3,
+                    pb: 0,
+                  }}
+                >
                   <Box
                     className="service-icon"
                     sx={{
-                      width: 48,
-                      height: 48,
+                      width: 64,
+                      height: 64,
                       background: index % 3 === 0
                         ? 'linear-gradient(135deg, #0F223F, rgba(15, 34, 63, 0.8))'
                         : index % 3 === 1
                         ? 'linear-gradient(135deg, #3097C0, rgba(48, 151, 192, 0.8))'
                         : 'linear-gradient(135deg, #50BB5A, rgba(80, 187, 90, 0.8))',
-                      borderRadius: 0.5,
+                      borderRadius: 2,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      mb: 2,
                       transition: 'transform 0.3s',
+                      boxShadow: 4,
                     }}
                   >
-                    <Box sx={{ '& svg': { width: 20, height: 20 } }}>
+                    <Box sx={{ '& svg': { width: 32, height: 32 } }}>
                       {service.icon}
                     </Box>
                   </Box>
+                </Box>
+
+                {/* Content - Positioned at Bottom */}
+                <CardContent
+                  sx={{
+                    flexGrow: 1,
+                    p: 3,
+                    position: 'relative',
+                    zIndex: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    width: '100%',
+                  }}
+                >
+                  {/* Title */}
                   <Typography
                     variant="h3"
                     className="font-display"
                     sx={{
-                      fontSize: '1.125rem',
+                      fontSize: '1.5rem',
                       fontWeight: 700,
-                      color: '#0F223F',
-                      mb: 1,
+                      color: 'white',
+                      mb: 1.5,
+                      textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
                     }}
                   >
                     {service.title}
                   </Typography>
+
+                  {/* Description */}
                   <Typography
                     sx={{
-                      color: '#6C757D',
+                      color: 'rgba(255, 255, 255, 0.95)',
                       mb: 2,
-                      lineHeight: 1.5,
-                      fontSize: '0.875rem',
-                      flexGrow: 1,
+                      lineHeight: 1.6,
+                      fontSize: '0.9375rem',
+                      textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
                     }}
                   >
                     {service.description}
                   </Typography>
-                  {/* <Button
-                    href="#contact"
-                    onClick={(e) => service.title=='Commercial & Residential Cleaning'?navigate('/services/cleaning') : handleNavClick(e, '#contact')}
-                    endIcon={<ArrowForwardIcon />}
-                    sx={{
-                      color: '#0F223F',
-                      fontSize: '0.875rem',
-                      fontWeight: 500,
-                      textTransform: 'none',
-                      p: 0,
-                      '&:hover': {
-                        color: index % 3 === 2 ? '#50BB5A' : '#F0942D',
-                        '& .MuiSvgIcon-root': {
-                          transform: 'translateX(4px)',
-                        },
-                      },
-                      '& .MuiSvgIcon-root': {
-                        transition: 'transform 0.3s',
-                      },
-                    }}
-                  >
-                    Learn More
-                  </Button> */}
                 </CardContent>
               </Card>
             </Box>
