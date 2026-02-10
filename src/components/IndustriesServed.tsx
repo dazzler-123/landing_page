@@ -79,7 +79,7 @@ const IndustriesServed: React.FC = () => {
             gap: { xs: 3, md: 4 },
           }}
         >
-          {industries.map((industry, index) => (
+          {industries.map((industry) => (
             <Box key={industry.title} data-aos="fade-up" data-aos-delay={industry.delay}>
               <Card
                 sx={{
