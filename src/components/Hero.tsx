@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
       id="home"
       sx={{
         position: 'relative',
-        minHeight: '140vh',
+        minHeight: { xs: '100vh', sm: '120vh', md: '140vh' },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
             content: '""',
             position: 'absolute',
             inset: 0,
-            bgcolor: 'rgba(0, 43, 86, 0.75)',
+            bgcolor: 'rgba(0, 43, 86, 0.26)',
             zIndex: 1,
           },
         }}
@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
       </Box>
 
       {/* Hero Content */}
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 10, width: '100%', px: { xs: 3, md: 6 } }}>
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 10, width: '100%', px: { xs: 3, md: 8 } }}>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, alignItems: { xs: 'center', lg: 'flex-start' }, justifyContent: 'space-between', gap: { xs: 4, lg: 8 } }}>
           {/* Left Side - Content */}
           <Box sx={{ flex: 1, maxWidth: { xs: '100%', lg: '42rem' } }}>
@@ -144,6 +144,7 @@ const Hero: React.FC = () => {
                 width: 8,
                 height: 8,
                 bgcolor: '#F0942D',
+                marginRight: 1,
                 borderRadius: '50%',
                 animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 '@keyframes pulse': {
@@ -151,7 +152,7 @@ const Hero: React.FC = () => {
                 },
               }}
             />
-            Professional • Reliable • Efficient
+            <Typography sx={{ color: 'white' }}>Professional • Reliable • Efficient</Typography>
           </Box>
 
           {/* Headline */}
@@ -182,13 +183,13 @@ const Hero: React.FC = () => {
             data-aos-delay="200"
             data-aos-duration="1000"
             sx={{
-              fontSize: '1.25rem',
+              fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
               color: 'rgba(255, 255, 255, 0.9)',
               mb: 5,
               lineHeight: 1.625,
             }}
           >
-            Professional, reliable, and comprehensive facilities management solutions tailored to your business needs across the UK.
+            Professional, reliable, and comprehensive facilities management solutions tailored to your business needs.
           </Typography>
 
           {/* CTAs */}
@@ -269,208 +270,7 @@ const Hero: React.FC = () => {
           </Box>
           </Box>
 
-          {/* Right Side - Form */}
-          <Box
-            data-aos="fade-left"
-            data-aos-delay="400"
-            sx={{
-              flex: { xs: '0 0 auto', lg: '0 0 auto' },
-              width: '100%',
-              maxWidth: { xs: '100%', lg: '380px' },
-              ml: { lg: 'auto' },
-            }}
-          >
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              sx={{
-                bgcolor: 'white',
-                borderRadius: 2,
-                p: 2.5,
-                boxShadow: 8,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 1.75,
-              }}
-            >
-              {/* Form Header */}
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0 }}>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontSize: '1.375rem',
-                    fontWeight: 700,
-                    color: '#0F223F',
-                  }}
-                >
-                  Get a Free Quote
-                </Typography>
-                <Box
-                  sx={{
-                    bgcolor: '#FFF4E6',
-                    color: '#0F223F',
-                    px: 1.1,
-                    py: 0.35,
-                    borderRadius: '9999px',
-                    fontSize: '0.65rem',
-                    fontWeight: 600,
-                  }}
-                >
-                  NO OBLIGATION
-                </Box>
-              </Box>
-
-              {/* Full Name */}
-              <TextField
-                required
-                name="fullName"
-                label="Full Name"
-                value={formData.fullName}
-                onChange={handleInputChange}
-                fullWidth
-                size="small"
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    bgcolor: 'white',
-                  },
-                }}
-              />
-
-              {/* Phone Number */}
-              <TextField
-                required
-                name="phoneNumber"
-                label="Phone Number"
-                value={formData.phoneNumber}
-                onChange={handleInputChange}
-                fullWidth
-                size="small"
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    bgcolor: 'white',
-                  },
-                }}
-              />
-
-              {/* Email Address */}
-              <TextField
-                name="email"
-                label="Email Address"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                fullWidth
-                size="small"
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    bgcolor: 'white',
-                  },
-                }}
-              />
-
-              {/* Service Interested In */}
-              <FormControl fullWidth required size="small">
-                <InputLabel>Service Interested In</InputLabel>
-                <Select
-                  name="serviceInterested"
-                  value={formData.serviceInterested}
-                  onChange={handleSelectChange('serviceInterested')}
-                  label="Service Interested In"
-                  sx={{
-                    bgcolor: 'white',
-                  }}
-                >
-                  <MenuItem value="commercial-cleaning">Commercial Cleaning</MenuItem>
-                  <MenuItem value="deep-cleaning">Deep Cleaning</MenuItem>
-                  <MenuItem value="carpet-upholstery">Carpet & Upholstery</MenuItem>
-                  <MenuItem value="window-cleaning">Window Cleaning</MenuItem>
-                  <MenuItem value="floor-care">Floor Care & Maintenance</MenuItem>
-                  <MenuItem value="gutter-cleaning">Gutter Cleaning</MenuItem>
-                </Select>
-              </FormControl>
-
-              {/* Facility Type */}
-              <FormControl fullWidth required size="small">
-                <InputLabel>Facility Type</InputLabel>
-                <Select
-                  name="facilityType"
-                  value={formData.facilityType}
-                  onChange={handleSelectChange('facilityType')}
-                  label="Facility Type"
-                  sx={{
-                    bgcolor: 'white',
-                  }}
-                >
-                  <MenuItem value="office">Office</MenuItem>
-                  <MenuItem value="hospital">Hospital</MenuItem>
-                  <MenuItem value="hotel">Hotel</MenuItem>
-                  <MenuItem value="restaurant">Restaurant</MenuItem>
-                  <MenuItem value="retail">Retail Store</MenuItem>
-                  <MenuItem value="warehouse">Warehouse</MenuItem>
-                  <MenuItem value="other">Other</MenuItem>
-                </Select>
-              </FormControl>
-
-              {/* Specific Requirements */}
-              <TextField
-                name="specificRequirements"
-                label="Specific Requirements"
-                value={formData.specificRequirements}
-                onChange={handleInputChange}
-                multiline
-                rows={3}
-                fullWidth
-                size="small"
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    bgcolor: 'white',
-                  },
-                }}
-              />
-
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                sx={{
-                  bgcolor: '#F0942D',
-                  color: 'white',
-                  py: 1.1,
-                  fontSize: '0.9rem',
-                  fontWeight: 600,
-                  textTransform: 'none',
-                  '&:hover': {
-                    bgcolor: 'rgba(240, 148, 45, 0.9)',
-                  },
-                }}
-              >
-                Request Quote Now
-              </Button>
-
-              {/* Footer Info */}
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  mt: 0.25,
-                  pt: 1.25,
-                  borderTop: '1px solid rgba(0, 0, 0, 0.1)',
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6 }}>
-                  <LockIcon sx={{ fontSize: 13, color: '#6C757D' }} />
-                  <Typography sx={{ fontSize: '0.75rem', color: '#6C757D' }}>
-                    Your details are 100% secure.
-                  </Typography>
-                </Box>
-                <Typography sx={{ fontSize: '0.75rem', color: '#0F223F', fontWeight: 500 }}>
-                  Call: 0121-123-4567
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
+         
         </Box>
       </Container>
 

@@ -1,36 +1,56 @@
 import React, { useEffect } from 'react';
-import { Box, Container, Typography, Card } from '@mui/material';
+import type { ReactNode } from 'react';
+import { Box, Container, Typography, Card, Button } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 interface Industry {
+  subtitle: ReactNode;
   title: string;
   bgImage: string;
   delay: number;
 }
 
 const IndustriesServed: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
 
+  const getIndustrySlug = (title: string): string => {
+    const slugMap: Record<string, string> = {
+      'Office Building': 'office-building',
+      'Healthcare Facilities': 'healthcare-facilities',
+      'Retail Centers': 'retail-centers',
+      'Industrial Facilities': 'industrial-facilities',
+    };
+    return slugMap[title] || 'office-building';
+  };
+
   const industries: Industry[] = [
     {
+      subtitle: 'This year marks our 20-year anniversary, delivering consistent property outperformance and value',
       title: 'Office Building',
       bgImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       delay: 0,
     },
     {
+      subtitle: 'Healthcare FacilitiesWe invest in a diversified commercial property portfolio across the Industrial, Office and Retail',
       title: 'Healthcare Facilities',
       bgImage: 'https://s7ap1.scene7.com/is/image/TCSCOMprod/women-leaders-healthcare-breaking-barriers-driving-change-web-1:Small?wid=1510&hei=1787&dpr=off',
       delay: 100,
     },
     {
+      subtitle: 'Group Serve has been there at every step of our journey, always ensuring we have the right space for our needs.',
       title: 'Retail Centers',
       bgImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       delay: 200,
     },
     {
+      subtitle: 'Driven by knowledge, expertise and research-led decision making, we aim to create long-term value for all our',
       title: 'Industrial Facilities',
       bgImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
       delay: 300,
@@ -85,8 +105,8 @@ const IndustriesServed: React.FC = () => {
                 sx={{
                   position: 'relative',
                   borderRadius: 2,
-                  height: { xs: '300px', sm: '350px', md: '400px' },
-                  minHeight: '300px',
+                  height: { xs: '350px', sm: '400px', md: '500px' },
+                  minHeight: { xs: '250px', sm: '280px', md: '300px' },
                   display: 'flex',
                   flexDirection: 'column',
                   overflow: 'hidden',
@@ -99,6 +119,16 @@ const IndustriesServed: React.FC = () => {
                     '& .industry-overlay': {
                       opacity: 1,
                       background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.9) 100%)',
+                    },
+                    '& .industry-subtitle': {
+                      opacity: 1,
+                      visibility: 'visible',
+                      transform: 'translateY(0)',
+                    },
+                    '& .industry-button': {
+                      opacity: 1,
+                      visibility: 'visible',
+                      transform: 'translateY(0)',
                     },
                   },
                 }}
@@ -148,14 +178,17 @@ const IndustriesServed: React.FC = () => {
                 <Box
                   sx={{
                     position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    p: 3,
+                    // bottom: 0,
+                    // left: 0,
+                    // right: 0,
+                    mt:5,
+                    p: 2,
+                    height: '100%',
                     zIndex: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'flex-end',
+                    justifyContent: 'center',
+                    alignItems:'center'
                   }}
                 >
                   {/* Title */}
@@ -163,14 +196,77 @@ const IndustriesServed: React.FC = () => {
                     variant="h3"
                     className="font-display"
                     sx={{
-                      fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' },
+                      fontSize: { xs: '1.5rem', sm: '1.7rem', md: '2rem' },
                       fontWeight: 700,
                       color: 'white',
+                      mb:2,
                       textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
                     }}
                   >
                     {industry.title}
                   </Typography>
+                  <Typography
+                    className="industry-subtitle font-body"
+                    sx={{
+                      fontSize: { xs: '0.875rem', sm: '0.9375rem', md: '1rem' },
+                      color: 'white',
+                      textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
+                      mb: 2,
+                      opacity: 0,
+                      visibility: 'hidden',
+                      transform: 'translateY(10px)',
+                      transition: 'opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease',
+                    }}
+                  >
+                    {industry.subtitle}
+                  </Typography>
+
+                  {/* Read More Button */}
+                  <Button
+                    className="industry-button"
+                    variant="contained"
+                    endIcon={<ArrowForwardIcon sx={{ fontSize: 18 }} />}
+                    onClick={() => {
+                      const slug = getIndustrySlug(industry.title);
+                      navigate(`/industries/${slug}`);
+                    }}
+                    sx={{
+                      color: 'white',
+                      bgcolor: 'rgba(255, 255, 255, 0.15)',
+                      backdropFilter: 'blur(12px)',
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
+                      textTransform: 'none',
+                      fontWeight: 600,
+                      fontSize: { xs: '0.8125rem', sm: '0.875rem', md: '0.9375rem' },
+                      px: { xs: 2, sm: 2.5, md: 3 },
+                      py: { xs: 1, sm: 1.125, md: 1.25 },
+                      borderRadius: 2,
+                      alignSelf: 'flex-start',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1)',
+                      opacity: 0,
+                      visibility: 'hidden',
+                      transform: 'translateY(10px)',
+                      '& .MuiButton-endIcon': {
+                        transition: 'transform 0.3s ease',
+                      },
+                      '&:hover': {
+                        bgcolor: 'rgba(255, 255, 255, 0.25)',
+                        borderColor: 'rgba(255, 255, 255, 0.5)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15)',
+                        '& .MuiButton-endIcon': {
+                          transform: 'translateX(4px)',
+                        },
+                      },
+                      '&:active': {
+                        transform: 'translateY(0px)',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+                      },
+                      transition: 'opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    }}
+                  >
+                    Read More
+                  </Button>
                 </Box>
               </Card>
             </Box>

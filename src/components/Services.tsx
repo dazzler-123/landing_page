@@ -48,8 +48,8 @@ const Services: React.FC = () => {
           <path d="M12 2v20M2 12h20" />
         </Box>
       ),
-      title: 'Commercial & Residential Cleaning',
-      description: 'Complete cleaning solutions for all environments including daily office cleaning, deep cleaning, window cleaning, and specialist treatments.',
+      title: 'Commercial Cleaning',
+      description: 'Professional cleaning services with eco-friendly products.',
       delay: 100,
       bgImage: CommercialImg,
     },
@@ -71,7 +71,7 @@ const Services: React.FC = () => {
         </Box>
       ),
       title: 'HVAC Maintenance',
-      description: 'Complete heating, ventilation, and air conditioning solutions including regular maintenance, emergency repairs, system installation, and energy efficiency optimization.',
+      description: 'Heating, ventilation and air conditioning services',
       delay: 200,
       bgImage: HVACImg,
     },
@@ -92,8 +92,8 @@ const Services: React.FC = () => {
           <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
         </Box>
       ),
-      title: 'Electrical & Plumbing',
-      description: 'Full electrical and plumbing installation, maintenance, and testing services including PAT testing, emergency repairs, and energy-efficient upgrades.',
+      title: 'Security Services',
+      description: 'Comprehensive security solutions for your facility.',
       delay: 300,
       bgImage: ElectricalImg,
     },
@@ -115,8 +115,8 @@ const Services: React.FC = () => {
           <path d="M12 2v20" />
         </Box>
       ),
-      title: 'Gutter & Roof Cleaning',
-      description: 'Specialist exterior maintenance services including gutter cleaning, roof cleaning, high-level access, and preventative maintenance to prevent water damage.',
+      title: 'Electrical Maintenance',
+      description: 'Safe and reliable electrical system maintenance and repairs.',
       delay: 100,
       bgImage: GutterImg,
     },
@@ -137,8 +137,8 @@ const Services: React.FC = () => {
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         </Box>
       ),
-      title: 'Landscaping & Grounds',
-      description: 'Professional exterior maintenance and landscaping including lawn care, hedge maintenance, seasonal planting, irrigation systems, and hard landscaping.',
+      title: 'Plumbing Services',
+      description:'Professional plumbing services and repairs.',
       delay: 200,
       bgImage: LandscapingImg,
     },
@@ -159,8 +159,8 @@ const Services: React.FC = () => {
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         </Box>
       ),
-      title: 'Building Maintenance',
-      description: 'Complete building maintenance and repair services including reactive maintenance, planned maintenance, carpentry, decorating, flooring, and building fabric maintenance.',
+      title: 'Gutter Cleaning',
+      description: 'Comprehensive maintenance for all facility needs.',
       delay: 100,
       bgImage: BuildingImg,
     },
@@ -199,7 +199,7 @@ const Services: React.FC = () => {
               color: '#50BB5A',
             }}
           >
-            Our Services
+            Our Expertise
           </Typography>
           <Typography
             variant="h2"
@@ -212,7 +212,7 @@ const Services: React.FC = () => {
               
             }}
           >
-            Comprehensive Facilities Management Solutions
+            Comprehensive Facilities Solutions
           </Typography>
           <Typography
             sx={{
@@ -223,12 +223,12 @@ const Services: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Group Serve Facilities Management is a full-service facilities management company providing integrated hard and soft services tailored to your operational needs.
+           We provide end-to-end facilities management services tailored to your specific needs.
           </Typography>
         </Box>
 
         {/* Statistics Section */}
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 4, mb: 8 }} data-aos="fade-up">
+        {/* <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 4, mb: 8 }} data-aos="fade-up">
           {[
             { number: '15+', label: 'Years Experience' },
             { number: '500+', label: 'Happy Clients' },
@@ -271,10 +271,10 @@ const Services: React.FC = () => {
               </Typography>
             </Box>
           ))}
-        </Box>
+        </Box> */}
 
         {/* Services Grid */}
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 4, alignItems: 'stretch' }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 3, alignItems: 'stretch' }}>
           {services.map((service, index) => (
             <Box key={service.title} sx={{ display: 'flex' }}>
               <Card
@@ -284,7 +284,7 @@ const Services: React.FC = () => {
                   position: 'relative',
                   borderRadius: 2,
                   height: '100%',
-                  minHeight: '400px',
+                  minHeight: { xs: '300px', sm: '350px', md: '400px' },
                   display: 'flex',
                   flexDirection: 'column',
                   overflow: 'hidden',
@@ -346,7 +346,7 @@ const Services: React.FC = () => {
                 />
 
                 {/* Icon - Positioned at Top */}
-                <Box
+                {/* <Box
                   sx={{
                     position: 'relative',
                     zIndex: 2,
@@ -376,7 +376,7 @@ const Services: React.FC = () => {
                       {service.icon}
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
 
                 {/* Content - Positioned at Bottom */}
                 <CardContent
@@ -418,35 +418,54 @@ const Services: React.FC = () => {
                   >
                     {service.description}
                   </Typography>
+
+                  {/* Learn More Button */}
+                  <Button
+                    variant="contained"
+                    endIcon={<ArrowForwardIcon sx={{ fontSize: 18 }} />}
+                    onClick={() => navigate('/services')}
+                    sx={{
+                      color: 'white',
+                      bgcolor: 'rgba(255, 255, 255, 0.15)',
+                      backdropFilter: 'blur(12px)',
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
+                      textTransform: 'none',
+                      fontWeight: 600,
+                      fontSize: '0.9375rem',
+                      px: 3,
+                      py: 1.25,
+                      borderRadius: 2,
+                      alignSelf: 'flex-start',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1)',
+                      mt: 0.5,
+                      '& .MuiButton-endIcon': {
+                        transition: 'transform 0.3s ease',
+                      },
+                      '&:hover': {
+                        bgcolor: 'rgba(255, 255, 255, 0.25)',
+                        borderColor: 'rgba(255, 255, 255, 0.5)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15)',
+                        '& .MuiButton-endIcon': {
+                          transform: 'translateX(4px)',
+                        },
+                      },
+                      '&:active': {
+                        transform: 'translateY(0px)',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+                      },
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </CardContent>
               </Card>
             </Box>
           ))}
         </Box>
 
-        {/* View All Button */}
-        <Box sx={{ textAlign: 'center', mt: 8 }} data-aos="fade-up">
-          <Button
-            variant="contained"
-            onClick={handleViewAllServices}
-            endIcon={<ArrowForwardIcon />}
-            sx={{
-              bgcolor: '#0F223F',
-              color: 'white',
-              px: 4,
-              py: 2,
-              fontSize: '1rem',
-              fontWeight: 600,
-              boxShadow: 4,
-              '&:hover': {
-                bgcolor: 'rgba(15, 34, 63, 0.9)',
-                boxShadow: 6,
-              },
-            }}
-          >
-            View All Services
-          </Button>
-        </Box>
+      
       </Container>
     </Box>
   );

@@ -179,7 +179,7 @@ const WhyChooseUs: React.FC = () => {
                   left: -24,
                   width: '100%',
                   height: '100%',
-                  bgcolor: '#F0942D',
+                  bgcolor: '#002b56',
                   borderRadius: 2,
                   zIndex: -1,
                   transition: 'transform 0.5s',
@@ -191,7 +191,7 @@ const WhyChooseUs: React.FC = () => {
             >
               <Box
                 component="img"
-                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                src="https://www.equans.com/sites/g/files/tkmtob111/files/styles/coh_x_large/public/2024-09/AdobeStock_821574217.jpeg?itok=2WrQvNO3"
                 alt="Professional gutter cleaning and building maintenance"
                 sx={{
                   width: '100%',

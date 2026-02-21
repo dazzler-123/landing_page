@@ -12,6 +12,11 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ServicePage from './pages/ServicePage';
+import IndustriesPage from './pages/IndustriesPage';
+import BlogPage from './pages/BlogPage';
+import Achievements from './components/Achievements';
+import Partners from './components/Partners';
+import BlogTestimonialsFAQ from './components/BlogTestimonialsFAQ';
 
 function HomePage() {
   return (
@@ -19,13 +24,16 @@ function HomePage() {
       <Navigation />
       <Hero />
       <Services />
-      <About />
+      {/* <About /> */}
+      <WhyChooseUs />
       <IndustriesServed />
+      <Achievements />
       <HowItWorks />
       <CaseStudies />
-      <WhyChooseUs />
       {/* <PropertyTypes /> */}
       <Contact />
+      <Partners />
+      <BlogTestimonialsFAQ />
       <Footer />
     </>
   );
@@ -40,6 +48,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/services/:serviceType" element={<ServicePage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/industries/:industrySlug" element={<IndustriesPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:blogSlug" element={<BlogPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -18,31 +18,59 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import HomeIcon from '@mui/icons-material/Home';
 import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 import BuildIcon from '@mui/icons-material/Build';
 import SecurityIcon from '@mui/icons-material/Security';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import PlumbingIcon from '@mui/icons-material/Plumbing';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { industrySlug } = useParams<{ industrySlug?: string }>();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
   const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
+  const [industriesAnchorEl, setIndustriesAnchorEl] = useState<null | HTMLElement>(null);
+  const [industriesMenuOpen, setIndustriesMenuOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isPageLink?: boolean) => {
     e.preventDefault();
-    const element = document.querySelector(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    if (isPageLink) {
+      // Navigate to page route
+      navigate(href);
+      setMobileOpen(false);
+      setServicesMenuOpen(false);
+      setServicesAnchorEl(null);
+    } else {
+      // Handle hash navigation
+      if (location.pathname !== '/') {
+        // If not on home page, navigate to home first, then scroll
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      setMobileOpen(false);
+      setServicesMenuOpen(false);
+      setServicesAnchorEl(null);
     }
-    setMobileOpen(false);
-    setServicesMenuOpen(false);
-    setServicesAnchorEl(null);
   };
 
   const handleServicesMenuClose = () => {
@@ -53,6 +81,22 @@ const Navigation: React.FC = () => {
   const handleServicesHover = (event: React.MouseEvent<HTMLElement>) => {
     setServicesAnchorEl(event.currentTarget);
     setServicesMenuOpen(true);
+  };
+
+  const handleIndustriesMenuClose = () => {
+    setIndustriesMenuOpen(false);
+    setIndustriesAnchorEl(null);
+  };
+
+  const handleIndustriesHover = (event: React.MouseEvent<HTMLElement>) => {
+    setIndustriesAnchorEl(event.currentTarget);
+    setIndustriesMenuOpen(true);
+  };
+
+  const handleIndustrySelect = (slug: string) => {
+    navigate(`/industries/${slug}`);
+    setIndustriesMenuOpen(false);
+    setIndustriesAnchorEl(null);
   };
 
   const servicesMenuItems = [
@@ -85,9 +129,16 @@ const Navigation: React.FC = () => {
 
   const navLinks = [
     { label: 'Services', href: '#services', hasDropdown: true },
-    // { label: 'About Us', href: '#about' },
-    // { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Blogs', href: '/blog', isPageLink: true },
+    { label: 'Industries', href: '/industries', isPageLink: true, hasDropdown: true },
     { label: 'Contact', href: '#contact' },
+  ];
+
+  const industriesMenuItems = [
+    { label: 'Office Building', slug: 'office-building' },
+    { label: 'Healthcare Facilities', slug: 'healthcare-facilities' },
+    { label: 'Retail Centers', slug: 'retail-centers' },
+    { label: 'Industrial Facilities', slug: 'industrial-facilities' },
   ];
 
   const drawer = (
@@ -103,13 +154,13 @@ const Navigation: React.FC = () => {
     >
       <List sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
         {navLinks.map((link) => {
-          if (link.hasDropdown) {
+          if (link.hasDropdown && link.label === 'Services') {
             return (
               <Box key={link.href}>
                 <ListItem
                   component="a"
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
                   sx={{
                     textAlign: 'center',
                     color: '#333333',
@@ -162,7 +213,7 @@ const Navigation: React.FC = () => {
               key={link.href}
               component="a"
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
+              onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
               sx={{
                 textAlign: 'center',
                 color: '#333333',
@@ -252,7 +303,7 @@ const Navigation: React.FC = () => {
                   variant="h6"
                   className="font-display"
                   sx={{
-                    fontSize: '1.25rem',
+                    fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
                     fontWeight: 700,
                     color: '#0F223F',
                     lineHeight: 1,
@@ -263,7 +314,7 @@ const Navigation: React.FC = () => {
                 <Typography
                   className="font-body"
                   sx={{
-                    fontSize: '10px',
+                    fontSize: { xs: '8px', sm: '9px', md: '10px' },
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     color: '#F0942D',
@@ -279,7 +330,7 @@ const Navigation: React.FC = () => {
             {/* Desktop Menu */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 4 }}>
               {navLinks.map((link) => {
-                if (link.hasDropdown) {
+                if (link.hasDropdown && link.label === 'Services') {
                   return (
                     <Box
                       key={link.href}
@@ -289,7 +340,7 @@ const Navigation: React.FC = () => {
                     >
                       <Button
                         href={link.href}
-                        onClick={(e) => handleNavClick(e, link.href)}
+                        onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
                         endIcon={<ArrowDropDownIcon />}
                         sx={{
                           color: '#333333',
@@ -355,11 +406,89 @@ const Navigation: React.FC = () => {
                     </Box>
                   );
                 }
+                if (link.hasDropdown && link.label === 'Industries') {
+                  return (
+                    <Box
+                      key={link.href}
+                      sx={{ position: 'relative' }}
+                      onMouseEnter={handleIndustriesHover}
+                      onMouseLeave={handleIndustriesMenuClose}
+                    >
+                      <Button
+                        href={link.href}
+                        onClick={(e) => {
+                          if (!industriesMenuOpen) {
+                            handleNavClick(e, link.href, link.isPageLink);
+                          }
+                        }}
+                        endIcon={<ArrowDropDownIcon />}
+                        sx={{
+                          color: '#333333',
+                          fontSize: '0.875rem',
+                          fontWeight: 500,
+                          '&:hover': { color: '#0F223F' },
+                          textTransform: 'none',
+                        }}
+                      >
+                        {link.label}
+                      </Button>
+                      <Menu
+                        anchorEl={industriesAnchorEl}
+                        open={industriesMenuOpen}
+                        onClose={handleIndustriesMenuClose}
+                        MenuListProps={{
+                          onMouseLeave: handleIndustriesMenuClose,
+                        }}
+                        PaperProps={{
+                          sx: {
+                            mt: 1.5,
+                            minWidth: 280,
+                            boxShadow: 4,
+                            borderRadius: 2,
+                            border: '1px solid rgba(15, 34, 63, 0.1)',
+                          },
+                        }}
+                        transformOrigin={{ horizontal: 'left', vertical: 'top' }}
+                        anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+                      >
+                        {industriesMenuItems.map((item) => (
+                          <MenuItem
+                            key={item.slug}
+                            onClick={() => handleIndustrySelect(item.slug)}
+                            selected={industrySlug === item.slug}
+                            sx={{
+                              py: 1.5,
+                              px: 2,
+                              '&:hover': {
+                                bgcolor: '#F8FAFD',
+                              },
+                              '&.Mui-selected': {
+                                bgcolor: '#F8FAFD',
+                                color: '#3097C0',
+                                fontWeight: 600,
+                              },
+                            }}
+                          >
+                            <Typography
+                              sx={{
+                                fontSize: '0.875rem',
+                                color: 'inherit',
+                                fontWeight: 'inherit',
+                              }}
+                            >
+                              {item.label}
+                            </Typography>
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </Box>
+                  );
+                }
                 return (
                   <Button
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
+                    onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
                     sx={{
                       color: '#333333',
                       fontSize: '0.875rem',
@@ -372,25 +501,48 @@ const Navigation: React.FC = () => {
                   </Button>
                 );
               })}
-              <Button
-                variant="contained"
-                href="#contact"
-                onClick={(e) => handleNavClick(e, '#contact')}
-                startIcon={<PhoneIcon />}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                <Box
+                  component="a"
+                  href="tel:07438580681"
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                    color: '#333333',
+                    textDecoration: 'none',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    '&:hover': { color: '#0F223F' },
+                    transition: 'color 0.3s',
+                  }}
+                >
+                  <PhoneIcon sx={{ fontSize: 18 }} />
+                  <Typography sx={{ fontSize: '0.875rem', fontWeight: 500 }}>
+                    07438 580681
+                  </Typography>
+                </Box>
+                <Box
+                  component="a"
+                  href="mailto:groupservefacilities@gmail.com"
                 sx={{
-                  bgcolor: '#0F223F',
-                  color: 'white',
-                  px: 3,
-                  py: 1.25,
-                  boxShadow: 2,
-                  '&:hover': {
-                    bgcolor: 'rgba(15, 34, 63, 0.9)',
-                    boxShadow: 4,
-                  },
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1,
+                    color: '#333333',
+                    textDecoration: 'none',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    '&:hover': { color: '#0F223F' },
+                    transition: 'color 0.3s',
                 }}
               >
-                Get A Free Quote
-              </Button>
+                  <EmailIcon sx={{ fontSize: 18 }} />
+                  <Typography sx={{ fontSize: '0.875rem', fontWeight: 500 }}>
+                    groupservefacilities@gmail.com
+                  </Typography>
+                </Box>
+              </Box>
             </Box>
 
             {/* Mobile Menu Button */}

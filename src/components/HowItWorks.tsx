@@ -4,6 +4,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DescriptionIcon from '@mui/icons-material/Description';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -19,29 +20,53 @@ const HowItWorks: React.FC = () => {
     {
       icon: <LocationOnIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 1,
-      title: 'Site Assessment',
-      description: 'We assess your specific requirements and facility conditions through a comprehensive on-site review.',
+      title: 'Assessment',
+      description: 'We evaluate your facility\'s needs and requirements',
+      points: [
+        'Comprehensive facility inspection',
+        'Identify specific service requirements',
+        'Assess current facility conditions',
+        'Document all findings and needs',
+      ],
       delay: 100,
     },
     {
       icon: <DescriptionIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 2,
-      title: 'Custom Plan',
-      description: 'We create a tailored facilities management plan designed specifically for your operational needs.',
+      title: 'Planning',
+      description: 'We develop a customized facilities management plan',
+      points: [
+        'Create tailored service schedules',
+        'Define scope of work and timelines',
+        'Allocate resources and personnel',
+        'Set performance metrics and KPIs',
+      ],
       delay: 200,
     },
     {
       icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 3,
-      title: 'Service Delivery',
-      description: 'Certified technicians deliver services to the highest standards with consistent quality.',
+      title: 'Implementation',
+      description: 'Our trained team executes the plan with precision',
+      points: [
+        'Deploy certified technicians',
+        'Execute services per schedule',
+        'Maintain quality standards',
+        'Ensure compliance with regulations',
+      ],
       delay: 300,
     },
     {
       icon: <PhoneIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 4,
-      title: 'Ongoing Support',
-      description: 'Regular reviews, performance reporting, and continuous optimization for efficiency and cost-effectiveness.',
+      title: 'Monitoring',
+      description: 'We continuously monitor and optimize service delivery',
+      points: [
+        'Regular performance reviews',
+        'Track service quality metrics',
+        'Gather client feedback',
+        'Continuous improvement initiatives',
+      ],
       delay: 400,
     },
   ];
@@ -61,7 +86,7 @@ const HowItWorks: React.FC = () => {
               color: '#50BB5A',
             }}
           >
-            Our Process
+            Our Service Process
           </Typography>
           <Typography
             variant="h2"
@@ -73,7 +98,7 @@ const HowItWorks: React.FC = () => {
               mb: 2,
             }}
           >
-            How It Works
+            How We Work
           </Typography>
           <Typography
             sx={{
@@ -84,7 +109,7 @@ const HowItWorks: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Simple, transparent, and effective process for all our clients. From initial assessment to ongoing support, we ensure consistent service delivery.
+            We follow a structured approach to ensure efficient and effective facilities management services.
           </Typography>
         </Box>
 
@@ -99,9 +124,20 @@ const HowItWorks: React.FC = () => {
                 left: 0,
                 right: 0,
                 height: 4,
-                background: 'linear-gradient(to right, #0F223F 0%, #3097C0 33%, #50BB5A 66%, #FF7E00 100%)',
+                background: 'linear-gradient(to right, #0F223F 0%, #3097C0 33%, #50BB5A 66%, #F0942D 100%)',
                 opacity: 0.3,
                 zIndex: 0,
+                animation: 'lineDraw 1.5s ease-out forwards',
+                '@keyframes lineDraw': {
+                  '0%': {
+                    width: '0%',
+                    opacity: 0,
+                  },
+                  '100%': {
+                    width: '100%',
+                    opacity: 0.3,
+                  },
+                },
               }}
             />
           )}
@@ -117,8 +153,21 @@ const HowItWorks: React.FC = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     textAlign: 'center',
-                    '&:hover .step-icon': {
-                      transform: 'scale(1.1)',
+                    opacity: 0,
+                    animation: `slideInUp 0.6s ease-out ${index * 0.15}s forwards`,
+                    '@keyframes slideInUp': {
+                      '0%': {
+                        opacity: 0,
+                        transform: 'translateY(40px)',
+                      },
+                      '100%': {
+                        opacity: 1,
+                        transform: 'translateY(0)',
+                      },
+                    },
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
                     },
                   }}
                 >
@@ -126,8 +175,8 @@ const HowItWorks: React.FC = () => {
                     <Box
                       className="step-icon"
                       sx={{
-                        width: 80,
-                        height: 80,
+                        width: { xs: 60, sm: 70, md: 80 },
+                        height: { xs: 60, sm: 70, md: 80 },
                         background:
                           index === 0
                             ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Contact Us - Dark blue gradient
@@ -141,7 +190,22 @@ const HowItWorks: React.FC = () => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         boxShadow: 4,
-                        transition: 'transform 0.3s',
+                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                        animation: `pulseIcon 2s ease-in-out infinite ${index * 0.2}s`,
+                        '@keyframes pulseIcon': {
+                          '0%, 100%': {
+                            transform: 'scale(1)',
+                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+                          },
+                          '50%': {
+                            transform: 'scale(1.05)',
+                            boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)',
+                          },
+                        },
+                        '&:hover': {
+                          transform: 'scale(1.15) rotate(5deg)',
+                          animation: 'none',
+                        },
                       }}
                     >
                       {step.icon}
@@ -191,10 +255,72 @@ const HowItWorks: React.FC = () => {
                     sx={{
                       color: '#6C757D',
                       lineHeight: 1.625,
+                      mb: 2,
                     }}
                   >
                     {step.description}
                   </Typography>
+                  {/* Bullet Points */}
+                  <Box sx={{ textAlign: 'left', width: '100%' }}>
+                    {step.points?.map((point, pointIndex) => (
+                      <Box
+                        key={pointIndex}
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          mb: 1,
+                          gap: 1,
+                          opacity: 0,
+                          animation: `fadeInLeft 0.5s ease-out ${(index * 0.15 + pointIndex * 0.1 + 0.6)}s forwards`,
+                          '@keyframes fadeInLeft': {
+                            '0%': {
+                              opacity: 0,
+                              transform: 'translateX(-20px)',
+                            },
+                            '100%': {
+                              opacity: 1,
+                              transform: 'translateX(0)',
+                            },
+                          },
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            transform: 'translateX(4px)',
+                          },
+                        }}
+                      >
+                        <FiberManualRecordIcon
+                          sx={{
+                            fontSize: 8,
+                            color: '#3097C0',
+                            mt: 0.75,
+                            flexShrink: 0,
+                            animation: `bounceDot 0.6s ease-out ${(index * 0.15 + pointIndex * 0.1 + 0.8)}s`,
+                            '@keyframes bounceDot': {
+                              '0%, 100%': {
+                                transform: 'scale(1)',
+                              },
+                              '50%': {
+                                transform: 'scale(1.5)',
+                              },
+                            },
+                          }}
+                        />
+                        <Typography
+                          sx={{
+                            color: '#6C757D',
+                            fontSize: '0.875rem',
+                            lineHeight: 1.6,
+                            transition: 'color 0.3s ease',
+                            '&:hover': {
+                              color: '#3097C0',
+                            },
+                          }}
+                        >
+                          {point}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
               </Box>
             ))}

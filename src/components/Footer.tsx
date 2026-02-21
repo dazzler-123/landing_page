@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                   variant="h6"
                   className="font-display"
                   sx={{
-                    fontSize: '1.25rem',
+                    fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
                     fontWeight: 700,
                     color: 'white', 
                     lineHeight: 1,
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                 <Typography
                   className="font-body"
                   sx={{
-                    fontSize: '10px',
+                    fontSize: { xs: '8px', sm: '9px', md: '10px' },
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     color: '#F0942D',
@@ -79,13 +79,13 @@ const Footer: React.FC = () => {
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}
                 >
-                  Professional Cleaning Services
+                  Facilities Management Solutions
                 </Typography>
               </Box>
             </Box>
             <Typography sx={{ fontSize: '0.875rem', mb: 3, lineHeight: 1.625 }}>
-            Professional cleaning services for commercial and residential properties. Your trusted partner for 
-            spotless, healthy environments.
+            Comprehensive facilities management solutions for commercial and industrial properties. Your trusted partner for 
+            professional cleaning, HVAC maintenance, security services, electrical, and plumbing solutions.
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               {[
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
                 <PhoneIcon sx={{ color: '#F0942D', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
-                    (555) 123-4567
+                    07438 580681
                   </Typography>
                   <Typography sx={{ fontSize: '0.75rem' }}>24/7 Emergency Line</Typography>
                 </Box>
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
                 <EmailIcon sx={{ color: '#F0942D', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
-                    info@groupserve.com
+                    groupservefacilities@gmail.com
                   </Typography>
                   <Typography sx={{ fontSize: '0.75rem' }}>General Inquiries</Typography>
                 </Box>
@@ -192,9 +192,10 @@ const Footer: React.FC = () => {
                 <LocationOnIcon sx={{ color: '#F0942D', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
-                    123 Business Ave
+                    Group Serve Facilities Management
                   </Typography>
-                  <Typography sx={{ fontSize: '0.75rem' }}>New York, NY 10001</Typography>
+                  <Typography sx={{ fontSize: '0.875rem', mb: 0.5 }}>181 Walmley Road</Typography>
+                  <Typography sx={{ fontSize: '0.75rem' }}>Sutton Coldfield, B761PX</Typography>
                 </Box>
               </Box>
             </Box>

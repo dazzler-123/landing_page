@@ -117,7 +117,7 @@ const ServicePage: React.FC = () => {
       heroTitle: 'Transform Your Workplace',
       heroSubtitle: 'With Professional Cleaning',
       heroDescription: 'Experience pristine, hygienic workspaces that boost productivity and impress clients. Group Serve\'s certified specialists deliver exceptional commercial cleaning solutions with eco-friendly products and flexible scheduling.',
-      sectionTitle: 'Comprehensive Commercial Cleaning Services Across the UK',
+      sectionTitle: 'Comprehensive Commercial Cleaning Services',
       sectionDescription: 'Group Serve Facilities Management delivers exceptional commercial cleaning services designed to meet the unique needs of businesses throughout the United Kingdom. With over 15 years of industry expertise, we understand that a clean, well-maintained workplace is essential for employee wellbeing, client impressions, and operational efficiency.',
       services: [
         {
@@ -221,8 +221,8 @@ const ServicePage: React.FC = () => {
     'hvac-maintenance': {
       heroTitle: 'Transform Your Workplace',
       heroSubtitle: 'With Professional HVAC Maintenance',
-      heroDescription: 'Ensure optimal comfort and air quality with Group Serve\'s comprehensive HVAC maintenance services. Our certified technicians deliver reliable heating, ventilation, and air conditioning solutions across the UK.',
-      sectionTitle: 'Comprehensive HVAC Maintenance Services Across the UK',
+      heroDescription: 'Ensure optimal comfort and air quality with Group Serve\'s comprehensive HVAC maintenance services. Our certified technicians deliver reliable heating, ventilation, and air conditioning solutions.',
+      sectionTitle: 'Comprehensive HVAC Maintenance Services',
       sectionDescription: 'Group Serve Facilities Management provides complete HVAC solutions designed to maintain optimal indoor air quality and comfort. With over 15 years of expertise, we ensure your heating and cooling systems operate efficiently, reducing energy costs and extending equipment lifespan.',
       services: [
         {
@@ -326,8 +326,8 @@ const ServicePage: React.FC = () => {
     'security-services': {
       heroTitle: 'Transform Your Workplace',
       heroSubtitle: 'With Professional Security Services',
-      heroDescription: 'Protect your business with Group Serve\'s comprehensive security solutions. Our trained security professionals provide reliable protection services across the UK.',
-      sectionTitle: 'Comprehensive Security Services Across the UK',
+      heroDescription: 'Protect your business with Group Serve\'s comprehensive security solutions. Our trained security professionals provide reliable protection services.',
+      sectionTitle: 'Comprehensive Security Services',
       sectionDescription: 'Group Serve Facilities Management delivers professional security services designed to protect your business, employees, and assets. With certified security personnel and advanced monitoring systems, we ensure your premises remain secure 24/7.',
       services: [
         {
@@ -431,8 +431,8 @@ const ServicePage: React.FC = () => {
     'electrical-maintenance': {
       heroTitle: 'Transform Your Workplace',
       heroSubtitle: 'With Professional Electrical Maintenance',
-      heroDescription: 'Ensure safe and reliable electrical systems with Group Serve\'s comprehensive electrical maintenance services. Our certified electricians deliver expert solutions across the UK.',
-      sectionTitle: 'Comprehensive Electrical Maintenance Services Across the UK',
+      heroDescription: 'Ensure safe and reliable electrical systems with Group Serve\'s comprehensive electrical maintenance services. Our certified electricians deliver expert solutions .',
+      sectionTitle: 'Comprehensive Electrical Maintenance Services ',
       sectionDescription: 'Group Serve Facilities Management provides complete electrical services designed to maintain safe and efficient electrical systems. With certified electricians and advanced testing equipment, we ensure your electrical infrastructure meets all safety standards.',
       services: [
         {
@@ -536,8 +536,8 @@ const ServicePage: React.FC = () => {
     'plumbing-services': {
       heroTitle: 'Transform Your Workplace',
       heroSubtitle: 'With Professional Plumbing Services',
-      heroDescription: 'Maintain reliable water systems with Group Serve\'s comprehensive plumbing services. Our certified plumbers deliver expert solutions across the UK.',
-      sectionTitle: 'Comprehensive Plumbing Services Across the UK',
+      heroDescription: 'Maintain reliable water systems with Group Serve\'s comprehensive plumbing services. Our certified plumbers deliver expert solutions .',
+      sectionTitle: 'Comprehensive Plumbing Services',
       sectionDescription: 'Group Serve Facilities Management provides complete plumbing solutions designed to maintain efficient water systems and prevent costly water damage. With certified plumbers and advanced equipment, we ensure your plumbing infrastructure operates reliably.',
       services: [
         {
@@ -682,13 +682,47 @@ const ServicePage: React.FC = () => {
     },
   ];
 
-  const portfolioImages = [
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  ];
+  // Service-specific portfolio images
+  const portfolioImagesMap: Record<string, string[]> = {
+    'commercial-cleaning': [
+      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Office cleaning
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Professional cleaner
+      'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Cleaning equipment
+      'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Clean office space
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Window cleaning
+    ],
+    'hvac-maintenance': [
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // HVAC system
+      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Air conditioning unit
+      'https://images.unsplash.com/photo-1621905252472-b7d3b1e478e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // HVAC technician
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Ventilation system
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // HVAC maintenance
+    ],
+    'security-services': [
+      'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security guard
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security camera
+      'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security system
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Access control
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security monitoring
+    ],
+    'electrical-maintenance': [
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical panel
+      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrician working
+      'https://images.unsplash.com/photo-1621905252472-b7d3b1e478e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical wiring
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical maintenance
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical installation
+    ],
+    'plumbing-services': [
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Plumbing tools
+      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Plumber working
+      'https://images.unsplash.com/photo-1621905252472-b7d3b1e478e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Pipe installation
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Plumbing repair
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Water system
+    ],
+  };
+
+  // Get portfolio images for current service type, fallback to commercial-cleaning
+  const portfolioImages = portfolioImagesMap[currentServiceType] || portfolioImagesMap['commercial-cleaning'];
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -755,7 +789,7 @@ const ServicePage: React.FC = () => {
                 <Box component="span" sx={{ color: '#3097C0' }}>
                   {pageData.heroSubtitle}
                 </Box>
-                {' '}Services Across the UK
+                {' '}Services
               </Typography>
               <Typography
                 sx={{
@@ -866,16 +900,7 @@ const ServicePage: React.FC = () => {
                   boxShadow: 8,
                 }}
               >
-                <Box
-                  component="img"
-                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Cleaning services"
-                  sx={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                  }}
-                />
+                
                 <Box
                   sx={{
                     position: 'absolute',
@@ -1195,7 +1220,7 @@ const ServicePage: React.FC = () => {
                 Investing in professional commercial cleaning services delivers measurable returns for your business beyond just cleanliness.
               </Typography>
 
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 {benefits.map((benefit, index) => (
                   <Box
                     key={benefit.title}
@@ -1246,14 +1271,14 @@ const ServicePage: React.FC = () => {
             </Box>
 
             {/* Right Side Image */}
-            <Box sx={{ flex: { xs: '0 0 auto', lg: '0 0 400px' } }} data-aos="fade-left">
+            <Box sx={{ flex:1}} data-aos="fade-left">
               <Box
                 component="img"
                 src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Benefits"
                 sx={{
                   width: '100%',
-                  height: 'auto',
+                  height: '100% ',
                   borderRadius: 2,
                   boxShadow: 4,
                 }}
@@ -1387,7 +1412,7 @@ const ServicePage: React.FC = () => {
                 lineHeight: 1.625,
               }}
             >
-              A streamlined 3-step approach ensuring consistent, high-quality cleaning results for businesses across the UK.
+              A streamlined 3-step approach ensuring consistent, high-quality cleaning results for businesses.
             </Typography>
           </Box>
 
@@ -1625,7 +1650,7 @@ const ServicePage: React.FC = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }} data-aos="fade-up">
                 <Typography sx={{ color: '#6C757D', fontWeight: 600 }}>Prefer to call?</Typography>
                 <Button
-                  href="tel:01211234567"
+                  href="tel:07438580681"
                   sx={{
                     color: '#3097C0',
                     textTransform: 'none',
