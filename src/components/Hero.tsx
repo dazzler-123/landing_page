@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Container, Typography, Button, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
-import type { SelectChangeEvent } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box, Container, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import LockIcon from '@mui/icons-material/Lock';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Hero: React.FC = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phoneNumber: '',
-    email: '',
-    serviceInterested: '',
-    facilityType: '',
-    specificRequirements: '',
-  });
-
   useEffect(() => {
     AOS.init({
       once: true,
@@ -34,20 +23,6 @@ const Hero: React.FC = () => {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSelectChange = (name: string) => (e: SelectChangeEvent<string>) => {
-    setFormData((prev) => ({ ...prev, [name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
 
   return (
     <Box

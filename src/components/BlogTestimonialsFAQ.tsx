@@ -140,7 +140,7 @@ const BlogTestimonialsFAQ: React.FC = () => {
     setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+  const handleAccordionChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpandedAccordion(isExpanded ? panel : false);
   };
 

@@ -722,7 +722,7 @@ const ServicePage: React.FC = () => {
   };
 
   // Get portfolio images for current service type, fallback to commercial-cleaning
-  const portfolioImages = portfolioImagesMap[currentServiceType] || portfolioImagesMap['commercial-cleaning'];
+  const portfolioImages: string[] = portfolioImagesMap[currentServiceType] || portfolioImagesMap['commercial-cleaning'] || [];
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>

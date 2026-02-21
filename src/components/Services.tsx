@@ -26,10 +26,6 @@ const Services: React.FC = () => {
     AOS.init({ once: true });
   }, []);
 
-  const handleViewAllServices = () => {
-    navigate('/services');
-  };
-
   const services: Service[] = [
     {
       icon: (
@@ -275,7 +271,7 @@ const Services: React.FC = () => {
 
         {/* Services Grid */}
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }, gap: 3, alignItems: 'stretch' }}>
-          {services.map((service, index) => (
+          {services.map((service) => (
             <Box key={service.title} sx={{ display: 'flex' }}>
               <Card
                 data-aos="fade-up"

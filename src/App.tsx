@@ -4,7 +4,6 @@ import { theme } from './theme';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import About from './components/About';
 import HowItWorks from './components/HowItWorks';
 import IndustriesServed from './components/IndustriesServed';
 import CaseStudies from './components/CaseStudies';
