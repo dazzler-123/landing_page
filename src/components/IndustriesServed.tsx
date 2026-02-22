@@ -105,8 +105,8 @@ const IndustriesServed: React.FC = () => {
                 sx={{
                   position: 'relative',
                   borderRadius: 2,
-                  height: { xs: '350px', sm: '400px', md: '500px' },
-                  minHeight: { xs: '250px', sm: '280px', md: '300px' },
+                  height: { xs: '220px', sm: '260px', md: '320px' },
+                  minHeight: { xs: '180px', sm: '200px', md: '240px' },
                   display: 'flex',
                   flexDirection: 'column',
                   overflow: 'hidden',
