@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
-import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DescriptionIcon from '@mui/icons-material/Description';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import EventIcon from '@mui/icons-material/Event';
+import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -18,56 +19,69 @@ const HowItWorks: React.FC = () => {
 
   const steps = [
     {
-      icon: <LocationOnIcon sx={{ fontSize: 32, color: 'white' }} />,
+      icon: <DescriptionIcon sx={{ fontSize: 32, color: 'white' }} />,
       number: 1,
-      title: 'Assessment',
-      description: 'We evaluate your facility\'s needs and requirements',
+      title: 'Request Quote',
+      description: 'Get a free, no-obligation quote tailored to your needs',
+      points: [
+        'Fill out our quick quote form',
+        'Specify your service requirements',
+        'Receive detailed pricing breakdown',
+        'No commitment required',
+      ],
+      delay: 100,
+    },
+    {
+      icon: <EventIcon sx={{ fontSize: 32, color: 'white' }} />,
+      number: 2,
+      title: 'Book Appointment',
+      description: 'Schedule a convenient time for consultation',
+      points: [
+        'Choose your preferred date and time',
+        'Confirm appointment details',
+        'Receive confirmation via email/SMS',
+        'Flexible scheduling options',
+      ],
+      delay: 200,
+    },
+    {
+      icon: <LocationOnIcon sx={{ fontSize: 32, color: 'white' }} />,
+      number: 3,
+      title: 'Site Visit',
+      description: 'Our team visits your facility for assessment',
       points: [
         'Comprehensive facility inspection',
         'Identify specific service requirements',
         'Assess current facility conditions',
         'Document all findings and needs',
       ],
-      delay: 100,
+      delay: 300,
     },
     {
-      icon: <DescriptionIcon sx={{ fontSize: 32, color: 'white' }} />,
-      number: 2,
-      title: 'Planning',
-      description: 'We develop a customized facilities management plan',
-      points: [
-        'Create tailored service schedules',
-        'Define scope of work and timelines',
-        'Allocate resources and personnel',
-        'Set performance metrics and KPIs',
-      ],
-      delay: 200,
-    },
-    {
-      icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
-      number: 3,
-      title: 'Implementation',
-      description: 'Our trained team executes the plan with precision',
+      icon: <DeliveryDiningIcon sx={{ fontSize: 32, color: 'white' }} />,
+      number: 4,
+      title: 'Service Delivery',
+      description: 'Professional service execution by certified technicians',
       points: [
         'Deploy certified technicians',
         'Execute services per schedule',
         'Maintain quality standards',
         'Ensure compliance with regulations',
       ],
-      delay: 300,
+      delay: 400,
     },
     {
-      icon: <PhoneIcon sx={{ fontSize: 32, color: 'white' }} />,
-      number: 4,
-      title: 'Monitoring',
-      description: 'We continuously monitor and optimize service delivery',
+      icon: <SupportAgentIcon sx={{ fontSize: 32, color: 'white' }} />,
+      number: 5,
+      title: 'Ongoing Support',
+      description: 'Continuous monitoring and support for your facility',
       points: [
+        '24/7 emergency support available',
         'Regular performance reviews',
         'Track service quality metrics',
-        'Gather client feedback',
         'Continuous improvement initiatives',
       ],
-      delay: 400,
+      delay: 500,
     },
   ];
 
@@ -115,23 +129,39 @@ const HowItWorks: React.FC = () => {
 
         {/* Timeline */}
         <Box sx={{ position: 'relative' }}>
-          {/* Connecting Line (Desktop) */}
+          {/* Connecting Line (Desktop) - Stepper Animation */}
           {isDesktop && (
             <Box
               sx={{
                 position: 'absolute',
                 top: 96,
                 left: 0,
-                right: 0,
                 height: 4,
-                background: 'linear-gradient(to right, #0F223F 0%, #3097C0 33%, #50BB5A 66%, #F0942D 100%)',
+                background: 'linear-gradient(to right, #0F223F 0%, #3097C0 25%, #50BB5A 50%, #FF7E00 75%, #F0942D 100%)',
                 opacity: 0.3,
                 zIndex: 0,
-                animation: 'lineDraw 1.5s ease-out forwards',
-                '@keyframes lineDraw': {
+                width: '0%',
+                animation: 'stepperLine 2s ease-out forwards',
+                '@keyframes stepperLine': {
                   '0%': {
                     width: '0%',
                     opacity: 0,
+                  },
+                  '20%': {
+                    width: '20%',
+                    opacity: 0.2,
+                  },
+                  '40%': {
+                    width: '40%',
+                    opacity: 0.25,
+                  },
+                  '60%': {
+                    width: '60%',
+                    opacity: 0.28,
+                  },
+                  '80%': {
+                    width: '80%',
+                    opacity: 0.3,
                   },
                   '100%': {
                     width: '100%',
@@ -142,7 +172,7 @@ const HowItWorks: React.FC = () => {
             />
           )}
 
-          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }, gap: 4, position: 'relative', zIndex: 1 }}>
+          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(5, 1fr)' }, gap: 4, position: 'relative', zIndex: 1 }}>
             {steps.map((step, index) => (
               <Box key={step.number}>
                 <Box
@@ -168,6 +198,11 @@ const HowItWorks: React.FC = () => {
                     transition: 'all 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-5px)',
+                      '& .step-points': {
+                        maxHeight: '500px',
+                        opacity: 1,
+                        mt: 2,
+                      },
                     },
                   }}
                 >
@@ -179,12 +214,14 @@ const HowItWorks: React.FC = () => {
                         height: { xs: 60, sm: 70, md: 80 },
                         background:
                           index === 0
-                            ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Contact Us - Dark blue gradient
+                            ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Request Quote - Dark blue gradient
                             : index === 1
-                            ? 'linear-gradient(135deg, #3097C0, #20C997)' // Property Assessment - Teal/blue gradient
+                            ? 'linear-gradient(135deg, #3097C0, #20C997)' // Book Appointment - Teal/blue gradient
                             : index === 2
-                            ? 'linear-gradient(135deg, #50BB5A, #28a745)' // Custom Proposal - Green gradient
-                            : 'linear-gradient(135deg, #FF7E00, #FFC700)', // Service Begins - Orange to yellow gradient
+                            ? 'linear-gradient(135deg, #50BB5A, #28a745)' // Site Visit - Green gradient
+                            : index === 3
+                            ? 'linear-gradient(135deg, #FF7E00, #FFC700)' // Service Delivery - Orange to yellow gradient
+                            : 'linear-gradient(135deg, #F0942D, #FFB84D)', // Ongoing Support - Orange gradient
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -220,12 +257,14 @@ const HowItWorks: React.FC = () => {
                         height: 32,
                         background:
                           index === 0
-                            ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Contact Us
+                            ? 'linear-gradient(135deg, #0F223F, #2B5A8E)' // Request Quote
                             : index === 1
-                            ? 'linear-gradient(135deg, #3097C0, #20C997)' // Property Assessment
+                            ? 'linear-gradient(135deg, #3097C0, #20C997)' // Book Appointment
                             : index === 2
-                            ? 'linear-gradient(135deg, #50BB5A, #28a745)' // Custom Proposal
-                            : 'linear-gradient(135deg, #FF7E00, #FFC700)', // Service Begins
+                            ? 'linear-gradient(135deg, #50BB5A, #28a745)' // Site Visit
+                            : index === 3
+                            ? 'linear-gradient(135deg, #FF7E00, #FFC700)' // Service Delivery
+                            : 'linear-gradient(135deg, #F0942D, #FFB84D)', // Ongoing Support
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -260,8 +299,18 @@ const HowItWorks: React.FC = () => {
                   >
                     {step.description}
                   </Typography>
-                  {/* Bullet Points */}
-                  <Box sx={{ textAlign: 'left', width: '100%' }}>
+                  {/* Bullet Points - Show on Hover */}
+                  <Box 
+                    sx={{ 
+                      textAlign: 'left', 
+                      width: '100%',
+                      maxHeight: 0,
+                      overflow: 'hidden',
+                      opacity: 0,
+                      transition: 'all 0.4s ease-in-out',
+                    }}
+                    className="step-points"
+                  >
                     {step.points?.map((point, pointIndex) => (
                       <Box
                         key={pointIndex}
@@ -270,22 +319,7 @@ const HowItWorks: React.FC = () => {
                           alignItems: 'flex-start',
                           mb: 1,
                           gap: 1,
-                          opacity: 0,
-                          animation: `fadeInLeft 0.5s ease-out ${(index * 0.15 + pointIndex * 0.1 + 0.6)}s forwards`,
-                          '@keyframes fadeInLeft': {
-                            '0%': {
-                              opacity: 0,
-                              transform: 'translateX(-20px)',
-                            },
-                            '100%': {
-                              opacity: 1,
-                              transform: 'translateX(0)',
-                            },
-                          },
                           transition: 'all 0.3s ease',
-                          '&:hover': {
-                            transform: 'translateX(4px)',
-                          },
                         }}
                       >
                         <FiberManualRecordIcon
@@ -294,15 +328,6 @@ const HowItWorks: React.FC = () => {
                             color: '#3097C0',
                             mt: 0.75,
                             flexShrink: 0,
-                            animation: `bounceDot 0.6s ease-out ${(index * 0.15 + pointIndex * 0.1 + 0.8)}s`,
-                            '@keyframes bounceDot': {
-                              '0%, 100%': {
-                                transform: 'scale(1)',
-                              },
-                              '50%': {
-                                transform: 'scale(1.5)',
-                              },
-                            },
                           }}
                         />
                         <Typography
@@ -311,9 +336,6 @@ const HowItWorks: React.FC = () => {
                             fontSize: '0.875rem',
                             lineHeight: 1.6,
                             transition: 'color 0.3s ease',
-                            '&:hover': {
-                              color: '#3097C0',
-                            },
                           }}
                         >
                           {point}

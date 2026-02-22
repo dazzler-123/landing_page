@@ -16,7 +16,6 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import HomeIcon from '@mui/icons-material/Home';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -26,6 +25,7 @@ import SecurityIcon from '@mui/icons-material/Security';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import PlumbingIcon from '@mui/icons-material/Plumbing';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import logo from '../assets/logo2.png';
 
 const Navigation: React.FC = () => {
   const navigate = useNavigate();
@@ -128,9 +128,10 @@ const Navigation: React.FC = () => {
   ];
 
   const navLinks = [
+    { label: 'Home', href: '/', hasDropdown: false },
     { label: 'Services', href: '#services', hasDropdown: true },
-    { label: 'Blogs', href: '/blog', isPageLink: true },
     { label: 'Industries', href: '/industries', isPageLink: true, hasDropdown: true },
+    { label: 'Blogs', href: '/blog', isPageLink: true },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -152,11 +153,11 @@ const Navigation: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      <List sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <List sx={{ p: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
         {navLinks.map((link) => {
           if (link.hasDropdown && link.label === 'Services') {
             return (
-              <Box key={link.href}>
+              <Box key={link.href} sx={{padding:0}}>
                 <ListItem
                   component="a"
                   href={link.href}
@@ -177,7 +178,7 @@ const Navigation: React.FC = () => {
                     }}
                   />
                 </ListItem>
-                <Box sx={{ pl: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                   {servicesMenuItems.map((item) => (
                     <ListItem
                       key={item.label}
@@ -231,21 +232,6 @@ const Navigation: React.FC = () => {
             </ListItem>
           );
         })}
-        <Button
-          variant="contained"
-          fullWidth
-          href="#contact"
-          onClick={(e) => handleNavClick(e, '#contact')}
-          sx={{
-            bgcolor: '#F0942D',
-            color: 'white',
-            py: 1.5,
-            mt: 1,
-            '&:hover': { bgcolor: 'rgba(240, 148, 45, 0.9)' },
-          }}
-        >
-          Get A Free Quote
-        </Button>
       </List>
     </Box>
   );
@@ -273,37 +259,45 @@ const Navigation: React.FC = () => {
             {/* Logo */}
             <Box
               component="a"
-              href="#"
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/');
+                setMobileOpen(false);
+              }}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: 1.5,
                 textDecoration: 'none',
                 color: 'inherit',
-                '&:hover': { transform: 'scale(1.05)' },
-                transition: 'transform 0.3s',
+                '&:hover': { opacity: 0.9 },
+                transition: 'opacity 0.2s',
               }}
             >
-              <Box
+              {/* <Box
+                
+              /> */}
+              <Box sx={{ display: { xs: 'none', sm: 'block',padding:1} }}>
+
+                <Box 
+                component="img"
+                src={logo}
+                alt="GroupServe"
                 sx={{
-                  width: 48,
-                  height: 48,
-                  bgcolor: '#0F223F',
-                  borderRadius: 2,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: 2,
+                  height: { xs: 36, sm: 40, md: 50 },
+                  // width: '300px',
+                  display: 'block',
+                
                 }}
-              >
-                <HomeIcon sx={{ color: 'white', fontSize: 24 }} />
-              </Box>
-              <Box>
-                <Typography
+                >
+
+                </Box>
+                {/* <Typography
                   variant="h6"
                   className="font-display"
                   sx={{
-                    fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
+                    fontSize: { sm: '1.125rem', md: '1.25rem' },
                     fontWeight: 700,
                     color: '#0F223F',
                     lineHeight: 1,
@@ -314,7 +308,7 @@ const Navigation: React.FC = () => {
                 <Typography
                   className="font-body"
                   sx={{
-                    fontSize: { xs: '8px', sm: '9px', md: '10px' },
+                    fontSize: { sm: '9px', md: '10px' },
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     color: '#F0942D',
@@ -323,12 +317,12 @@ const Navigation: React.FC = () => {
                   }}
                 >
                   Professional Cleaning Services
-                </Typography>
+                </Typography> */}
               </Box>
             </Box>
 
             {/* Desktop Menu */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 4 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
               {navLinks.map((link) => {
                 if (link.hasDropdown && link.label === 'Services') {
                   return (
@@ -343,6 +337,8 @@ const Navigation: React.FC = () => {
                         onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
                         endIcon={<ArrowDropDownIcon />}
                         sx={{
+                          padding:0,
+                          minWidth:0,
                           color: '#333333',
                           fontSize: '0.875rem',
                           fontWeight: 500,
@@ -362,7 +358,7 @@ const Navigation: React.FC = () => {
                         PaperProps={{
                           sx: {
                             mt: 1.5,
-                            minWidth: 280,
+                            minWidth: 200,
                             boxShadow: 4,
                             borderRadius: 2,
                             border: '1px solid rgba(15, 34, 63, 0.1)',
@@ -501,7 +497,7 @@ const Navigation: React.FC = () => {
                   </Button>
                 );
               })}
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 <Box
                   component="a"
                   href="tel:07438580681"
@@ -524,7 +520,7 @@ const Navigation: React.FC = () => {
                 </Box>
                 <Box
                   component="a"
-                  href="mailto:groupservefacilities@gmail.com"
+                  href="mailto:support@groupservefacilities.co.uk"
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
@@ -539,7 +535,7 @@ const Navigation: React.FC = () => {
               >
                   <EmailIcon sx={{ fontSize: 18 }} />
                   <Typography sx={{ fontSize: '0.875rem', fontWeight: 500 }}>
-                    groupservefacilities@gmail.com
+                    support@groupservefacilities.co.uk
                   </Typography>
                 </Box>
               </Box>

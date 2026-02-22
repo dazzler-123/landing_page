@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Link } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
 import PhoneIcon from '@mui/icons-material/Phone';
+import logo from '../assets/logo2.png';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -42,46 +42,16 @@ const Footer: React.FC = () => {
           <Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
               <Box
+                component="img"
+                src={logo}
+                alt="GroupServe"
                 sx={{
-                  width: 48,
-                  height: 48,
-                  background: 'linear-gradient(135deg, #0F223F, rgba(15, 34, 63, 0.8))',
-                  borderRadius: 2,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: 2,
+                  height: { xs: 36, sm: 40, md: 44 },
+                  width: 'auto',
+                  display: 'block',
                 }}
-              >
-                <HomeIcon sx={{ color: 'white', fontSize: 24 }} />
-              </Box>
-              <Box>
-                <Typography
-                  variant="h6"
-                  className="font-display"
-                  sx={{
-                    fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
-                    fontWeight: 700,
-                    color: 'white', 
-                    lineHeight: 1,
-                  }}
-                >
-                  GroupServe
-                </Typography>
-                <Typography
-                  className="font-body"
-                  sx={{
-                    fontSize: { xs: '8px', sm: '9px', md: '10px' },
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: '#F0942D',
-                    fontWeight: 500,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}
-                >
-                  Facilities Management Solutions
-                </Typography>
-              </Box>
+              />
+           
             </Box>
             <Typography sx={{ fontSize: '0.875rem', mb: 3, lineHeight: 1.625 }}>
             Comprehensive facilities management solutions for commercial and industrial properties. Your trusted partner for 
@@ -183,7 +153,7 @@ const Footer: React.FC = () => {
                 <EmailIcon sx={{ color: '#F0942D', fontSize: 20, mt: 0.5, flexShrink: 0 }} />
                 <Box>
                   <Typography sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
-                    groupservefacilities@gmail.com
+                    support@groupservefacilities.co.uk
                   </Typography>
                   <Typography sx={{ fontSize: '0.75rem' }}>General Inquiries</Typography>
                 </Box>

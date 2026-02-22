@@ -25,6 +25,9 @@ import Footer from '../components/Footer';
 import BuildIcon from '@mui/icons-material/Build';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import PlumbingIcon from '@mui/icons-material/Plumbing';
+import RoofingIcon from '@mui/icons-material/Roofing';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import BrushIcon from '@mui/icons-material/Brush';
 
 interface Service {
   icon: React.ReactNode;
@@ -189,6 +192,42 @@ const ServicePage: React.FC = () => {
             'Laboratory cleaning',
             'Sports facility maintenance',
             'Term-time flexibility',
+          ],
+          delay: 300,
+        },
+        {
+          icon: <RoofingIcon sx={{ fontSize: 32 }} />,
+          title: 'Roof Cleaning',
+          description: 'Professional roof cleaning and maintenance to remove moss, algae, debris, and staining—extending roof life and improving building appearance.',
+          features: [
+            'Moss and algae removal',
+            'Debris and gutter run-off clearance',
+            'Soft washing and safe treatments',
+            'Inspection and minor repair advice',
+          ],
+          delay: 100,
+        },
+        {
+          icon: <WaterDropIcon sx={{ fontSize: 32 }} />,
+          title: 'Gutter Cleaning',
+          description: 'Thorough gutter and downpipe cleaning to prevent blockages, water damage, and overflow—keeping drainage systems clear year-round.',
+          features: [
+            'Gutter debris and leaf removal',
+            'Downpipe unblocking',
+            'Fascia and soffit cleaning',
+            'Pre-winter and seasonal clearance',
+          ],
+          delay: 200,
+        },
+        {
+          icon: <BrushIcon sx={{ fontSize: 32 }} />,
+          title: 'Graphic & Signage Cleaning',
+          description: 'Careful cleaning of signs, graphics, display boards, and branded surfaces to maintain a professional, legible appearance.',
+          features: [
+            'Exterior and interior sign cleaning',
+            'Digital display and screen cleaning',
+            'Graffiti removal and prevention',
+            'Branded surface restoration',
           ],
           delay: 300,
         },
@@ -933,87 +972,70 @@ const ServicePage: React.FC = () => {
         }}
       >
         <Container maxWidth="xl">
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 6, alignItems: 'center' }}>
-            <Box sx={{ flex: 1 }}>
-              <Typography
-                sx={{
-                  fontSize: '0.875rem',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  fontWeight: 700,
-                  mb: 1,
-                  color: '#3097C0',
-                }}
-                data-aos="fade-up"
-              >
-                Our Services
-              </Typography>
-              <Typography
-                variant="h2"
-                className="font-display"
-                sx={{
-                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-                  fontWeight: 700,
-                  color: '#0F223F',
-                  mb: 3,
-                }}
-                data-aos="fade-up"
-              >
-                {pageData.sectionTitle}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: '1.125rem',
-                  color: '#6C757D',
-                  mb: 4,
-                  lineHeight: 1.625,
-                }}
-                data-aos="fade-up"
-              >
-                {pageData.sectionDescription}
-              </Typography>
+          <Box sx={{ width: '100%', maxWidth: '100%' }}>
+            <Typography
+              sx={{
+                fontSize: '0.875rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                fontWeight: 700,
+                mb: 1,
+                color: '#3097C0',
+              }}
+              data-aos="fade-up"
+            >
+              Our Services
+            </Typography>
+            <Typography
+              variant="h2"
+              className="font-display"
+              sx={{
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+                fontWeight: 700,
+                color: '#0F223F',
+                mb: 3,
+              }}
+              data-aos="fade-up"
+            >
+              {pageData.sectionTitle}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '1.125rem',
+                color: '#6C757D',
+                mb: 4,
+                lineHeight: 1.625,
+              }}
+              data-aos="fade-up"
+            >
+              {pageData.sectionDescription}
+            </Typography>
 
-              {/* Statistics */}
-              <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 3 }} data-aos="fade-up">
-                {[
-                  { number: '500+', label: 'Commercial Clients' },
-                  { number: '98%', label: 'Satisfaction Rate' },
-                  { number: 'ISO', label: '9001 Certified' },
-                  { number: '24/7', label: 'Emergency Service' },
-                ].map((stat) => (
-                  <Box
-                    key={stat.label}
-                    sx={{
-                      textAlign: 'center',
-                      p: 2,
-                      bgcolor: '#F8FAFD',
-                      borderRadius: 2,
-                    }}
-                  >
-                    <Typography sx={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F223F', mb: 0.5 }}>
-                      {stat.number}
-                    </Typography>
-                    <Typography sx={{ fontSize: '0.875rem', color: '#6C757D' }}>
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-
-            {/* Right Side Image */}
-            <Box sx={{ flex: { xs: '0 0 auto', lg: '0 0 400px' } }} data-aos="fade-left">
-              <Box
-                component="img"
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Cleaning services"
-                sx={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: 2,
-                  boxShadow: 4,
-                }}
-              />
+            {/* Statistics */}
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 3 }} data-aos="fade-up">
+              {[
+                { number: '500+', label: 'Commercial Clients' },
+                { number: '98%', label: 'Satisfaction Rate' },
+                { number: 'ISO', label: '9001 Certified' },
+                { number: '24/7', label: 'Emergency Service' },
+              ].map((stat) => (
+                <Box
+                  key={stat.label}
+                  sx={{
+                    textAlign: 'center',
+                    p: 2,
+                    bgcolor: '#F8FAFD',
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography sx={{ fontSize: '1.75rem', fontWeight: 700, color: '#0F223F', mb: 0.5 }}>
+                    {stat.number}
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.875rem', color: '#6C757D' }}>
+                    {stat.label}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Box>
         </Container>
@@ -1657,7 +1679,7 @@ const ServicePage: React.FC = () => {
                     fontWeight: 600,
                   }}
                 >
-                  0121 123 4567
+                  07438580681
                 </Button>
               </Box>
 
@@ -1932,7 +1954,7 @@ const ServicePage: React.FC = () => {
             >
               <EmailIcon sx={{ color: '#3097C0', fontSize: 32 }} />
               <Box>
-                <Typography sx={{ color: 'white', fontWeight: 600 }}>cleaning@groupserve.co.uk</Typography>
+                <Typography sx={{ color: 'white', fontWeight: 600 }}>support@groupservefacilities.co.uk</Typography>
               </Box>
             </Box>
           </Box>
