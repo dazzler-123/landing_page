@@ -731,32 +731,32 @@ const ServicePage: React.FC = () => {
       'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Window cleaning
     ],
     'hvac-maintenance': [
-      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // HVAC system
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Air conditioning unit
-      'https://images.unsplash.com/photo-1621905252472-b7d3b1e478e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // HVAC technician
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Ventilation system
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // HVAC maintenance
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxVbLt82W48XFAjfoB5BnQUEBXI76YV_dAlw&s', // HVAC system
+      'https://www.unitedmech.com/hubfs/AdobeStock_290366802.jpeg', // Air conditioning unit
+      'https://chillsairconditioning.com/wp-content/uploads/2023/11/Two-Electricians-Men-Wearing-Safety-Jackets-Checking-Air-Conditioning-Unit-On-Building-Rooftop.jpg', // HVAC technician
+      'https://wg.scene7.com/is/image/wrenchgroup/maintenance-be22wi001wg?wid=500&$Wrench_New$', // Ventilation system
+      'https://www.confortexpert.com/wp-content/uploads/2021/07/note-1353601819600355278-ConfortExpert-MaintenancePreventive-1024x681.jpg', // HVAC maintenance
     ],
     'security-services': [
-      'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security guard
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security camera
-      'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security system
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Access control
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Security monitoring
+      'https://content.jdmagicbox.com/comp/def_content/security-services-for-industrial/shutterstock-390449341-security-services-for-industrial-10-gt037.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JuQTd8-zRKlJP2vEA2bu5dhDToV2ge8YWA&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa2lN3xyU8VXXRMQlGv5Lrt7LcHa_I2lr1LA&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrjQSwKpk5_JEersAr9owp9f-qjFU_1wbINA&s',
+      'https://starsecurity.in/wp-content/uploads/2019/01/security.jpg',
     ],
     'electrical-maintenance': [
       'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical panel
       'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrician working
-      'https://images.unsplash.com/photo-1621905252472-b7d3b1e478e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical wiring
+      'https://5.imimg.com/data5/SELLER/Default/2023/9/348174646/LX/MN/AA/2151787/electrical-maintenance-services.jpg', // Electrical wiring
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical maintenance
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Electrical installation
     ],
     'plumbing-services': [
-      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Plumbing tools
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Plumber working
-      'https://images.unsplash.com/photo-1621905252472-b7d3b1e478e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Pipe installation
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Plumbing repair
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // Water system
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMJhpUP0xpqkF6BBGvV5cbe8eO0XkUsCJslQ&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzILw3fZ3JQLGS2iYVuEw1GoDiUY9nzW1YQ&s',
+      'https://varunmanagement.com/wp-content/uploads/2023/09/plumber-varun.jpg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-TbV_iZRfr9L4JkogYRNDwzkmXvCSlKS4MQ&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaP3xNuH4UHmWGsHMiFsQiDkA_npeaNXAU7Q&s',
     ],
   };
 

@@ -24,6 +24,13 @@ import BuildIcon from '@mui/icons-material/Build';
 import SecurityIcon from '@mui/icons-material/Security';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import PlumbingIcon from '@mui/icons-material/Plumbing';
+import HomeIcon from '@mui/icons-material/Home';
+import BusinessIcon from '@mui/icons-material/Business';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import StoreIcon from '@mui/icons-material/Store';
+import FactoryIcon from '@mui/icons-material/Factory';
+import ArticleIcon from '@mui/icons-material/Article';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import logo from '../assets/logo2.png';
 
@@ -128,18 +135,18 @@ const Navigation: React.FC = () => {
   ];
 
   const navLinks = [
-    { label: 'Home', href: '/', hasDropdown: false },
-    { label: 'Services', href: '#services', hasDropdown: true },
-    { label: 'Industries', href: '/industries', isPageLink: true, hasDropdown: true },
-    { label: 'Blogs', href: '/blog', isPageLink: true },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/', hasDropdown: false, icon: <HomeIcon sx={{ fontSize: 22 }} /> },
+    { label: 'Blogs', href: '/blog', isPageLink: true, icon: <ArticleIcon sx={{ fontSize: 22 }} /> },
+    { label: 'Contact', href: '#contact', icon: <ContactPageIcon sx={{ fontSize: 22 }} /> },
+    { label: 'Services', href: '#services', hasDropdown: true, icon: <CleaningServicesIcon sx={{ fontSize: 22 }} /> },
+    { label: 'Industries', href: '/industries', isPageLink: true, hasDropdown: true, icon: <BusinessIcon sx={{ fontSize: 22 }} /> },
   ];
 
   const industriesMenuItems = [
-    { label: 'Office Building', slug: 'office-building' },
-    { label: 'Healthcare Facilities', slug: 'healthcare-facilities' },
-    { label: 'Retail Centers', slug: 'retail-centers' },
-    { label: 'Industrial Facilities', slug: 'industrial-facilities' },
+    { label: 'Office Building', slug: 'office-building', icon: <BusinessIcon sx={{ fontSize: 20 }} /> },
+    { label: 'Healthcare Facilities', slug: 'healthcare-facilities', icon: <LocalHospitalIcon sx={{ fontSize: 20 }} /> },
+    { label: 'Retail Centers', slug: 'retail-centers', icon: <StoreIcon sx={{ fontSize: 20 }} /> },
+    { label: 'Industrial Facilities', slug: 'industrial-facilities', icon: <FactoryIcon sx={{ fontSize: 20 }} /> },
   ];
 
   const drawer = (
@@ -157,19 +164,21 @@ const Navigation: React.FC = () => {
         {navLinks.map((link) => {
           if (link.hasDropdown && link.label === 'Services') {
             return (
-              <Box key={link.href} sx={{padding:0}}>
+              <Box key={link.href} sx={{ padding: 0 }}>
                 <ListItem
                   component="a"
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
                   sx={{
-                    textAlign: 'center',
                     color: '#333333',
                     '&:hover': { color: '#0F223F' },
                     cursor: 'pointer',
                     mb: 1,
                   }}
                 >
+                  <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center', mr: 1.5 }}>
+                    {link.icon}
+                  </Box>
                   <ListItemText
                     primary={link.label}
                     primaryTypographyProps={{
@@ -192,17 +201,74 @@ const Navigation: React.FC = () => {
                         color: '#6C757D',
                         fontSize: '0.875rem',
                         py: 0.5,
+                        pl: 4,
                         '&:hover': { color: '#0F223F', bgcolor: '#F8FAFD' },
                         cursor: 'pointer',
                         borderRadius: 1,
                       }}
                     >
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                        <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center' }}>
-                          {item.icon}
-                        </Box>
-                        <Typography sx={{ fontSize: '0.875rem' }}>{item.label}</Typography>
+                      <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center', mr: 1.5 }}>
+                        {item.icon}
                       </Box>
+                      <Typography sx={{ fontSize: '0.875rem' }}>{item.label}</Typography>
+                    </ListItem>
+                  ))}
+                </Box>
+              </Box>
+            );
+          }
+          if (link.hasDropdown && link.label === 'Industries') {
+            return (
+              <Box key={link.href} sx={{ padding: 0 }}>
+                <ListItem
+                  component="a"
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
+                  sx={{
+                    color: '#333333',
+                    '&:hover': { color: '#0F223F' },
+                    cursor: 'pointer',
+                    mb: 1,
+                  }}
+                >
+                  <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center', mr: 1.5 }}>
+                    {link.icon}
+                  </Box>
+                  <ListItemText
+                    primary={link.label}
+                    primaryTypographyProps={{
+                      fontSize: '1.125rem',
+                      fontWeight: 500,
+                    }}
+                  />
+                </ListItem>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  {industriesMenuItems.map((item) => (
+                    <ListItem
+                      key={item.slug}
+                      component="button"
+                      onClick={() => {
+                        handleIndustrySelect(item.slug);
+                        handleDrawerToggle();
+                      }}
+                      sx={{
+                        color: '#6C757D',
+                        fontSize: '0.875rem',
+                        py: 0.5,
+                        pl: 4,
+                        '&:hover': { color: '#0F223F', bgcolor: '#F8FAFD' },
+                        cursor: 'pointer',
+                        borderRadius: 1,
+                        border: 'none',
+                        background: 'none',
+                        width: '100%',
+                        textAlign: 'left',
+                      }}
+                    >
+                      <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center', mr: 1.5 }}>
+                        {item.icon}
+                      </Box>
+                      <Typography sx={{ fontSize: '0.875rem' }}>{item.label}</Typography>
                     </ListItem>
                   ))}
                 </Box>
@@ -216,12 +282,14 @@ const Navigation: React.FC = () => {
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
               sx={{
-                textAlign: 'center',
                 color: '#333333',
                 '&:hover': { color: '#0F223F' },
                 cursor: 'pointer',
               }}
             >
+              <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center', mr: 1.5 }}>
+                {link.icon}
+              </Box>
               <ListItemText
                 primary={link.label}
                 primaryTypographyProps={{
@@ -246,17 +314,26 @@ const Navigation: React.FC = () => {
           borderBottom: '1px solid rgba(15, 34, 63, 0.1)',
           boxShadow: 'none',
           zIndex: 50,
+          overflowX: 'hidden',
+          left: 0,
+          right: 0,
+          width: '100%',
+          maxWidth: '100vw',
         }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ maxWidth: '100%', minWidth: 0, px: { xs: 1.5, sm: 2 } }}>
           <Toolbar
+            disableGutters
             sx={{
               display: 'flex',
               justifyContent: 'space-between',
+              alignItems: 'center',
               py: 1,
+              minWidth: 0,
+              width: '100%',
             }}
           >
-            {/* Logo */}
+            {/* Logo - visible on all breakpoints including mobile */}
             <Box
               component="a"
               href="/"
@@ -273,55 +350,27 @@ const Navigation: React.FC = () => {
                 color: 'inherit',
                 '&:hover': { opacity: 0.9 },
                 transition: 'opacity 0.2s',
+                flexShrink: 0,
+                minWidth: 0,
               }}
             >
-              {/* <Box
-                
-              /> */}
-              <Box sx={{ display: { xs: 'none', sm: 'block',padding:1} }}>
-
-                <Box 
-                component="img"
-                src={logo}
-                alt="GroupServe"
-                sx={{
-                  height: { xs: 36, sm: 40, md: 50 },
-                  // width: '300px',
-                  display: 'block',
-                
-                }}
-                >
-
-                </Box>
-                {/* <Typography
-                  variant="h6"
-                  className="font-display"
+              <Box sx={{ display: 'block', p: { xs: 0.5, sm: 1 } }}>
+                <Box
+                  component="img"
+                  src={logo}
+                  alt="GroupServe"
                   sx={{
-                    fontSize: { sm: '1.125rem', md: '1.25rem' },
-                    fontWeight: 700,
-                    color: '#0F223F',
-                    lineHeight: 1,
+                    height: { xs: 32, sm: 40, md: 50 },
+                    width: 'auto',
+                    maxHeight: 50,
+                    display: 'block',
+                    objectFit: 'contain',
                   }}
-                >
-                  GroupServe
-                </Typography>
-                <Typography
-                  className="font-body"
-                  sx={{
-                    fontSize: { sm: '9px', md: '10px' },
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: '#F0942D',
-                    fontWeight: 500,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}
-                >
-                  Professional Cleaning Services
-                </Typography> */}
+                />
               </Box>
             </Box>
 
-            {/* Desktop Menu */}
+            {/* Desktop Menu - hidden on mobile; hamburger shown instead */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
               {navLinks.map((link) => {
                 if (link.hasDropdown && link.label === 'Services') {
@@ -335,6 +384,7 @@ const Navigation: React.FC = () => {
                       <Button
                         href={link.href}
                         onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
+                        startIcon={<Box sx={{ color: '#3097C0', display: 'flex' }}>{link.icon}</Box>}
                         endIcon={<ArrowDropDownIcon />}
                         sx={{
                           padding:0,
@@ -417,6 +467,7 @@ const Navigation: React.FC = () => {
                             handleNavClick(e, link.href, link.isPageLink);
                           }
                         }}
+                        startIcon={<Box sx={{ color: '#3097C0', display: 'flex' }}>{link.icon}</Box>}
                         endIcon={<ArrowDropDownIcon />}
                         sx={{
                           color: '#333333',
@@ -465,15 +516,20 @@ const Navigation: React.FC = () => {
                               },
                             }}
                           >
-                            <Typography
-                              sx={{
-                                fontSize: '0.875rem',
-                                color: 'inherit',
-                                fontWeight: 'inherit',
-                              }}
-                            >
-                              {item.label}
-                            </Typography>
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                              <Box sx={{ color: '#3097C0', display: 'flex', alignItems: 'center' }}>
+                                {item.icon}
+                              </Box>
+                              <Typography
+                                sx={{
+                                  fontSize: '0.875rem',
+                                  color: 'inherit',
+                                  fontWeight: 'inherit',
+                                }}
+                              >
+                                {item.label}
+                              </Typography>
+                            </Box>
                           </MenuItem>
                         ))}
                       </Menu>
@@ -485,6 +541,7 @@ const Navigation: React.FC = () => {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href, link.isPageLink)}
+                    startIcon={<Box sx={{ color: '#3097C0', display: 'flex' }}>{link.icon}</Box>}
                     sx={{
                       color: '#333333',
                       fontSize: '0.875rem',
@@ -541,13 +598,18 @@ const Navigation: React.FC = () => {
               </Box>
             </Box>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - right side */}
             <IconButton
               color="inherit"
-              aria-label="open drawer"
-              edge="start"
+              aria-label={mobileOpen ? 'close menu' : 'open menu'}
+              edge="end"
               onClick={handleDrawerToggle}
-              sx={{ display: { md: 'none' }, color: '#0F223F' }}
+              sx={{
+                display: { md: 'none' },
+                color: '#0F223F',
+                ml: 'auto',
+                flexShrink: 0,
+              }}
             >
               {mobileOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>

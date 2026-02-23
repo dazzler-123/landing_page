@@ -4,12 +4,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import CommercialImg from '../assets/Commercial.png';
+import CommercialImg from '../assets/image1.png';
 import HVACImg from '../assets/HVAC.png';
-import ElectricalImg from '../assets/Electrical.png';
-import GutterImg from '../assets/Gutter.png';
-import LandscapingImg from '../assets/Landscaping.png';
-import BuildingImg from '../assets/Building.png';
+import GutterImg from '../assets/Electrical.png';
+import BuildingImg from '../assets/Gutter.png';
 
 interface Service {
   icon: React.ReactNode;
@@ -91,7 +89,7 @@ const Services: React.FC = () => {
       title: 'Security Services',
       description: 'Comprehensive security solutions for your facility.',
       delay: 300,
-      bgImage: ElectricalImg,
+      bgImage: 'https://content.jdmagicbox.com/comp/def_content/security-services-for-industrial/shutterstock-390449341-security-services-for-industrial-10-gt037.jpg',
     },
     {
       icon: (
@@ -136,7 +134,7 @@ const Services: React.FC = () => {
       title: 'Plumbing Services',
       description:'Professional plumbing services and repairs.',
       delay: 200,
-      bgImage: LandscapingImg,
+      bgImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMJhpUP0xpqkF6BBGvV5cbe8eO0XkUsCJslQ&s',
     },
     {
       icon: (
