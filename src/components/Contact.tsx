@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
             top: 0,
             left: 0,
             right: 0,
-            height: { xs: '210px', sm: '170px', md: '250px' },
+            height: { xs: '205px', sm: '170px', md: '250px' },
             background: 'linear-gradient(135deg, #0F223F 0%, #3097C0 100%)',
             borderRadius: '8px 8px 0 0',
             zIndex: 0,
