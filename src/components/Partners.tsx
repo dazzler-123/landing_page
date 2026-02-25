@@ -2,27 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { Box, Container, Typography, Card, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import MicrosoftIcon from '@mui/icons-material/Microsoft';
-import GoogleIcon from '@mui/icons-material/Google';
-import AppleIcon from '@mui/icons-material/Apple';
-import AndroidIcon from '@mui/icons-material/Android';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import RouterIcon from '@mui/icons-material/Router';
-import PaletteIcon from '@mui/icons-material/Palette';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Slider partners: MUI brand/company logo icons
+// Import partner images from assets folder
+import partner1 from '../assets/1.avif';
+import partner2 from '../assets/2.avif';
+import partner3 from '../assets/3.avif';
+import partner4 from '../assets/4.avif';
+import partner5 from '../assets/5.avif';
+import partner6 from '../assets/6.avif';
+import partner7 from '../assets/7.avif';
+
+// Partner images array
 const partners = [
-  { name: 'Microsoft', Icon: MicrosoftIcon, color: '#0078D4' },
-  { name: 'Google', Icon: GoogleIcon, color: '#4285F4' },
-  { name: 'Apple', Icon: AppleIcon, color: '#000000' },
-  { name: 'Cisco', Icon: RouterIcon, color: '#1BA0D7' },
-  { name: 'Adobe', Icon: PaletteIcon, color: '#FF0000' },
-  { name: 'Android', Icon: AndroidIcon, color: '#3DDC84' },
-  { name: 'LinkedIn', Icon: LinkedInIcon, color: '#0A66C2' },
-  { name: 'YouTube', Icon: YouTubeIcon, color: '#FF0000' },
+  { name: 'Partner 1', image: partner1 },
+  { name: 'Partner 2', image: partner2 },
+  { name: 'Partner 3', image: partner3 },
+  { name: 'Partner 4', image: partner4 },
+  { name: 'Partner 5', image: partner5 },
+  { name: 'Partner 6', image: partner6 },
+  { name: 'Partner 7', image: partner7 },
 ].map((p) => ({ ...p, bgColor: '#F8FAFD', textColor: '#0F223F' }));
 
 const Partners: React.FC = () => {
@@ -337,7 +337,6 @@ const Partners: React.FC = () => {
                   }}
                 >
                   {duplicatedPartners.map((partner, index) => {
-                    const LogoIcon = partner.Icon;
                     return (
                       <Card
                         key={index}
@@ -365,11 +364,16 @@ const Partners: React.FC = () => {
                           },
                         }}
                       >
-                        <LogoIcon
+                        <Box
+                          component="img"
+                          src={partner.image}
+                          alt={partner.name}
                           sx={{
-                            color: partner.color,
                             width: { xs: 48, sm: 56, md: 64 },
                             height: { xs: 48, sm: 56, md: 64 },
+                            objectFit: 'contain',
+                            maxWidth: '100%',
+                            maxHeight: '100%',
                           }}
                         />
                       </Card>
