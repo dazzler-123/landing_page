@@ -52,6 +52,24 @@ const Navigation: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isPageLink?: boolean) => {
     e.preventDefault();
     
+    // Handle Home link - scroll to top
+    if (href === '/') {
+      if (location.pathname !== '/') {
+        // If not on home page, navigate to home first, then scroll to top
+        navigate('/');
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      } else {
+        // Already on home page, just scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      setMobileOpen(false);
+      setServicesMenuOpen(false);
+      setServicesAnchorEl(null);
+      return;
+    }
+    
     if (isPageLink) {
       // Navigate to page route
       navigate(href);
@@ -345,7 +363,14 @@ const Navigation: React.FC = () => {
               href="/"
               onClick={(e) => {
                 e.preventDefault();
-                navigate('/');
+                if (location.pathname !== '/') {
+                  navigate('/');
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }, 100);
+                } else {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
                 setMobileOpen(false);
               }}
               sx={{
