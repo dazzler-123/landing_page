@@ -7,7 +7,6 @@ import 'aos/dist/aos.css';
 import CommercialImg from '../assets/image1.png';
 import HVACImg from '../assets/HVAC.png';
 import GutterImg from '../assets/Electrical.png';
-import BuildingImg from '../assets/Gutter.png';
 
 interface Service {
   icon: React.ReactNode;
@@ -150,13 +149,16 @@ const Services: React.FC = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <rect x="4" y="2" width="16" height="20" rx="2" />
+          <path d="M8 6h8M8 10h8M8 14h8M8 18h8" />
+          <circle cx="12" cy="4" r="1" />
+          <circle cx="12" cy="20" r="1" />
         </Box>
       ),
-      title: 'Gutter Cleaning',
-      description: 'Comprehensive maintenance for all facility needs.',
+      title: 'Lift and Elevator Maintenance',
+      description: 'Professional lift and elevator maintenance and repair services.',
       delay: 100,
-      bgImage: BuildingImg,
+      bgImage: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     },
   ];
 

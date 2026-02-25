@@ -24,13 +24,14 @@ import BuildIcon from '@mui/icons-material/Build';
 import SecurityIcon from '@mui/icons-material/Security';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import PlumbingIcon from '@mui/icons-material/Plumbing';
-import HomeIcon from '@mui/icons-material/Home';
+import ElevatorIcon from '@mui/icons-material/Elevator';
+// import HomeIcon from '@mui/icons-material/Home';
 import BusinessIcon from '@mui/icons-material/Business';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import StoreIcon from '@mui/icons-material/Store';
 import FactoryIcon from '@mui/icons-material/Factory';
-import ArticleIcon from '@mui/icons-material/Article';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
+// import ArticleIcon from '@mui/icons-material/Article';
+// import ContactPageIcon from '@mui/icons-material/ContactPage';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import logo from '../assets/logo2.png';
 
@@ -132,14 +133,19 @@ const Navigation: React.FC = () => {
       href: '/services/plumbing-services',
       icon: <PlumbingIcon sx={{ fontSize: 20 }} />
     },
+    { 
+      label: 'Lift and Elevator Maintenance', 
+      href: '/services/lift-elevator-maintenance',
+      icon: <ElevatorIcon sx={{ fontSize: 20 }} />
+    },
   ];
 
   const navLinks = [
-    { label: 'Home', href: '/', hasDropdown: false, icon: <HomeIcon sx={{ fontSize: 22 }} /> },
-    { label: 'Blogs', href: '/blog', isPageLink: true, icon: <ArticleIcon sx={{ fontSize: 22 }} /> },
-    { label: 'Contact', href: '#contact', icon: <ContactPageIcon sx={{ fontSize: 22 }} /> },
-    { label: 'Services', href: '#services', hasDropdown: true, icon: <CleaningServicesIcon sx={{ fontSize: 22 }} /> },
-    { label: 'Industries', href: '/industries', isPageLink: true, hasDropdown: true, icon: <BusinessIcon sx={{ fontSize: 22 }} /> },
+    { label: 'Home', href: '/', hasDropdown: false, icon: <></> },
+    { label: 'Services', href: '#services', hasDropdown: true, icon: <></> },
+    { label: 'Industries', href: '/industries', isPageLink: true, hasDropdown: true, icon: <></> },
+    { label: 'Blogs', href: '/blog', isPageLink: true, icon: <></> },
+    { label: 'Contact', href: '#contact', icon: <></> },
   ];
 
   const industriesMenuItems = [
@@ -153,7 +159,7 @@ const Navigation: React.FC = () => {
     <Box
       sx={{
         width: '100%',
-        bgcolor: 'rgba(255, 255, 255, 0.95)',
+        bgcolor: 'rgb(255, 255, 255)',
         backdropFilter: 'blur(24px)',
           borderTop: '1px solid rgba(15, 34, 63, 0.1)',
         borderRadius: '0 0 16px 16px',
@@ -309,7 +315,7 @@ const Navigation: React.FC = () => {
       <AppBar
         position="fixed"
         sx={{
-          bgcolor: 'rgba(255, 255, 255, 0.9)',
+          bgcolor: 'rgb(255, 255, 255)',
           backdropFilter: 'blur(12px)',
           borderBottom: '1px solid rgba(15, 34, 63, 0.1)',
           boxShadow: 'none',
@@ -402,6 +408,8 @@ const Navigation: React.FC = () => {
                         anchorEl={servicesAnchorEl}
                         open={servicesMenuOpen}
                         onClose={handleServicesMenuClose}
+                        disableScrollLock={true}
+                        anchorReference="anchorEl"
                         MenuListProps={{
                           onMouseLeave: handleServicesMenuClose,
                         }}
@@ -409,9 +417,11 @@ const Navigation: React.FC = () => {
                           sx: {
                             mt: 1.5,
                             minWidth: 200,
+                            maxWidth: 'calc(100vw - 32px)',
                             boxShadow: 4,
                             borderRadius: 2,
                             border: '1px solid rgba(15, 34, 63, 0.1)',
+                            overflow: 'hidden',
                           },
                         }}
                         transformOrigin={{ horizontal: 'left', vertical: 'top' }}
@@ -483,6 +493,8 @@ const Navigation: React.FC = () => {
                         anchorEl={industriesAnchorEl}
                         open={industriesMenuOpen}
                         onClose={handleIndustriesMenuClose}
+                        disableScrollLock={true}
+                        anchorReference="anchorEl"
                         MenuListProps={{
                           onMouseLeave: handleIndustriesMenuClose,
                         }}
@@ -490,9 +502,11 @@ const Navigation: React.FC = () => {
                           sx: {
                             mt: 1.5,
                             minWidth: 280,
+                            maxWidth: 'calc(100vw - 32px)',
                             boxShadow: 4,
                             borderRadius: 2,
                             border: '1px solid rgba(15, 34, 63, 0.1)',
+                            overflow: 'hidden',
                           },
                         }}
                         transformOrigin={{ horizontal: 'left', vertical: 'top' }}
@@ -554,7 +568,7 @@ const Navigation: React.FC = () => {
                   </Button>
                 );
               })}
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0.5 }}>
                 <Box
                   component="a"
                   href="tel:07438580681"

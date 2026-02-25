@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Typography, Card, CardContent, Button, TextField } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PersonIcon from '@mui/icons-material/Person';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -175,14 +175,14 @@ const BlogPage: React.FC = () => {
               content: '""',
               position: 'absolute',
               inset: 0,
-              bgcolor: 'rgba(0, 43, 86, 0.75)',
+              bgcolor: 'rgba(0, 43, 86, 0.19)',
             },
           }}
         />
         
         <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
           <Button
-            startIcon={<ArrowBackIcon />}
+            // startIcon={<ArrowBackIcon />}
             onClick={handleBackClick}
             sx={{
               color: 'white',
@@ -193,7 +193,7 @@ const BlogPage: React.FC = () => {
               },
             }}
           >
-            Back to Home
+            {/* Back to Home */}
           </Button>
           
           <Box sx={{ maxWidth: '800px', mx: 'auto', textAlign: 'center' }}>

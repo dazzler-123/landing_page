@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Link } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo3.png';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -46,8 +46,8 @@ const Footer: React.FC = () => {
                 src={logo}
                 alt="GroupServe"
                 sx={{
-                  height: { xs: 36, sm: 40, md: 44 },
-                  width: 'auto',
+                  height: { xs: 80, sm: 80, md: 80 },
+                  width:  { xs: 200, sm: 200, md: 200 },
                   display: 'block',
                 }}
               />

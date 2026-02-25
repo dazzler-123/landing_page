@@ -127,7 +127,37 @@ const Hero: React.FC = () => {
                 },
               }}
             />
-            <Typography sx={{ color: 'white' }}>Professional • Reliable • Efficient</Typography>
+            <Typography sx={{ color: 'white' }}>Professional</Typography>
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                bgcolor: '#F0942D',
+                marginLeft: 1,
+                marginRight: 1,
+                borderRadius: '50%',
+                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                '@keyframes pulse': {
+                  '50%': { opacity: 0.5 },
+                },
+              }}
+            />
+            <Typography sx={{ color: 'white' }}>Reliable</Typography>
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                bgcolor: '#F0942D',
+                marginRight: 1,
+                marginLeft: 1,
+                borderRadius: '50%',
+                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                '@keyframes pulse': {
+                  '50%': { opacity: 0.5 },
+                },
+              }}
+            />
+            <Typography sx={{ color: 'white' }}>Efficient</Typography>
           </Box>
 
           {/* Headline */}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Typography, Card, CardContent, Button, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
@@ -17,7 +17,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navigation from '../components/Navigation';
@@ -25,6 +25,7 @@ import Footer from '../components/Footer';
 import BuildIcon from '@mui/icons-material/Build';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import PlumbingIcon from '@mui/icons-material/Plumbing';
+import ElevatorIcon from '@mui/icons-material/Elevator';
 import RoofingIcon from '@mui/icons-material/Roofing';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import BrushIcon from '@mui/icons-material/Brush';
@@ -49,12 +50,14 @@ interface ServicePageData {
     title: string;
     description: string;
   }>;
+  benefitsTitle: string;
+  benefitsDescription: string;
   portfolioTitle: string;
   portfolioDescription: string;
 }
 
 const ServicePage: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { serviceType } = useParams<{ serviceType?: string }>();
   
   // Get service data based on URL parameter or default to commercial-cleaning
@@ -88,9 +91,6 @@ const ServicePage: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [serviceType]);
 
-  const handleBackClick = () => {
-    navigate('/');
-  };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -254,6 +254,8 @@ const ServicePage: React.FC = () => {
           description: 'Professional cleaning extends asset lifespan, reduces maintenance costs, and eliminates the need for expensive in-house cleaning teams.',
         },
       ],
+      benefitsTitle: 'Benefits of Professional Commercial Cleaning',
+      benefitsDescription: 'Investing in professional commercial cleaning services delivers measurable returns for your business beyond just cleanliness.',
       portfolioTitle: 'Commercial Cleaning Portfolio',
       portfolioDescription: 'Browse our gallery showcasing professional cleaning transformations across various commercial sectors.',
     },
@@ -359,6 +361,8 @@ const ServicePage: React.FC = () => {
           description: 'Round-the-clock emergency support ensures your systems are always operational when needed.',
         },
       ],
+      benefitsTitle: 'Benefits of Professional HVAC Maintenance',
+      benefitsDescription: 'Investing in professional HVAC maintenance delivers measurable returns for your business, ensuring comfort, energy efficiency, and reliable climate control.',
       portfolioTitle: 'HVAC Maintenance Portfolio',
       portfolioDescription: 'View our successful HVAC maintenance projects across various commercial facilities.',
     },
@@ -464,6 +468,8 @@ const ServicePage: React.FC = () => {
           description: 'Reduce insurance costs and protect against losses with comprehensive security solutions.',
         },
       ],
+      benefitsTitle: 'Benefits of Professional Security Services',
+      benefitsDescription: 'Investing in professional security services delivers measurable returns for your business, ensuring protection, peace of mind, and compliance with security regulations.',
       portfolioTitle: 'Security Services Portfolio',
       portfolioDescription: 'Explore our security service implementations across various commercial sectors.',
     },
@@ -569,6 +575,8 @@ const ServicePage: React.FC = () => {
           description: 'Optimized electrical systems reduce energy consumption and lower costs.',
         },
       ],
+      benefitsTitle: 'Benefits of Professional Electrical Maintenance',
+      benefitsDescription: 'Investing in professional electrical maintenance delivers measurable returns for your business, ensuring safety, reliability, and compliance with electrical regulations.',
       portfolioTitle: 'Electrical Maintenance Portfolio',
       portfolioDescription: 'View our electrical maintenance projects across various commercial facilities.',
     },
@@ -674,8 +682,117 @@ const ServicePage: React.FC = () => {
           description: 'Preventive maintenance and water-saving solutions reduce operational costs significantly.',
         },
       ],
+      benefitsTitle: 'Benefits of Professional Plumbing Services',
+      benefitsDescription: 'Investing in professional plumbing services delivers measurable returns for your business, ensuring reliable water systems, safety, and compliance with water regulations.',
       portfolioTitle: 'Plumbing Services Portfolio',
       portfolioDescription: 'View our plumbing service projects across various commercial facilities.',
+    },
+    'lift-elevator-maintenance': {
+      heroTitle: 'Transform Your Workplace',
+      heroSubtitle: 'With Professional Lift and Elevator Maintenance',
+      heroDescription: 'Ensure safe, reliable vertical transportation with Group Serve\'s comprehensive lift and elevator maintenance services. Our certified engineers deliver expert solutions to keep your elevators operating smoothly.',
+      sectionTitle: 'Comprehensive Lift and Elevator Maintenance Services',
+      sectionDescription: 'Group Serve Facilities Management provides complete lift and elevator maintenance solutions designed to ensure safe, reliable, and compliant vertical transportation systems. With certified engineers and comprehensive service programs, we ensure your lifts and elevators meet all safety regulations and operate at peak performance.',
+      services: [
+        {
+          icon: <ElevatorIcon sx={{ fontSize: 32 }} />,
+          title: 'Regular Maintenance',
+          description: 'Scheduled servicing to ensure optimal performance and prevent breakdowns.',
+          features: [
+            'Monthly and quarterly inspections',
+            'Component lubrication and adjustment',
+            'Safety system testing',
+            'Performance optimization',
+          ],
+          delay: 100,
+        },
+        {
+          icon: <ElevatorIcon sx={{ fontSize: 32 }} />,
+          title: 'Emergency Repairs',
+          description: '24/7 emergency call-out service for lift breakdowns and urgent issues.',
+          features: [
+            'Fast response times',
+            'Expert troubleshooting',
+            'Quality parts replacement',
+            'System restoration',
+          ],
+          delay: 200,
+        },
+        {
+          icon: <ElevatorIcon sx={{ fontSize: 32 }} />,
+          title: 'Safety Inspections',
+          description: 'Comprehensive safety inspections and compliance certification.',
+          features: [
+            'LOLER compliance inspections',
+            'Safety system testing',
+            'Compliance documentation',
+            'Remediation recommendations',
+          ],
+          delay: 300,
+        },
+        {
+          icon: <ElevatorIcon sx={{ fontSize: 32 }} />,
+          title: 'Modernization Services',
+          description: 'Upgrade and modernize existing lift systems for improved performance.',
+          features: [
+            'Control system upgrades',
+            'Energy-efficient improvements',
+            'Accessibility enhancements',
+            'Performance optimization',
+          ],
+          delay: 100,
+        },
+        {
+          icon: <ElevatorIcon sx={{ fontSize: 32 }} />,
+          title: 'Preventive Maintenance',
+          description: 'Proactive maintenance programs to extend equipment lifespan.',
+          features: [
+            'Predictive maintenance',
+            'Component replacement',
+            'System monitoring',
+            'Cost-effective planning',
+          ],
+          delay: 200,
+        },
+        {
+          icon: <ElevatorIcon sx={{ fontSize: 32 }} />,
+          title: 'Installation Services',
+          description: 'Complete lift installation and commissioning for new builds.',
+          features: [
+            'New lift installation',
+            'System commissioning',
+            'Warranty coverage',
+            'Training and handover',
+          ],
+          delay: 300,
+        },
+      ],
+      benefits: [
+        {
+          icon: <EmojiEmotionsIcon sx={{ fontSize: 32 }} />,
+          title: 'Safety Assurance',
+          description: 'Regular maintenance ensures lift safety and compliance with LOLER regulations, protecting passengers and reducing liability.',
+        },
+        {
+          icon: <SecurityIcon sx={{ fontSize: 32 }} />,
+          title: 'Reduced Downtime',
+          description: 'Preventive maintenance and rapid emergency response minimize lift downtime and disruption to building operations.',
+        },
+        {
+          icon: <AssignmentIcon sx={{ fontSize: 32 }} />,
+          title: 'Compliance Guaranteed',
+          description: 'All maintenance work meets UK LOLER regulations and building safety standards, ensuring full legal compliance.',
+        },
+        {
+          icon: <LightbulbIcon sx={{ fontSize: 32 }} />,
+          title: 'Extended Equipment Life',
+          description: 'Regular servicing extends lift lifespan and prevents costly premature replacements, maximizing your investment.',
+        },
+      ],
+      benefitsTitle: 'Benefits of Professional Lift and Elevator Maintenance',
+      benefitsDescription: 'Investing in professional lift and elevator maintenance delivers measurable returns for your business, ensuring safety, reliability, and compliance while minimizing operational disruptions.',
+      portfolioTitle: 'Lift and Elevator Maintenance Portfolio',
+      portfolioDescription: 'View our lift and elevator maintenance projects across various commercial facilities.',
     },
   };
 
@@ -721,6 +838,19 @@ const ServicePage: React.FC = () => {
     },
   ];
 
+  // Service-specific background images for hero sections
+  const backgroundImagesMap: Record<string, string> = {
+    'commercial-cleaning': 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29tbWVyY2lhbCUyMGNsZWFuaW5nfGVufDB8fDB8fHww',
+    'hvac-maintenance': 'https://img.freepik.com/free-photo/men-working-with-equipment-full-shot_23-2148921408.jpg',
+    'security-services': 'https://img.freepik.com/free-photo/portrait-male-security-guard-with-uniform_23-2150368732.jpg?semt=ais_user_personalization&w=740&q=80',
+    'electrical-maintenance': 'https://img.freepik.com/free-photo/man-electrical-technician-working-switchboard-with-fuses_169016-24062.jpg?semt=ais_user_personalization&w=740&q=80',
+    'plumbing-services': 'https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-various-stainless-steel-plumbing-components-and-hoses-image_2876267.jpg',
+    'lift-elevator-maintenance': 'https://png.pngtree.com/background/20250205/original/pngtree-view-of-modern-elevator-or-lift-with-closed-doors-picture-image_15565466.jpg',
+  };
+
+  // Get background image for current service type, fallback to default
+  const heroBackgroundImage: string = backgroundImagesMap[currentServiceType] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
+
   // Service-specific portfolio images
   const portfolioImagesMap: Record<string, string[]> = {
     'commercial-cleaning': [
@@ -758,6 +888,13 @@ const ServicePage: React.FC = () => {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-TbV_iZRfr9L4JkogYRNDwzkmXvCSlKS4MQ&s',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaP3xNuH4UHmWGsHMiFsQiDkA_npeaNXAU7Q&s',
     ],
+    'lift-elevator-maintenance': [
+      'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    ],
   };
 
   // Get portfolio images for current service type, fallback to commercial-cleaning
@@ -782,22 +919,22 @@ const ServicePage: React.FC = () => {
             position: 'absolute',
             inset: 0,
             zIndex: 0,
-            backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+            backgroundImage: `url(${heroBackgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             '&::before': {
               content: '""',
               position: 'absolute',
               inset: 0,
-              bgcolor: 'rgba(0, 43, 86, 0.75)',
+              bgcolor: 'rgb(0, 43, 86, 0.23)'
             },
           }}
         />
         
         <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
           <Button
-            startIcon={<ArrowBackIcon />}
-            onClick={handleBackClick}
+            // startIcon={<ArrowBackIcon />}
+            // onClick={handleBackClick}
             sx={{
               color: 'white',
               mb: 4,
@@ -807,7 +944,7 @@ const ServicePage: React.FC = () => {
               },
             }}
           >
-            Back to Home
+            {/* Back to Home */}
           </Button>
           
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 6, alignItems: 'center' }}>
@@ -825,7 +962,7 @@ const ServicePage: React.FC = () => {
                 data-aos="fade-up"
               >
                 {pageData.heroTitle}{' '}
-                <Box component="span" sx={{ color: '#3097C0' }}>
+                <Box component="span" sx={{ color: 'rgba(240, 148, 45, 0.9)' }}>
                   {pageData.heroSubtitle}
                 </Box>
                 {' '}Services
@@ -850,7 +987,7 @@ const ServicePage: React.FC = () => {
                   href="#contact-form"
                   onClick={(e) => handleNavClick(e, '#contact-form')}
                   sx={{
-                    bgcolor: '#3097C0',
+                    bgcolor: 'rgba(240, 148, 45, 0.9)',
                     color: 'white',
                     px: 4,
                     py: 2,
@@ -858,7 +995,7 @@ const ServicePage: React.FC = () => {
                     fontWeight: 600,
                     textTransform: 'none',
                     '&:hover': {
-                      bgcolor: 'rgba(48, 151, 192, 0.9)',
+                      bgcolor: 'rgba(240, 148, 45, 0.9)',
                     },
                   }}
                 >
@@ -945,7 +1082,7 @@ const ServicePage: React.FC = () => {
                     position: 'absolute',
                     bottom: 20,
                     right: 20,
-                    bgcolor: '#3097C0',
+                    bgcolor: 'rgba(240, 148, 45, 0.9)',
                     color: 'white',
                     px: 2,
                     py: 1,
@@ -980,7 +1117,7 @@ const ServicePage: React.FC = () => {
                 letterSpacing: '0.1em',
                 fontWeight: 700,
                 mb: 1,
-                color: '#3097C0',
+                color: 'rgba(240, 148, 45, 0.9)',
               }}
               data-aos="fade-up"
             >
@@ -1059,7 +1196,7 @@ const ServicePage: React.FC = () => {
                 letterSpacing: '0.1em',
                 fontWeight: 700,
                 mb: 1,
-                color: '#3097C0',
+                color: 'rgba(240, 148, 45, 0.9)',
               }}
             >
               Our Solutions
@@ -1123,7 +1260,7 @@ const ServicePage: React.FC = () => {
                       background: index % 3 === 0
                         ? 'linear-gradient(135deg, #0F223F, rgba(15, 34, 63, 0.8))'
                         : index % 3 === 1
-                        ? 'linear-gradient(135deg, #3097C0, rgba(48, 151, 192, 0.8))'
+                        ? 'linear-gradient(135deg, rgba(240, 148, 45, 0.9), rgba(240, 148, 45, 0.8))'
                         : 'linear-gradient(135deg, #50BB5A, rgba(80, 187, 90, 0.8))',
                       borderRadius: 2,
                       display: 'flex',
@@ -1211,7 +1348,7 @@ const ServicePage: React.FC = () => {
                   letterSpacing: '0.1em',
                   fontWeight: 700,
                   mb: 1,
-                  color: '#3097C0',
+                  color: 'rgba(240, 148, 45, 0.9)',
                 }}
                 data-aos="fade-up"
               >
@@ -1228,7 +1365,7 @@ const ServicePage: React.FC = () => {
                 }}
                 data-aos="fade-up"
               >
-                Benefits of Professional Commercial Cleaning
+                {pageData.benefitsTitle}
               </Typography>
               <Typography
                 sx={{
@@ -1239,7 +1376,7 @@ const ServicePage: React.FC = () => {
                 }}
                 data-aos="fade-up"
               >
-                Investing in professional commercial cleaning services delivers measurable returns for your business beyond just cleanliness.
+                {pageData.benefitsDescription}
               </Typography>
 
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -1254,7 +1391,7 @@ const ServicePage: React.FC = () => {
                       sx={{
                         width: 64,
                         height: 64,
-                        bgcolor: '#3097C0',
+                        bgcolor: 'rgba(240, 148, 45, 0.9)',
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
@@ -1327,7 +1464,7 @@ const ServicePage: React.FC = () => {
                 letterSpacing: '0.1em',
                 fontWeight: 700,
                 mb: 1,
-                color: '#3097C0',
+                color: 'rgba(240, 148, 45, 0.9)',
               }}
             >
               Our Portfolio
@@ -1408,7 +1545,7 @@ const ServicePage: React.FC = () => {
                 letterSpacing: '0.1em',
                 fontWeight: 700,
                 mb: 1,
-                color: '#3097C0',
+                color: 'rgba(240, 148, 45, 0.9)',
               }}
             >
               Our Process
@@ -1448,14 +1585,22 @@ const ServicePage: React.FC = () => {
                 left: 0,
                 right: 0,
                 height: 4,
-                bgcolor: '#3097C0',
+                bgcolor: 'rgba(240, 148, 45, 0.9)',
                 opacity: 0.2,
                 display: { xs: 'none', md: 'block' },
               }}
             />
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, gap: 4, position: 'relative' }}>
-              {processSteps.map((step, index) => (
-                <Box
+              {processSteps.map((step, index) => {
+                const stepColors = [
+                  'rgba(240, 148, 45, 0.9)', // Orange for step 1
+                  '#0F223F', // Dark blue for step 2
+                  '#50BB5A', // Green for step 3
+                ];
+                const currentColor = stepColors[index];
+                
+                return (
+                  <Box
                   key={step.number}
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
@@ -1465,7 +1610,7 @@ const ServicePage: React.FC = () => {
                     sx={{
                       width: 80,
                       height: 80,
-                      bgcolor: '#3097C0',
+                      bgcolor: currentColor,
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
@@ -1485,7 +1630,7 @@ const ServicePage: React.FC = () => {
                     sx={{
                       width: 64,
                       height: 64,
-                      bgcolor: '#3097C0',
+                      bgcolor: currentColor,
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
@@ -1529,7 +1674,7 @@ const ServicePage: React.FC = () => {
                             fontSize: '0.875rem',
                             mb: 0.5,
                             '&::marker': {
-                              color: '#3097C0',
+                              color: currentColor,
                             },
                           }}
                         >
@@ -1538,8 +1683,9 @@ const ServicePage: React.FC = () => {
                       ))}
                     </Box>
                   )}
-                </Box>
-              ))}
+                  </Box>
+                );
+              })}
             </Box>
           </Box>
         </Container>
@@ -1584,7 +1730,7 @@ const ServicePage: React.FC = () => {
             href="#contact-form"
             onClick={(e) => handleNavClick(e, '#contact-form')}
             sx={{
-              bgcolor: '#3097C0',
+              bgcolor: 'rgba(240, 148, 45, 0.9)',
               color: 'white',
               px: 4,
               py: 2,
@@ -1592,7 +1738,7 @@ const ServicePage: React.FC = () => {
               fontWeight: 600,
               textTransform: 'none',
               '&:hover': {
-                bgcolor: 'rgba(48, 151, 192, 0.9)',
+                bgcolor: 'rgba(240, 148, 45, 0.9)',
               },
             }}
             data-aos="fade-up"
@@ -1622,7 +1768,7 @@ const ServicePage: React.FC = () => {
                   letterSpacing: '0.1em',
                   fontWeight: 700,
                   mb: 1,
-                  color: '#3097C0',
+                  color: 'rgba(240, 148, 45, 0.9)',
                 }}
                 data-aos="fade-up"
               >
@@ -1656,15 +1802,15 @@ const ServicePage: React.FC = () => {
               {/* Quick Info */}
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mb: 4 }} data-aos="fade-up">
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <CheckCircleIcon sx={{ color: '#3097C0' }} />
+                  <CheckCircleIcon sx={{ color: 'rgba(240, 148, 45, 0.9)' }} />
                   <Typography sx={{ color: '#6C757D' }}>Quote delivered within 24 hours</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <CheckCircleIcon sx={{ color: '#3097C0' }} />
+                  <CheckCircleIcon sx={{ color: 'rgba(240, 148, 45, 0.9)' }} />
                   <Typography sx={{ color: '#6C757D' }}>Free, no-pressure assessment</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <CheckCircleIcon sx={{ color: '#3097C0' }} />
+                  <CheckCircleIcon sx={{ color: 'rgba(240, 148, 45, 0.9)' }} />
                   <Typography sx={{ color: '#6C757D' }}>Tailored to your requirements</Typography>
                 </Box>
               </Box>
@@ -1674,7 +1820,7 @@ const ServicePage: React.FC = () => {
                 <Button
                   href="tel:07438580681"
                   sx={{
-                    color: '#3097C0',
+                    color: 'rgba(240, 148, 45, 0.9)',
                     textTransform: 'none',
                     fontWeight: 600,
                   }}
@@ -1809,14 +1955,14 @@ const ServicePage: React.FC = () => {
                     type="submit"
                     variant="contained"
                     sx={{
-                      bgcolor: '#3097C0',
+                      bgcolor: 'rgba(240, 148, 45, 0.9)',
                       color: 'white',
                       py: 1.5,
                       fontSize: '1rem',
                       fontWeight: 600,
                       textTransform: 'none',
                       '&:hover': {
-                        bgcolor: 'rgba(48, 151, 192, 0.9)',
+                        bgcolor: 'rgba(240, 148, 45, 0.9)',
                       },
                     }}
                   >
@@ -1843,7 +1989,7 @@ const ServicePage: React.FC = () => {
             position: 'absolute',
             inset: 0,
             zIndex: 0,
-            backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+            backgroundImage: `url(${heroBackgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             '&::before': {
@@ -1906,7 +2052,7 @@ const ServicePage: React.FC = () => {
             href="#contact-form"
             onClick={(e) => handleNavClick(e, '#contact-form')}
             sx={{
-              bgcolor: '#3097C0',
+              bgcolor: 'rgba(240, 148, 45, 0.9)',
               color: 'white',
               px: 4,
               py: 2,
@@ -1915,7 +2061,7 @@ const ServicePage: React.FC = () => {
               textTransform: 'none',
               mb: 4,
               '&:hover': {
-                bgcolor: 'rgba(48, 151, 192, 0.9)',
+                bgcolor: 'rgba(240, 148, 45, 0.9)',
               },
             }}
             data-aos="fade-up"
@@ -1935,7 +2081,7 @@ const ServicePage: React.FC = () => {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              <PhoneIcon sx={{ color: '#3097C0', fontSize: 32 }} />
+              <PhoneIcon sx={{ color: 'rgba(240, 148, 45, 0.9)', fontSize: 32 }} />
               <Box>
                 <Typography sx={{ color: 'white', fontWeight: 600 }}>0121 123 4567</Typography>
               </Box>
@@ -1952,7 +2098,7 @@ const ServicePage: React.FC = () => {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              <EmailIcon sx={{ color: '#3097C0', fontSize: 32 }} />
+              <EmailIcon sx={{ color: 'rgba(240, 148, 45, 0.9)', fontSize: 32 }} />
               <Box>
                 <Typography sx={{ color: 'white', fontWeight: 600 }}>support@groupservefacilities.co.uk</Typography>
               </Box>

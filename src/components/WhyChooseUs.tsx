@@ -6,6 +6,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import BuildingImg from '../assets/image7.jpeg';
 
 interface Feature {
   icon: React.ReactNode;
@@ -179,7 +180,7 @@ const WhyChooseUs: React.FC = () => {
                   left: -24,
                   width: '100%',
                   height: '100%',
-                  bgcolor: '#002b56',
+                  // bgcolor: '#002b56',
                   borderRadius: 2,
                   zIndex: -1,
                   transition: 'transform 0.5s',
@@ -191,7 +192,7 @@ const WhyChooseUs: React.FC = () => {
             >
               <Box
                 component="img"
-                src="https://www.equans.com/sites/g/files/tkmtob111/files/styles/coh_x_large/public/2024-09/AdobeStock_821574217.jpeg?itok=2WrQvNO3"
+                src={BuildingImg}
                 alt="Professional gutter cleaning and building maintenance"
                 sx={{
                   width: '100%',

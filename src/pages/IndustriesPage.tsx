@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Typography, Card, Button, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 import BusinessIcon from '@mui/icons-material/Business';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import FactoryIcon from '@mui/icons-material/Factory';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PhoneIcon from '@mui/icons-material/Phone';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navigation from '../components/Navigation';
@@ -37,7 +37,7 @@ interface IndustryPageData {
 }
 
 const IndustriesPage: React.FC = () => {
-  const navigate = useNavigate();
+
   const { industrySlug } = useParams<{ industrySlug?: string }>();
   
   const currentIndustrySlug = industrySlug || 'office-building';
@@ -64,9 +64,7 @@ const IndustriesPage: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [industrySlug]);
 
-  const handleBackClick = () => {
-    navigate('/');
-  };
+
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -100,19 +98,19 @@ const IndustriesPage: React.FC = () => {
       sectionDescription: 'Tailored facilities management for corporate offices, co-working spaces, and business centers.',
       services: [
         {
-          icon: <BusinessIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <BusinessIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Commercial Cleaning',
           description: 'Professional cleaning services for office spaces, meeting rooms, and common areas.',
           features: ['Daily office cleaning', 'Deep cleaning services', 'Window cleaning', 'Carpet maintenance'],
         },
         {
-          icon: <CheckCircleIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <CheckCircleIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'HVAC Maintenance',
           description: 'Climate control and air quality management for optimal working conditions.',
           features: ['Regular HVAC inspections', 'Filter replacements', 'System optimization', 'Energy efficiency'],
         },
         {
-          icon: <PhoneIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <PhoneIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Security Services',
           description: '24/7 security monitoring and access control for office buildings.',
           features: ['Access control systems', 'Security patrols', 'CCTV monitoring', 'Emergency response'],
@@ -152,24 +150,24 @@ const IndustriesPage: React.FC = () => {
       heroTitle: 'Facilities Management for',
       heroSubtitle: 'Healthcare Facilities',
       heroDescription: 'Specialized facilities management services for hospitals, clinics, and medical centers. We understand the critical importance of maintaining sterile, safe environments.',
-      heroImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      heroImage: 'https://iprospectcheck.com/wp-content/uploads/2020/01/healthcare-background-checks-1.jpg',
       sectionTitle: 'Healthcare Facilities Services',
       sectionDescription: 'Comprehensive facilities management tailored to the unique needs of healthcare environments.',
       services: [
         {
-          icon: <LocalHospitalIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <LocalHospitalIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Medical Grade Cleaning',
           description: 'Specialized cleaning protocols meeting healthcare standards and infection control requirements.',
           features: ['Infection control cleaning', 'Sterilization services', 'Waste management', 'Biohazard handling'],
         },
         {
-          icon: <CheckCircleIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <CheckCircleIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'HVAC & Air Quality',
           description: 'Critical air quality management for patient safety and comfort.',
           features: ['HEPA filtration systems', 'Air quality monitoring', 'Ventilation maintenance', 'Temperature control'],
         },
         {
-          icon: <PhoneIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <PhoneIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Emergency Maintenance',
           description: '24/7 emergency response for critical facility issues.',
           features: ['Rapid response team', 'Critical system repairs', 'Emergency protocols', 'On-call technicians'],
@@ -214,19 +212,19 @@ const IndustriesPage: React.FC = () => {
       sectionDescription: 'Comprehensive facilities management designed for retail environments and shopping centers.',
       services: [
         {
-          icon: <ShoppingBagIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <ShoppingBagIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Retail Cleaning',
           description: 'Professional cleaning services to maintain an attractive shopping environment.',
           features: ['Storefront cleaning', 'Floor maintenance', 'Restroom services', 'Window displays'],
         },
         {
-          icon: <CheckCircleIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <CheckCircleIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Maintenance Services',
           description: 'Keep retail facilities in top condition for customers and staff.',
           features: ['Lighting maintenance', 'Plumbing repairs', 'HVAC services', 'General repairs'],
         },
         {
-          icon: <PhoneIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <PhoneIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Security & Safety',
           description: 'Comprehensive security and safety services for retail spaces.',
           features: ['Security patrols', 'Access control', 'Safety inspections', 'Emergency response'],
@@ -271,19 +269,19 @@ const IndustriesPage: React.FC = () => {
       sectionDescription: 'Comprehensive facilities management solutions for manufacturing and industrial operations.',
       services: [
         {
-          icon: <FactoryIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <FactoryIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Industrial Cleaning',
           description: 'Specialized cleaning for manufacturing and warehouse environments.',
           features: ['Heavy-duty cleaning', 'Equipment cleaning', 'Waste management', 'Hazardous material handling'],
         },
         {
-          icon: <CheckCircleIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <CheckCircleIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Maintenance & Repairs',
           description: 'Comprehensive maintenance for industrial equipment and facilities.',
           features: ['Equipment maintenance', 'Structural repairs', 'Electrical systems', 'Plumbing services'],
         },
         {
-          icon: <PhoneIcon sx={{ fontSize: 40, color: '#3097C0' }} />,
+          icon: <PhoneIcon sx={{ fontSize: 40, color: 'rgba(240, 148, 45, 0.9)' }} />,
           title: 'Safety & Compliance',
           description: 'Ensure compliance with industrial safety and environmental regulations.',
           features: ['Safety inspections', 'Compliance audits', 'Training programs', 'Documentation'],
@@ -349,15 +347,15 @@ const IndustriesPage: React.FC = () => {
               content: '""',
               position: 'absolute',
               inset: 0,
-              bgcolor: 'rgba(0, 43, 86, 0.75)',
+              bgcolor: 'rgba(3, 3, 3, 0.09)',
             },
           }}
         />
         
         <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
           <Button
-            startIcon={<ArrowBackIcon />}
-            onClick={handleBackClick}
+            // startIcon={<ArrowBackIcon />}
+            // onClick={handleBackClick}
             sx={{
               color: 'white',
               mb: 4,
@@ -367,7 +365,7 @@ const IndustriesPage: React.FC = () => {
               },
             }}
           >
-            Back to Home
+            {/* Back to Home */}
           </Button>
           
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 6, alignItems: 'center' }}>
@@ -385,7 +383,7 @@ const IndustriesPage: React.FC = () => {
                 data-aos="fade-up"
               >
                 {pageData.heroTitle}{' '}
-                <Box component="span" sx={{ color: '#3097C0' }}>
+                <Box component="span" sx={{ color: 'rgba(240, 148, 45, 0.9)' }}>
                   {pageData.heroSubtitle}
                 </Box>
               </Typography>
@@ -409,7 +407,7 @@ const IndustriesPage: React.FC = () => {
                   href="#contact-form"
                   onClick={(e) => handleNavClick(e, '#contact-form')}
                   sx={{
-                    bgcolor: '#3097C0',
+                    bgcolor: 'rgba(240, 148, 45, 0.9)',
                     color: 'white',
                     px: 4,
                     py: 2,
@@ -417,7 +415,7 @@ const IndustriesPage: React.FC = () => {
                     fontWeight: 600,
                     textTransform: 'none',
                     '&:hover': {
-                      bgcolor: 'rgba(48, 151, 192, 0.9)',
+                      bgcolor: 'rgba(240, 148, 45, 0.9)',
                     },
                   }}
                 >
@@ -597,7 +595,7 @@ const IndustriesPage: React.FC = () => {
                   textAlign: 'center',
                 }}
               >
-                <Box sx={{ color: '#3097C0', mb: 2 }}>{benefit.icon}</Box>
+                <Box sx={{ color: 'rgba(240, 148, 45, 0.9)', mb: 2 }}>{benefit.icon}</Box>
                 <Typography
                   variant="h3"
                   className="font-display"
@@ -766,15 +764,15 @@ const IndustriesPage: React.FC = () => {
               
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mb: 4 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <CheckCircleIcon sx={{ color: '#3097C0' }} />
+                  <CheckCircleIcon sx={{ color: 'rgba(240, 148, 45, 0.9)' }} />
                   <Typography sx={{ color: '#6C757D' }}>Quote delivered within 24 hours</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <CheckCircleIcon sx={{ color: '#3097C0' }} />
+                  <CheckCircleIcon sx={{ color: 'rgba(240, 148, 45, 0.9)' }} />
                   <Typography sx={{ color: '#6C757D' }}>Free, no-pressure assessment</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <CheckCircleIcon sx={{ color: '#3097C0' }} />
+                  <CheckCircleIcon sx={{ color: 'rgba(240, 148, 45, 0.9)' }} />
                   <Typography sx={{ color: '#6C757D' }}>Tailored to your requirements</Typography>
                 </Box>
               </Box>
@@ -784,7 +782,7 @@ const IndustriesPage: React.FC = () => {
                 <Button
                   href="tel:07438580681"
                   sx={{
-                    color: '#3097C0',
+                    color: 'rgba(240, 148, 45, 0.9)',
                     textTransform: 'none',
                     fontWeight: 600,
                   }}
@@ -894,14 +892,14 @@ const IndustriesPage: React.FC = () => {
                     variant="contained"
                     fullWidth
                     sx={{
-                      bgcolor: '#3097C0',
+                      bgcolor: 'rgba(240, 148, 45, 0.9)',
                       color: 'white',
                       py: 1.5,
                       fontSize: '1rem',
                       fontWeight: 600,
                       textTransform: 'none',
                       '&:hover': {
-                        bgcolor: 'rgba(48, 151, 192, 0.9)',
+                        bgcolor: 'rgba(240, 148, 45, 0.9)',
                       },
                     }}
                   >

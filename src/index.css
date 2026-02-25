@@ -19,6 +19,7 @@ body {
   background-color: #F8FAFD;
   color: #333333;
   overflow-x: hidden;
+  scrollbar-gutter: stable;
 }
 
 /* Font utility classes */
