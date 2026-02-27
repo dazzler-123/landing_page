@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography, Link } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import PhoneIcon from '@mui/icons-material/Phone';
 import logo from '../assets/logo3.png';
 import EmailIcon from '@mui/icons-material/Email';
@@ -11,12 +11,27 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    const element = document.querySelector(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Check if we're on the home page
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll to the section
+      const element = document.querySelector(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
