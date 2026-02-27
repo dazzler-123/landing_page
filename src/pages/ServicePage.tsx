@@ -248,7 +248,7 @@ const ServicePage: React.FC = () => {
         {
           icon: <AssignmentIcon sx={{ fontSize: 32 }} />,
           title: 'Health & Safety Compliance',
-          description: 'Our services meet all UK health and safety regulations, reducing liability and creating safer working environments for employees and visitors.',
+          description: 'Our services meet all  health and safety regulations, reducing liability and creating safer working environments for employees and visitors.',
         },
         {
           icon: <LightbulbIcon sx={{ fontSize: 32 }} />,
@@ -569,7 +569,7 @@ const ServicePage: React.FC = () => {
         {
           icon: <AssignmentIcon sx={{ fontSize: 32 }} />,
           title: 'Compliance Guaranteed',
-          description: 'All work meets UK electrical safety standards and building regulations.',
+          description: 'All work meets electrical safety standards and building regulations.',
         },
         {
           icon: <LightbulbIcon sx={{ fontSize: 32 }} />,
@@ -676,7 +676,7 @@ const ServicePage: React.FC = () => {
         {
           icon: <AssignmentIcon sx={{ fontSize: 32 }} />,
           title: 'Compliance Assurance',
-          description: 'All work meets UK water regulations and health and safety standards.',
+          description: 'All work meets water regulations and health and safety standards.',
         },
         {
           icon: <LightbulbIcon sx={{ fontSize: 32 }} />,
@@ -783,7 +783,7 @@ const ServicePage: React.FC = () => {
         {
           icon: <AssignmentIcon sx={{ fontSize: 32 }} />,
           title: 'Compliance Guaranteed',
-          description: 'All maintenance work meets UK LOLER regulations and building safety standards, ensuring full legal compliance.',
+          description: 'All maintenance work meets LOLER regulations and building safety standards, ensuring full legal compliance.',
         },
         {
           icon: <LightbulbIcon sx={{ fontSize: 32 }} />,
@@ -2025,7 +2025,7 @@ const ServicePage: React.FC = () => {
             }}
             data-aos="fade-up"
           >
-            Join 500+ UK businesses enjoying pristine, professional environments. Let's discuss how we can transform your commercial space today.
+            Join 500+ businesses enjoying pristine, professional environments. Let's discuss how we can transform your commercial space today.
           </Typography>
           
           {/* Trust Indicators */}
@@ -2070,42 +2070,7 @@ const ServicePage: React.FC = () => {
           >
             Get Your Free Quote
           </Button>
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3, justifyContent: 'center' }} data-aos="fade-up">
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 2,
-                bgcolor: 'rgba(255, 255, 255, 0.1)',
-                px: 3,
-                py: 2,
-                borderRadius: 2,
-                backdropFilter: 'blur(10px)',
-              }}
-            >
-              <PhoneIcon sx={{ color: 'rgba(240, 148, 45, 0.9)', fontSize: 32 }} />
-              <Box>
-                <Typography sx={{ color: 'white', fontWeight: 600 }}>0121 123 4567</Typography>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 2,
-                bgcolor: 'rgba(255, 255, 255, 0.1)',
-                px: 3,
-                py: 2,
-                borderRadius: 2,
-                backdropFilter: 'blur(10px)',
-              }}
-            >
-              <EmailIcon sx={{ color: 'rgba(240, 148, 45, 0.9)', fontSize: 32 }} />
-              <Box>
-                <Typography sx={{ color: 'white', fontWeight: 600 }}>support@groupservefacilities.co.uk</Typography>
-              </Box>
-            </Box>
-          </Box>
+          
         </Container>
       </Box>
 
