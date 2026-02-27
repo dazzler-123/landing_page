@@ -145,7 +145,7 @@ const BlogTestimonialsFAQ: React.FC = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#F8FAFD', py: { xs: 6, md: 12 } }}>
+    <Box id="blog-testimonials-faq" component="section" sx={{ bgcolor: '#F8FAFD', py: { xs: 6, md: 12 } }}>
       <Container maxWidth="xl">
         {/* Blog Section */}
         <Box sx={{ mb: { xs: 8, md: 12 } }} data-aos="fade-up">
@@ -429,8 +429,8 @@ const BlogTestimonialsFAQ: React.FC = () => {
         </Box>
 
         {/* FAQ Section */}
-        <Box data-aos="fade-up">
-          <Box sx={{ textAlign: 'center', mb: 4 }}>
+        <Box data-aos="fade-up" id="faq" component="section">
+          <Box component="section" sx={{ textAlign: 'center', mb: 4 }}>
             <Typography
               sx={{
                 fontSize: '0.875rem',

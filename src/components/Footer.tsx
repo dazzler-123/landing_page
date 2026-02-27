@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography, Link } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import PhoneIcon from '@mui/icons-material/Phone';
 import logo from '../assets/logo3.png';
 import EmailIcon from '@mui/icons-material/Email';
@@ -9,6 +10,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+  
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.querySelector(targetId);
@@ -17,13 +20,18 @@ const Footer: React.FC = () => {
     }
   };
 
+  const handlePageLink = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    navigate(path);
+  };
+
   const quickLinks = [
-    { label: 'Home', href: '#' },
+    { label: 'Home', href: '#home' },
     { label: 'Services', href: '#services' },
-    { label: 'About Us', href: '#about' },
+    // { label: 'About Us', href: '#about' },
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Contact', href: '#contact' },
-    { label: 'FAQ', href: '#' },
+    { label: 'FAQ', href: '#faq' },
   ];
 
   return (
@@ -189,22 +197,26 @@ const Footer: React.FC = () => {
           </Typography>
           <Box sx={{ display: 'flex', gap: 3, fontSize: '0.875rem' }}>
             <Link
-              href="#"
+              href="/privacy-policy"
+              onClick={(e) => handlePageLink(e, '/privacy-policy')}
               sx={{
                 color: 'inherit',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
+                cursor: 'pointer',
                 '&:hover': { color: '#F0942D' },
               }}
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms-of-service"
+              onClick={(e) => handlePageLink(e, '/terms-of-service')}
               sx={{
                 color: 'inherit',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
+                cursor: 'pointer',
                 '&:hover': { color: '#F0942D' },
               }}
             >

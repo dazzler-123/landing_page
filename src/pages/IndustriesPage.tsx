@@ -54,10 +54,12 @@ const IndustriesPage: React.FC = () => {
 
   useEffect(() => {
     AOS.init({ once: true });
-    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
+    // Scroll to top when industry changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     if (industrySlug && industrySlug !== formData.industryType) {
       setFormData((prev) => ({ ...prev, industryType: industrySlug }));
     }
@@ -347,7 +349,7 @@ const IndustriesPage: React.FC = () => {
               content: '""',
               position: 'absolute',
               inset: 0,
-              bgcolor: 'rgba(3, 3, 3, 0.09)',
+              bgcolor: 'rgba(3, 3, 3, 0.42)',
             },
           }}
         />

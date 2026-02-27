@@ -80,11 +80,13 @@ const ServicePage: React.FC = () => {
 
   useEffect(() => {
     AOS.init({ once: true });
-    window.scrollTo(0, 0);
   }, []);
 
-  // Update form service type when URL parameter changes
+  // Update form service type when URL parameter changes and scroll to top
   useEffect(() => {
+    // Scroll to top when service type changes
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
     if (serviceType && serviceType !== formData.serviceType) {
       setFormData((prev) => ({ ...prev, serviceType: serviceType }));
     }
@@ -926,7 +928,7 @@ const ServicePage: React.FC = () => {
               content: '""',
               position: 'absolute',
               inset: 0,
-              bgcolor: 'rgb(0, 43, 86, 0.23)'
+              bgcolor: 'rgb(0, 43, 86, 0.35)'
             },
           }}
         />
