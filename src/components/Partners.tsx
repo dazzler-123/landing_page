@@ -6,13 +6,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 // Import partner images from assets folder
-import partner1 from '../assets/1.avif';
-import partner2 from '../assets/2.avif';
-import partner3 from '../assets/3.avif';
-import partner4 from '../assets/4.avif';
-import partner5 from '../assets/5.avif';
-import partner6 from '../assets/6.avif';
-import partner7 from '../assets/7.avif';
+import partner1 from '../assets/tower.png';
+import partner2 from '../assets/coral.png';
+import partner3 from '../assets/iso9001.jpg';
+import partner4 from '../assets/refcom.jpg';
+import partner5 from '../assets/safecontractor.jpg';
+// import partner6 from '../assets/6.avif';
+// import partner7 from '../assets/7.avif';
 
 // Partner images array
 const partners = [
@@ -21,8 +21,8 @@ const partners = [
   { name: 'Partner 3', image: partner3 },
   { name: 'Partner 4', image: partner4 },
   { name: 'Partner 5', image: partner5 },
-  { name: 'Partner 6', image: partner6 },
-  { name: 'Partner 7', image: partner7 },
+  // { name: 'Partner 6', image: partner6 },
+  // { name: 'Partner 7', image: partner7 },
 ].map((p) => ({ ...p, bgColor: '#F8FAFD', textColor: '#0F223F' }));
 
 const Partners: React.FC = () => {
