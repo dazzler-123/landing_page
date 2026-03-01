@@ -593,48 +593,28 @@ const Navigation: React.FC = () => {
                   </Button>
                 );
               })}
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 0.5 }}>
-                <Box
-                  component="a"
-                  href="tel:07438580681"
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    color: '#333333',
-                    textDecoration: 'none',
-                    fontSize: '0.875rem',
-                    fontWeight: 500,
-                    '&:hover': { color: '#0F223F' },
-                    transition: 'color 0.3s',
-                  }}
-                >
-                  <PhoneIcon sx={{ fontSize: 18 }} />
-                  <Typography sx={{ fontSize: '0.875rem', fontWeight: 500 }}>
-                    07438 580681
-                  </Typography>
-                </Box>
-                <Box
-                  component="a"
-                  href="mailto:support@groupservefacilities.co.uk"
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    color: '#333333',
-                    textDecoration: 'none',
-                    fontSize: '0.875rem',
-                    fontWeight: 500,
-                    '&:hover': { color: '#0F223F' },
-                    transition: 'color 0.3s',
-                }}
-              >
-                  <EmailIcon sx={{ fontSize: 18 }} />
-                  <Typography sx={{ fontSize: '0.875rem', fontWeight: 500 }}>
-                    support@groupservefacilities.co.uk
-                  </Typography>
-                </Box>
-              </Box>
+            <Button
+              href="#contact"
+              onClick={(e) => handleNavClick(e as any, '#contact')}
+              variant="contained"
+              sx={{
+                bgcolor: 'rgba(240, 148, 45, 0.9)',
+                color: 'white',
+                px: 3,
+                py: 1,
+                fontSize: '0.875rem',
+                fontWeight: 600,
+                textTransform: 'none',
+                borderRadius: 999,
+                boxShadow: '0 4px 12px rgba(240, 148, 45, 0.35)',
+                '&:hover': {
+                  bgcolor: 'rgba(240, 148, 45, 0.9)',
+                  boxShadow: '0 6px 18px rgba(240, 148, 45, 0.45)',
+                },
+              }}
+            >
+              Request a quote
+            </Button>
             </Box>
 
             {/* Mobile Menu Button - right side */}
