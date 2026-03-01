@@ -112,23 +112,28 @@ const BlogTestimonialsFAQ: React.FC = () => {
   const faqs = [
     {
       question: 'What services does Group Serve Facilities Management offer?',
-      answer: 'We offer comprehensive facilities management services including commercial cleaning, HVAC maintenance, security services, electrical maintenance, plumbing services, and general maintenance. Our services are tailored to meet the specific needs of various industries.',
+      answer:
+        'We provide a wide range of facilities management services including gutter cleaning, property maintenance, commercial & residential cleaning, reactive maintenance, grounds & external maintenance, and 24/7 emergency call-outs. If you require a service not listed, please contact us — we may still be able to help.',
     },
     {
       question: 'Do you provide emergency services?',
-      answer: 'Yes, we provide 24/7 emergency response services. Our team is always available to address urgent facility issues and ensure minimal disruption to your operations.',
+      answer:
+        'Yes. We operate a 24/7 emergency line to respond to urgent property issues. Response times may vary depending on your location and the severity of the issue.',
     },
     {
-      question: 'How quickly can you respond to service requests?',
-      answer: 'Our average response time is under 2 hours for standard requests. For emergency situations, we aim to respond within 30 minutes and have a technician on-site within 1 hour.',
+      question: 'Which areas do you cover?',
+      answer:
+        'We are based in Sutton Coldfield and serve the surrounding areas, as well as wider UK locations depending on the service required. Contact us to confirm coverage for your property.',
     },
     {
-      question: 'Are your staff qualified and insured?',
-      answer: 'Absolutely. All our technicians are fully qualified, certified, and insured. We maintain comprehensive insurance coverage and conduct regular training to ensure the highest standards of service delivery.',
+      question: 'Are you insured?',
+      answer:
+        'Yes. We operate with appropriate insurance coverage to protect both our clients and our team while carrying out services. Insurance documentation can be provided upon request.',
     },
     {
-      question: 'What areas do you serve?',
-      answer: 'We serve clients across the UK, with a strong presence in major cities including Birmingham, London, Manchester, and surrounding areas. Contact us to confirm coverage in your specific location.',
+      question: 'How do I request a quote?',
+      answer:
+        "You can request a quote by filling out our online enquiry form, emailing support@groupservefacilities.co.uk, or calling us directly on 07438 580681. We aim to respond to all enquiries promptly.",
     },
   ];
 

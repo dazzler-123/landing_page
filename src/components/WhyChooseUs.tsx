@@ -22,23 +22,23 @@ const WhyChooseUs: React.FC = () => {
   const features: Feature[] = [
     {
       icon: <CheckCircleIcon sx={{ fontSize: 20, color: '#50BB5A' }} />,
-      title: 'Experienced Professionals',
-      description: 'Our team has years of experience handling all types of facilities with precision and care.',
+      title: 'UK-wide coverage & 24/7 response',
+      description: 'Wherever you are in the UK, our teams can support you around the clock with both planned visits and urgent call-outs.',
     },
     {
       icon: <VerifiedUserIcon sx={{ fontSize: 20, color: '#50BB5A' }} />,
-      title: 'Fully Licensed & Insured',
-      description: 'We are fully licensed, insured, and compliant with all health and safety regulations.',
+      title: 'Fully insured & safety compliant',
+      description: 'We operate with comprehensive insurance and work in line with current UK health and safety regulations.',
     },
     {
       icon: <AccessTimeIcon sx={{ fontSize: 20, color: '#50BB5A' }} />,
-      title: '24/7 Emergency Support',
-      description: 'Our emergency response team is available round the clock to address urgent issues.',
+      title: 'Transparent pricing & fast turnaround',
+      description: 'Clear quotes with no hidden extras and efficient scheduling designed to minimise disruption to your site.',
     },
     {
       icon: <AttachMoneyIcon sx={{ fontSize: 20, color: '#50BB5A' }} />,
-      title: 'Competitive Pricing',
-      description: 'We offer transparent, competitive pricing with no hidden charges or surprises.',
+      title: 'Customer-focused, long-term care',
+      description: 'We build ongoing maintenance plans around your property, focusing on long-term reliability rather than one-off fixes.',
     },
   ];
 
@@ -57,7 +57,7 @@ const WhyChooseUs: React.FC = () => {
               color: '#50BB5A',
             }}
           >
-            Why Choose Group Serve
+            Why Choose Us
           </Typography>
           <Typography
             variant="h2"
@@ -69,7 +69,7 @@ const WhyChooseUs: React.FC = () => {
               mb: 2,
             }}
           >
-            Why Choose Group Serve
+            Trusted, Efficient & Professional Services
           </Typography>
           <Typography
             sx={{
@@ -80,7 +80,7 @@ const WhyChooseUs: React.FC = () => {
               lineHeight: 1.625,
             }}
           >
-            Discover what sets us apart from other facilities management companies.
+            At Group Serve Facilities Management, we deliver dependable, high-quality property care solutions for residential, commercial, and industrial clients. Our trained technicians and responsive support ensure your facility is always in excellent condition.
           </Typography>
         </Box>
 
@@ -99,7 +99,7 @@ const WhyChooseUs: React.FC = () => {
                   mb: 3,
                 }}
               >
-                Experience the Group Serve Difference
+                Why Choose Us
               </Typography>
               <Typography
                 sx={{
@@ -109,7 +109,18 @@ const WhyChooseUs: React.FC = () => {
                   lineHeight: 1.75,
                 }}
               >
-                We utilize advanced gutter vacuum systems and reach-and-wash equipment for cleaning gutters on various property types, including multi-storey buildings, terraced houses, flats, offices, and retail properties. Our comprehensive services include gutter unblocking, downpipe cleaning, soffit and fascia cleaning, moss removal, and minor gutter repairs. We are fully insured, competitively priced, and committed to excellent customer satisfaction.
+                From commercial offices and industrial sites to residential properties, we provide reliable facilities management and property maintenance that keeps everything running smoothly. Whether you need routine cleaning, reactive maintenance, grounds and external upkeep, or 24/7 emergency call-outs, we tailor our service to the way you operate.
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontSize: { xs: '1rem', sm: '1.0625rem' },
+                  fontWeight: 600,
+                  color: '#0F223F',
+                  mb: 2,
+                }}
+              >
+                Key benefits:
               </Typography>
 
               {/* Features List */}
