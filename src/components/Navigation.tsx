@@ -16,8 +16,6 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 import BuildIcon from '@mui/icons-material/Build';
